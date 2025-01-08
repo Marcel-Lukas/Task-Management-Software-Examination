@@ -7,6 +7,26 @@
   font-family: 'Inter', sans-serif;
 }
 
+.d-none {
+  display: none !important;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+
 
 
 
@@ -22,19 +42,28 @@
   padding: 64px 0px 64px 0px;
 }
 
-.nav-container img {
+.join-logo {
   width: 100px;
   height: 122px;
 }
 
 .nav-links {
-  padding-bottom: 64px;
+  height: 229px;
+  width: 100%;
+  color: #cdcdcd;
+  box-sizing: unset;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.nav-links a {
+  gap: 8px;
 }
 
 .nav-links a:hover {
   cursor: pointer;
-  border: solid 1px rgba(211, 211, 211, 0.6);
-  border-radius: 5px;
+  background-color: #2A3D59;
 }
 
 .nav-link img {
@@ -44,29 +73,35 @@
   height: 25px;
 }
 
+.nav-link {
+  display: flex;
+  align-items: center;
+}
+
 .sub-nav {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 232px;
-  height: 317px;
+  width: 100%;
+  height: 300px;
   padding: 243px 0px 0px 0px;
   gap: 4px;
 }
 
 .sub-nav a {
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
-  padding: 8px 0px;
   gap: 8px;
-  color: white;
+  color: #A8A8A8;
   text-decoration: none;
+  padding-left: 52px;
 }
 
 .sub-nav a:hover {
   cursor: pointer;
-  text-decoration: underline;
+  color: rgb(41,171,226);
+  transform: scale(106%);
 }
 
 nav {
@@ -99,10 +134,86 @@ nav a {
 }
 
 .active {
-  background-color: #2A3D59;
+  background-color: #091931;
 }
 
 
 
 /* Header Template */
 
+header {
+  position: absolute;
+  top: 0;
+  left: 232px;
+  font-size: 20px;
+  display: flex;
+  width: calc(100% - 232px);
+  height: 96px;
+  padding: 20px 40px 20px 116px;
+  gap: 0px;
+  justify-content: space-between;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+  align-items: center;
+  background-color: white;
+}
+
+.help-desktop {
+  padding-top: 5px;
+}
+
+.help {
+  width: 20px;
+  height: 20px;
+  margin-right: 20px;
+}
+
+.user-button {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 3px solid #2A3647;
+}
+
+#user-menu {
+  z-index: 11;
+  display: flex;
+  flex-direction: column;
+  background-color: #2a3647;
+  padding: 10px;
+  border-radius: 20px 0px 20px 20px;
+  position: absolute;
+  top: 69px;
+  left: calc(100% - 238px);
+  font-size: clamp(16px, 3vw, 20px);
+  box-shadow: 0px 0px 16px rgb(255, 255, 255);
+  border-top: none;
+}
+
+
+#user-menu.shift-in {
+  animation: user-menu-shift-in 150ms linear;
+  transform: translateX(0%);
+}
+
+@keyframes user-menu-shift-in {
+  0% {
+      transform: translateX(110%);
+  }
+  100% {
+      transform: translateX(0%);
+  }
+}
+
+#user-menu a {
+  color: #cdcdcd;
+  padding: 12px 14px;
+  text-decoration: none;
+}
+
+#user-menu a:hover {
+  background-color: #354b6b;
+  border-radius: 12px;
+}
+
+
+/* Nächster shit */

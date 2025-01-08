@@ -14,6 +14,17 @@ async function includeHTML() {
 }
 
 
+function showUserMenu (){
+  let userMenu = document.getElementById('user-menu');
+  userMenu.classList.toggle('d-none');
+  if(!userMenu.classList.contains('shift-in')) {
+      userMenu.classList.add('shift-in');
+  }else {
+      userMenu.classList.remove('shift-in');
+  }
+}
+
+
 function extractFilename(url) {
   const urlObj = new URL(url);
   const pathname = urlObj.pathname;
