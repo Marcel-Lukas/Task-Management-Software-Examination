@@ -45,3 +45,8 @@ function activeLink() {
 }
 
 activeLink();
+
+
+function goBack() {
+  window.history.back();
+}

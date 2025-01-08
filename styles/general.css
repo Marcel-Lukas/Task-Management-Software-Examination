@@ -37,6 +37,16 @@ main {
   z-index: -1;
 }
 
+.content {
+  height: 100%;
+  width: calc(100% - 232px);
+  margin-left: 232px;
+  margin-top: 96px;
+  padding: 30px 96px 70px 96px;
+  display: flex;
+  flex-direction: column;
+}
+
 
 
 /* Navigation Template */
