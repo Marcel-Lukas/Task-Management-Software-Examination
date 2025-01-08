@@ -1,13 +1,14 @@
 
-.content {
-  padding: 64px;
-}
-
 .content-policy {
   overflow: scroll;
-  gap: 21px;
+  padding-left: 250px;
+  padding-top: 120px;
+  padding-right: 280px;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
 
 .headline {
   display: flex;
@@ -26,7 +27,7 @@ h1 {
 }
 
 h2 {
-  font-size: 27px;
+  font-size: 32px;
   margin-top: 24px;
   margin-bottom: 24px;
 }
@@ -37,6 +38,10 @@ h3 {
   margin-bottom: 24px;
 }
 
+p, li {
+  width: 1000px;
+}
+
 .link {
   color: #a8a8a8;
   text-decoration: none;
@@ -44,7 +49,7 @@ h3 {
 
 .link:hover {
   cursor: pointer;
-  color: rgb(41,171,226);
+  color: #29abe2;
 }
 
 li {
