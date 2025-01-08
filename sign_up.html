@@ -19,20 +19,42 @@
     <main>
         <div class="logInBox">
             <h1 class="h1LogIn">Sign up</h1>
-            <div class="logInForm">
-                <input type="text" class="inputMail" placeholder="Name">
-                <input type="email" class="inputPassword" placeholder="Email">
-                <input type="password" class="inputPassword" placeholder="Password">
-                <input type="password" class="inputPassword" placeholder="Confirm Password">
-
-                <div class="buttonDirection">
-                    <button>Sign up</button>
+            <form class="logInForm">
+                <!-- Name Input -->
+                <div class="inputContainer">
+                    <label for="name" class="visually-hidden">Name</label>
+                    <input type="text" id="name" class="inputField" placeholder="Name">
+                    <img src="./assets/img/png/person.png" alt="User Icon" class="inputIcon">
                 </div>
-
-            </div>
+    
+                <!-- Email Input -->
+                <div class="inputContainer">
+                    <label for="email" class="visually-hidden">Email</label>
+                    <input type="email" id="email" class="inputField" placeholder="Email">
+                    <img src="./assets/img/png/mail.png" alt="Email Icon" class="inputIcon">
+                </div>
+    
+                <!-- Password Input -->
+                <div class="inputContainer">
+                    <label for="password" class="visually-hidden">Password</label>
+                    <input type="password" id="password" class="inputField" placeholder="Password">
+                    <img src="./assets/img/png/lock.png" alt="Password Icon" class="inputIcon">
+                </div>
+    
+                <!-- Confirm Password Input -->
+                <div class="inputContainer">
+                    <label for="confirmPassword" class="visually-hidden">Confirm Password</label>
+                    <input type="password" id="confirmPassword" class="inputField" placeholder="Confirm Password">
+                    <img src="./assets/img/png/lock.png" alt="Password Icon" class="inputIcon">
+                </div>
+    
+                <div class="buttonDirection">
+                    <button type="submit">Sign up</button>
+                </div>
+            </form>
         </div>
-
     </main>
+    
 
     <footer>
         <div class="privacyPolice">
