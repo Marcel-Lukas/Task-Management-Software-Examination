@@ -30,7 +30,8 @@
       <h1>Add Task</h1>
 
       <div class="taskContent">
-        <div class="frame1">
+
+        <div class="frame">
           <div class="entryField">
             <h6>Title</h6>
             <input type="text" name="" id="" placeholder="Enter a Titel">
@@ -47,7 +48,9 @@
           </div>
         </div>
 
-        <div class="frame2">
+        <div class="seperator"></div>
+
+        <div class="frame">
           <div class="entryField">
             <h6>Due date</h6>
             <input type="date">
@@ -55,9 +58,21 @@
 
           <div class="entryField">
             <h6>Prio</h6>
-            <button>Urgent</button>
-            <button>Medium</button>
-            <button>Low</button>
+            <div class="prioBar">
+
+              <div class="prioButton">
+                <h3>Urgent</h3>
+                <img class="prioIcon" src="/assets/img/png/prio-urgent.png">
+              </div>
+              <div class="prioButton">
+                <h3>Medium</h3>
+                <img class="prioIcon" src="/assets/img/png/prio-medium.png">
+              </div>
+              <div class="prioButton">
+                <h3>Low</h3>
+                <img class="prioIcon" src="/assets/img/png/prio-low.png">
+              </div>
+            </div>
           </div>
 
           <div class="entryField">
@@ -70,6 +85,7 @@
             <input type="text" name="" id="" placeholder="Add new subtask">
           </div>
         </div>
+
       </div>
       
       <div class="taskFooter">
@@ -84,7 +100,7 @@
 
           <div class="taskButton">
             <h5>Create Task</h5>
-            <img class="taskIcon" src="/assets/img/png/check-summary.png">
+            <img class="taskIcon" src="/assets/img/png/check-blue-summary.png">
           </div>
         </div>
       </div>

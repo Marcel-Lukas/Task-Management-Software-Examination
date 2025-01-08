@@ -1,26 +1,103 @@
 body{
-    background-color: rgb(243, 243, 243);
+    background-color: rgb(246, 247, 248);
 }
 
 h1{
     font-weight: 700;
-    margin: 0px 0px 0px 0px;
+    margin: 110px 0px 0px 96px;
+    font-size: 61px;
+}
+
+h3{
+    font-size: 20px;
+    font-weight: 400;
+}
+
+h6{
+    font-size: 20px;
+    padding-bottom: 4px;
 }
 
 .taskContent{
+    width: auto;
     display: flex;
+    margin: 50px 0px 0px 96px;
+}
+
+.seperator{
+    width: 3px;
+    height: 424px;
+    background-color: rgb(209, 209, 209);
+    margin: 0px 24px 8px 0px;
+}
+
+.frame{
+    margin: 0px 24px 0px 0px;
 }
 
 .entryField{
-    margin: 0px 8px 8px 0px;
+    margin: 0px 8px 16px 0px;
+}
+
+input{
+    padding: 16px;
+    font-size: 20px;
+    width: 440px;
+    height: 48px;
+    border-radius: 10px;
+    border: solid 1px rgb(209, 209, 209);
+}
+
+textarea{
+    padding: 16px;
+    font-size: 20px;
+    width: 440px;
+    height: 136px;
+    border-radius: 10px;
+    border: solid 1px rgb(209, 209, 209);
 }
 
 .taskButtonBox{
     display: flex;
     justify-content: space-around;
+    height: 56px;
+    width:  110px;
+}
+
+.prioBar{
+    display: flex;
+}
+
+.prioButton{
+    display: flex;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    border: solid 1px rgb(209, 209, 209);
+    border-radius: 10px;
+    padding: 16px 10px 16px 10px;
+    margin: 0px 8px 0px 0px;
+}
+
+.prioIcon{
+    width: 24px;
+}
+
+.taskFooter{
+    margin: 58px 0px 0px 0px;
+    display: flex;
+    justify-content: space-around;
 }
 
 .taskButton{
+    display: flex;
+    align-items: center;
     border: solid rgb(42, 54, 71);
     border-radius: 15px;
+    padding: 16px 10px 16px 10px;
+    margin: 0px 8px 0px 0px;
+}
+
+.taskIcon{
+    width: 24px;
+    height: 24px;
 }
