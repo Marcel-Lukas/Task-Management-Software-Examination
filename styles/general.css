@@ -30,7 +30,12 @@ body {
   flex-direction: column;
 }
 
-
+main {
+  position: absolute;
+  top: 100px;
+  left: 234px;
+  z-index: -1;
+}
 
 
 
@@ -112,7 +117,7 @@ nav {
   width: 232px;
   height: 100vh;
   background: #2A3647;
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 1;
@@ -146,7 +151,7 @@ nav a {
 /* Header Template */
 
 header {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 232px;
   font-size: 20px;
