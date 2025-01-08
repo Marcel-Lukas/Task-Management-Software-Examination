@@ -1,0 +1,26 @@
+body{
+    background-color: rgb(243, 243, 243);
+}
+
+h1{
+    font-weight: 700;
+    margin: 0px 0px 0px 0px;
+}
+
+.taskContent{
+    display: flex;
+}
+
+.entryField{
+    margin: 0px 8px 8px 0px;
+}
+
+.taskButtonBox{
+    display: flex;
+    justify-content: space-around;
+}
+
+.taskButton{
+    border: solid rgb(42, 54, 71);
+    border-radius: 15px;
+}
