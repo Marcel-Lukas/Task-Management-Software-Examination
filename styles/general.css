@@ -7,6 +7,10 @@
   font-family: 'Inter', sans-serif;
 }
 
+body {
+  background-color: #F5F6F7;
+}
+
 .d-none {
   display: none !important;
 }
@@ -217,3 +221,4 @@ header {
 
 
 /* Nächster shit */
+
