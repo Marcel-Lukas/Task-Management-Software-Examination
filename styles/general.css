@@ -47,6 +47,17 @@ main {
   flex-direction: column;
 }
 
+.arrow-back {
+  height: 37px;
+  width: 37px;
+  border-radius: 23px;
+  &:hover {
+    cursor: pointer;
+    transform: scale(118%);
+    background-color: rgba(192, 192, 192, 0.2);
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.3);
+  }
+}
 
 
 /* Navigation Template */
