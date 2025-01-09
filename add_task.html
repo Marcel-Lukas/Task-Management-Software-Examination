@@ -69,15 +69,15 @@
             <h6>Prio</h6>
             <div class="prioBar">
 
-              <div class="prioButton urgent">
+              <div class="prioButton urgent" onclick="toggleActive(this)">
                 <h3>Urgent</h3>
                 <img class="prioIcon urgent" src="/assets/img/png/prio-urgent.png">
               </div>
-              <div class="prioButton medium">
+              <div class="prioButton medium" onclick="toggleActive(this)">
                 <h3>Medium</h3>
                 <img class="prioIcon" src="/assets/img/png/prio-medium.png">
               </div>
-              <div class="prioButton low">
+              <div class="prioButton low" onclick="toggleActive(this)">
                 <h3>Low</h3>
                 <img class="prioIcon" src="/assets/img/png/prio-low.png">
               </div>
@@ -86,7 +86,16 @@
 
           <div class="entryField">
             <h6>Category</h6>
-            <input type="" placeholder="Select task Category">
+            <div class="dropdown">
+              <div class="dropbutton">Select task category
+                <img class="dropIcon" src="/assets/img/png/arrow_drop_down.png">
+              </div>
+              <div class="dropdown-content">
+                <a href="#">Kat 1</a>
+                <a href="#">Kat 2</a>
+                <a href="#">Kat 3</a>
+              </div>
+            </div>
           </div>
 
           <div class="entryField">
@@ -101,15 +110,13 @@
         <p>This field is required</p>
 
         <div class="taskButtonBox">
-
-          <div class="taskButton dispose">
+          <div class="taskButton dispose" onclick="toggleActive(this)">
             <h5>Clear</h5>
             <img class="clear" src="/assets/img/png/close.png">
           </div>
-
-          <div class="taskButton crate">
+          <div class="taskButton crate" onclick="toggleActive(this)">
             <h5>Create Task</h5>
-            <img class="check" src="/assets/img/png/check-blue-summary.png">
+            <img class="check" src="/assets/img/png/check-summary.png">
           </div>
         </div>
       </div>

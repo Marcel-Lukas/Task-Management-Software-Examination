@@ -11,6 +11,7 @@ h1{
 h3{
     font-size: 20px;
     font-weight: 400;
+    padding: 8px;
 }
 
 h5{
@@ -74,40 +75,48 @@ textarea{
     border-radius: 10px;
     padding: 16px 10px 16px 10px;
     margin: 0px 8px 0px 0px;
+    transition: transform 222ms ease-in-out;
 }
 
 .prioButton:hover{
     cursor: pointer;
 }
 
+.prioButton.active{
+    transform: scale(108%);
+}
+
 .prioIcon{
     width: 24px;
 }
 
-.urgent:hover{
+.urgent.active{
     background-color: rgb(255, 61, 0);
     color: white;
+    transform: scale(108%)
 }
 
-.urgent:hover img{
+.urgent.active img{
     content: url(/assets/img/png/Prio-urgent-white.png);
 }
 
-.medium:hover{
+.medium.active{
     background-color: rgb(255, 168, 0);
     color: white;
+    transform: scale(108%)
 }
 
-.medium:hover img{
+.medium.active img{
     content: url(/assets/img/png/prio-medium-white-at.png);
 }
 
-.low:hover{
+.low.active{
     background-color: rgb(122, 226, 41);
     color: white;
+    transform: scale(108%)
 }
 
-.low:hover img{
+.low.active img{
     content: url(/assets/img/png/prio-low-white-at.png);
 }
 
@@ -133,20 +142,20 @@ textarea{
     border-radius: 15px;
     padding: 16px 10px 16px 10px;
     margin: 0px 8px 0px 0px;
+    transition: transform 222ms ease-in-out;
 }
 
-.dispose:hover img{
-    content: url(/assets/img/png/close-white.png);
-}
-
-.crate:hover img{
-    content: url(/assets/img/png/check-summary.png);
+.crate{
+    color: rgb(255, 255, 255);
+    background-color: rgb(42, 54, 71);
 }
 
 .taskButton:hover{
     cursor: pointer;
-    background-color: rgb(42, 54, 71);
-    color: rgb(255, 255, 255);
+}
+
+.taskButton.active{
+    transform: scale(108%);
 }
 
 .taskIcon{
