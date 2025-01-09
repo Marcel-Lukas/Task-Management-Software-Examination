@@ -44,7 +44,16 @@
 
           <div class="entryField">
             <h6>Assigned to</h6>
-            <input type="submit" placeholder="Select contacts to assign">
+            <div class="dropdown">
+              <div class="dropbutton">Select contacts to assign
+                <img class="dropIcon" src="/assets/img/png/arrow_drop_down.png">
+              </div>
+              <div class="dropdown-content">
+                <a href="#">Marcel</a>
+                <a href="#">Andreas</a>
+                <a href="#">Nicolaus</a>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -60,15 +69,15 @@
             <h6>Prio</h6>
             <div class="prioBar">
 
-              <div class="prioButton">
+              <div class="prioButton urgent">
                 <h3>Urgent</h3>
-                <img class="prioIcon" src="/assets/img/png/prio-urgent.png">
+                <img class="prioIcon urgent" src="/assets/img/png/prio-urgent.png">
               </div>
-              <div class="prioButton">
+              <div class="prioButton medium">
                 <h3>Medium</h3>
                 <img class="prioIcon" src="/assets/img/png/prio-medium.png">
               </div>
-              <div class="prioButton">
+              <div class="prioButton low">
                 <h3>Low</h3>
                 <img class="prioIcon" src="/assets/img/png/prio-low.png">
               </div>
@@ -93,14 +102,14 @@
 
         <div class="taskButtonBox">
 
-          <div class="taskButton">
+          <div class="taskButton dispose">
             <h5>Clear</h5>
-            <img class="taskIcon" src="/assets/img/png/clear-button-darkblue.png">
+            <img class="clear" src="/assets/img/png/close.png">
           </div>
 
-          <div class="taskButton">
+          <div class="taskButton crate">
             <h5>Create Task</h5>
-            <img class="taskIcon" src="/assets/img/png/check-blue-summary.png">
+            <img class="check" src="/assets/img/png/check-blue-summary.png">
           </div>
         </div>
       </div>
