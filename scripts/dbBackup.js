@@ -5,7 +5,7 @@ let dbBackupContacts = [
     id: 1,
     initials: "AZ",
     name: "Anna Zuckerberg",
-    phone: 165816542,
+    phone: "0176-8165542",
   },
   {
     color: "#19FF82",
@@ -13,7 +13,7 @@ let dbBackupContacts = [
     id: 2,
     initials: "BB",
     name: "Bill Blumberg",
-    phone: 1834566923,
+    phone: "0152-3456692",
   },
   {
     color: "#ED4F01",
@@ -21,7 +21,7 @@ let dbBackupContacts = [
     id: 3,
     initials: "CM",
     name: "Claus Müller",
-    phone: 1783412342,
+    phone: "0178-3412342",
   },
   {
     color: "#1C7B2B",
@@ -29,7 +29,7 @@ let dbBackupContacts = [
     id: 4,
     initials: "DK",
     name: "Dirk Kaschba",
-    phone: 193412343,
+    phone: "0159-9341234",
   },
   {
     color: "#523C5A",
@@ -37,7 +37,7 @@ let dbBackupContacts = [
     id: 5,
     initials: "EE",
     name: "Emily Erdbeer",
-    phone: 1723418343,
+    phone: "0172-3418343",
   },
   {
     color: "#59C248",
@@ -45,7 +45,7 @@ let dbBackupContacts = [
     id: 6,
     initials: "FS",
     name: "Florian Stein",
-    phone: 18234723114,
+    phone: "0151-3472311",
   },
   {
     color: "#BA6C74",
@@ -53,7 +53,7 @@ let dbBackupContacts = [
     id: 7,
     initials: "GB",
     name: "Gerd Bauer",
-    phone: 182341432234,
+    phone: "0160-3414322",
   },
   {
     color: "#130994",
@@ -61,7 +61,7 @@ let dbBackupContacts = [
     id: 8,
     initials: "HL",
     name: "Hans Laurent",
-    phone: 12341234,
+    phone: "0170-1234123",
   },
   {
     color: "#2A3A33",
@@ -69,7 +69,7 @@ let dbBackupContacts = [
     id: 9,
     initials: "IB",
     name: "Ines Bremer",
-    phone: 15633499467,
+    phone: "0156-3349946",
   },
   {
     color: "#FD5B4F",
@@ -77,6 +77,6 @@ let dbBackupContacts = [
     id: 10,
     initials: "JK",
     name: "John Kovaci",
-    phone: 182377732894,
+    phone: "0159-3777328",
   },
 ];
