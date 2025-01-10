@@ -46,12 +46,54 @@ h6{
 }
 
 input{
-    padding: 16px;
+    font-size: 20px;
+    width: 440px;
+    height: 46px;
+    border-radius: 10px;
+    border: none;
+}
+
+.required:after {
+    content:" *";
+    color: red;
+  }
+
+  p:before {
+    content:"* ";
+    color: red;
+  }
+
+.date:focus{
+    outline: none;
+}
+
+.inputDate{
+    padding: 0px 16px 0px 0px;
     font-size: 20px;
     width: 440px;
     height: 48px;
     border-radius: 10px;
+    background-color: rgb(255, 255, 255);
     border: solid 1px rgb(209, 209, 209);
+    display: flex;
+    align-items: center;
+}
+
+.date{
+    padding: 0px 0px 0px 16px;
+}
+
+.dateIcon:hover{
+    cursor: pointer;
+}
+
+.date:hover{
+    cursor: pointer;
+}
+
+::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
 }
 
 textarea{
@@ -152,9 +194,6 @@ textarea{
 
 .taskButton:hover{
     cursor: pointer;
-}
-
-.taskButton.active{
     transform: scale(108%);
 }
 
@@ -183,16 +222,16 @@ textarea{
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
+}
 
   .dropbutton:hover{
     cursor: pointer;
-  }
+}
   
   .dropdown {
     position: relative;
     display: inline-block;
-  }
+}
   
   .dropdown-content {
     display: none;
@@ -203,7 +242,7 @@ textarea{
     z-index: 1;
     width: 440px;
     border-radius: 10px;
-  }
+}
   
   .dropdown-content a {
     color: black;
@@ -211,7 +250,7 @@ textarea{
     text-decoration: none;
     display: block;
     border-radius: 10px;
-  }
+}
   
   .dropdown-content a:hover {
     background-color: #f1f1f1;
@@ -224,4 +263,4 @@ textarea{
   .dropIcon{
     width: 12px;
     height: 6px;
-  }
+}

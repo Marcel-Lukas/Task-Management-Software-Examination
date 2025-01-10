@@ -8,3 +8,11 @@ function toggleActive(clickedElement) {
         clickedElement.classList.add('active');
     }
 }
+
+  function showPicker() {
+    document.getElementById('dateIcon');
+    let dateInput = document.getElementById('dateInput');
+    if (dateInput) {
+        dateInput.showPicker();
+    }
+  }
