@@ -33,12 +33,12 @@
 
         <div class="frame">
           <div class="entryField">
-            <h6>Title</h6>
-            <input type="text" name="" id="" placeholder="Enter a Titel">
+            <h6 class="required" >Title</h6>
+            <input class="required" type="text" placeholder="Enter a Titel">
           </div>
 
           <div class="entryField">
-            <h6>Description</h6>
+            <h6 class="required">Description</h6>
             <textarea placeholder="Enter a Description"></textarea>
           </div>
 
@@ -61,8 +61,11 @@
 
         <div class="frame">
           <div class="entryField">
-            <h6>Due date</h6>
-            <input type="date">
+            <h6 class="required">Due date</h6>
+            <div class="inputDate">
+              <input type="date" class="date" id="dateInput">
+              <img class="dateIcon" src="/assets/img/png/calendar.png" id="dateIcon" onclick="showPicker()">
+            </div>
           </div>
 
           <div class="entryField">
@@ -85,7 +88,7 @@
           </div>
 
           <div class="entryField">
-            <h6>Category</h6>
+            <h6 class="required">Category</h6>
             <div class="dropdown">
               <div class="dropbutton">Select task category
                 <img class="dropIcon" src="/assets/img/png/arrow_drop_down.png">
@@ -110,11 +113,11 @@
         <p>This field is required</p>
 
         <div class="taskButtonBox">
-          <div class="taskButton dispose" onclick="toggleActive(this)">
+          <div class="taskButton dispose">
             <h5>Clear</h5>
             <img class="clear" src="/assets/img/png/close.png">
           </div>
-          <div class="taskButton crate" onclick="toggleActive(this)">
+          <div class="taskButton crate">
             <h5>Create Task</h5>
             <img class="check" src="/assets/img/png/check-summary.png">
           </div>
