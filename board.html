@@ -28,8 +28,72 @@
   
     <main>
       
-      
+      <section class="content board">
+
+        <div class="d-flex-spbe-center">
+          <h1>Board</h1>
+          <div class="board-menue d-flex-spbe-center">
+
+            <div class="search-box pos-rel d-flex-spbe-center" id="search_box">
+              <input id="sought_task" oninput="updateTasksOnBoard()" type="text" placeholder="Find Task"/>
+              <button class="input-button" id="sought_button" onclick="updateTasksOnBoard()">
+                <img class="magnifying-glass" src="../assets/img/png/magnifying-glass-default.png" alt="magnifiying glass"/>
+              </button>
+            </div>
   
+            <button class="btn-add-task" onclick="initTemplateAddTask('add_task_template', true); openAddTask('todo')">
+              <div class="wh-32 d-flex-center">
+                <img src="../assets/img/png/add.png" alt="add task button" />
+              </div>
+            </button>
+
+          </div>
+        </div>
+  
+
+        <div id="kanban_board" class="kanban-board">
+
+          <div class="w-100 d-flex-column gap-12">
+            <div class="d-flex-spbe-center kanban-header font-s-20 font-w-700 font-c-66-82-110">
+              To do
+              <img onclick="initTemplateAddTask('add_task_template', true); openAddTask('todo')"  class="add-board-btn" src="../assets/img/png/add-board-default.png" alt="add task button for todo status"/>
+            </div>
+            <div id="kanban_todo" class="kanban-tasks d-flex-column" ondrop="moveTo('todo')" ondragover="allowDrop(event); hightlight('todo')" ondragleave="removeHightlight('todo')"></div>
+          </div>
+  
+
+          <div class="w-100 d-flex-column gap-12">
+            <div
+              class="d-flex-spbe-center kanban-header font-s-20 font-w-700 font-c-66-82-110">
+              In progress
+              <img onclick="initTemplateAddTask('add_task_template', true); openAddTask('inprogress')" class="add-board-btn" src="../assets/img/png/add-board-default.png" alt="add task button for in progress status"/>
+            </div>
+
+            <div id="kanban_inprogress" class="kanban-tasks d-flex-column" ondrop="moveTo('inprogress')" ondragover="allowDrop(event); hightlight('inprogress')" ondragleave="removeHightlight('inprogress')"></div>
+          </div>
+  
+
+          <div class="w-100 d-flex-column gap-12">
+            <div class="d-flex-spbe-center kanban-header font-s-20 font-w-700 font-c-66-82-110">
+              Await feedback
+              <img onclick="initTemplateAddTask('add_task_template', true); openAddTask('awaitfeedback')" class="add-board-btn" src="../assets/img/png/add-board-default.png" alt="add task button for awati feedback status"/>
+            </div>
+            <div id="kanban_awaitfeedback" class="kanban-tasks d-flex-column" ondrop="moveTo('awaitfeedback')" ondragover="allowDrop(event); hightlight('awaitfeedback')" ondragleave="removeHightlight('awaitfeedback')"></div>
+          </div>
+  
+
+          <div class="w-100 d-flex-column gap-12">
+            <div class="d-flex-spbe-center kanban-header font-s-20 font-w-700 font-c-66-82-110">
+              Done
+            </div>
+            <div id="kanban_done" class="kanban-tasks d-flex-column" ondrop="moveTo('done')" ondragover="allowDrop(event); hightlight('done')" ondragleave="removeHightlight('done')"></div>
+          </div>
+
+
+        </div>
+
+      </section>
+
     </main>
   
   </body>

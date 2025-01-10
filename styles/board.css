@@ -1,0 +1,136 @@
+.board {
+  padding: 80px 44px 20px 44px;
+  gap: 55px;
+}
+
+.board-menue {
+  width: 504px;
+  height: 48px;
+}
+
+.search-box {
+  width: 312px;
+}
+
+.input-button {
+  cursor: pointer;
+  height: 32px;
+  width: 48px;
+  padding: 0;
+  border: none;
+  border-left: 1px solid rgb(209, 209, 209);
+  border-radius: 0;
+  background: transparent;
+  position: absolute;
+  right: 250px;
+  display: flex;
+  justify-content: end;
+}
+
+.input-button:hover {
+  box-shadow: none;
+  background-color: transparent;
+}
+
+.magnifying-glass:hover {
+  content: url(../assets/img/png/magnifying-glass-hover.png);
+}
+
+.magnifying-glass:active {
+  content: url(../assets/img/png/magnifying-glass-active.png);
+}
+
+.btn-add-task::before {
+  content: "Add Task";
+}
+
+.kanban-board {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.kanban-header {
+  width: 260px;
+  margin-right: 24px;
+}
+
+.add-board-btn {
+  cursor: pointer;
+  margin-left: 40px;
+}
+
+.add-board-btn:hover {
+  content: url(../assets/img/png/add-board-hover.png);
+}
+
+.add-board-btn:active {
+  content: url(../assets/img/png/add-board-active.png);
+}
+
+.kanban-tasks {
+  height: calc(100vh - 380px);
+  padding-right: 2px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+
+input {
+  cursor: pointer;
+  width: 100%;
+  height: 48px;
+  background-color: #ffffff;
+  padding-left: 12px;
+  padding-right: 70px;
+  font-size: 20px;
+  border: 1px solid #d1d1d1;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+}
+
+::placeholder {
+  color: #d1d1d1;
+}
+
+input:focus{
+  outline-style: none;
+  box-shadow: none;
+  border-color: #29abe2;
+}
+
+.btn-add-task {
+  height: 100%;
+  padding: 0 16px;
+  border-radius: 10px;
+  font-size: 21px;
+  font-weight: 700;
+  color: white;
+  background-color: rgb(42, 54, 71);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  border: none;
+}
+
+.btn-add-task:hover {
+  cursor: pointer;
+  background-color: rgb(41, 171, 226);
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  border: none;
+}
+
+.btn-add-task:active {
+  background-color: rgb(9, 25, 49);
+  box-shadow: none;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 61px;
+  color: #000000;
+  margin-right: 300px;
+}

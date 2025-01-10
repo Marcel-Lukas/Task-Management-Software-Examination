@@ -11,25 +11,6 @@ body {
   background-color: #F5F6F7;
 }
 
-.d-none {
-  display: none !important;
-}
-
-.flex {
-  display: flex;
-}
-
-.flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.flex-column {
-  display: flex;
-  flex-direction: column;
-}
-
 main {
   position: absolute;
   top: 100px;
@@ -47,6 +28,69 @@ main {
   flex-direction: column;
 }
 
+.d-none {
+  display: none !important;
+}
+
+.flex {
+  display: flex;
+}
+
+.d-flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.d-flex-spbe-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.d-flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.d-flex-column-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gap-4 {
+  gap: 4px;
+}
+
+.gap-8 {
+  gap: 8px;
+}
+
+.gap-10 {
+  gap: 10px;
+}
+
+.gap-12 {
+  gap: 12px;
+}
+
+.gap-16 {
+  gap: 16px;
+}
+
+.gap-20 {
+  gap: 20px;
+}
+
+.gap-24 {
+  gap: 24px;
+}
+
+.gap-32 {
+  gap: 32px;
+}
+
 .arrow-back {
   height: 37px;
   width: 37px;
@@ -59,6 +103,17 @@ main {
   }
 }
 
+.font-s-20 {
+  font-size: 20px;
+}
+
+.font-w-700 {
+  font-weight: 700;
+}
+
+.font-c-66-82-110 {
+  color: rgb(66, 82, 110);
+}
 
 /* Navigation Template */
 
