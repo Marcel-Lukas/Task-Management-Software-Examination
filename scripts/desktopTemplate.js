@@ -135,11 +135,11 @@ function updateInitials() {
 }
 
 
-function legalNoticeWithoutUser() {
-  const checkIfUserIsLogged = localStorage.getItem("activeUser");
-  if (!checkIfUserIsLogged) {
-    document.getElementById('header_icons').classList.add('d-none');
-    document.getElementById('icon_bar').classList.add('d-none');
-    document.getElementById('arrow_back').classList.add('d-none');
-  }
-}
+// function legalNoticeWithoutUser() {
+//   const checkIfUserIsLogged = localStorage.getItem("activeUser");
+//   if (!checkIfUserIsLogged) {
+//     document.getElementById('header_icons').classList.add('d-none');
+//     document.getElementById('icon_bar').classList.add('d-none');
+//     document.getElementById('arrow_back').classList.add('d-none');
+//   }
+// }
