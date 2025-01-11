@@ -1,0 +1,87 @@
+main{
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.contactsContent{
+    background-color: rgb(255, 255, 255);
+    width: 456px;
+    height: 89vh;
+    padding: 0px 0px 0px 16px;
+}
+
+.headerRow{
+    margin: 74px 0px 0px 96px;
+    display: flex;
+    align-items: center;
+}
+
+.contactsSeperator{
+    width: 3px;
+    height: 59px;
+    background-color: rgb(41, 171, 226);
+    margin: 0px 14px 0px 14px;
+}
+
+h1{
+    font-weight: 700;
+    margin: 0px 0px 0px 0px;
+    font-size: 61px;
+    font-weight: 700;
+}
+
+h3{
+    font-size: 27px;
+    font-weight: 400;
+}
+
+h4{
+    font-size: 20px;
+    padding: 17px 0px 17px 56px;
+}
+
+.btnArea{
+    display: flex;
+    justify-content: center;
+    height: 101px;
+    padding: 16px 0px 16px 0px;
+}
+
+.addConButton{
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.addConIcon{
+    width: 24px;
+    margin: 0px 0px 0px 8px;
+}
+
+.addConButton{
+    width: 352px;
+    height: 56px;
+    background-color: rgb(42, 54, 71);
+    color: white;
+    font-size: 21px;
+    transition: transform 222ms ease-in-out;
+}
+
+.addConButton:hover{
+    cursor: pointer;
+    transform: scale(108%);
+}
+
+.filingCabinet{
+    scroll-behavior: smooth;
+    display: flex;
+    justify-content: center;
+}
+
+.regSeperator{
+    width: 352px;
+    height: 1px;
+    background-color: rgb(209, 209, 209);
+    margin: 8px 0px 8px 0px;
+}
