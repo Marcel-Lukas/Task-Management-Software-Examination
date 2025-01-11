@@ -19,21 +19,25 @@
     <link rel="stylesheet" type="text/css" href="../styles/desktopTemplate.css">
 
     <script defer src="../main.js"></script>
-    <script defer src="../scripts/boardAddTask.js"></script>
+    <script defer src="../scripts/desktopTemplate.js"></script>
+
     <script defer src="../scripts/boardBasic.js"></script>
+    <script defer src="../scripts/boardTasks.js"></script>
     <script defer src="../scripts/boardSingleTask.js"></script>
     <script defer src="../scripts/boardTemplate.js"></script>
+    <script defer src="../scripts/boardAddTask.js"></script>
+    
+    <script defer src="../scripts/addTaskTemplate.js"></script>
+    <script defer src="../scripts/addTaskFetchLoad.js"></script>
     <script defer src="../scripts/addTaskButtons.js"></script>
-
-    <script defer src="../scripts/desktopTemplate.js"></script>
+    <script defer src="../scripts/addTask.js"></script>
+    <script defer src="../scripts/dbBackup.js"></script>
     
   </head>
 
-  <body>
+  <body onload="updateTasksOnBoard()">
 
     <div id="desktop_template"></div>
-  
-    <main>
       
       <section class="content board">
 
@@ -100,8 +104,6 @@
         </div>
 
       </section>
-
-    </main>
   
   </body>
   
