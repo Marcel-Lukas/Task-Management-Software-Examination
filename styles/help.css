@@ -71,3 +71,15 @@ tr {
   justify-content: space-between;
 }
 
+.arrow-back {
+  border-radius: 50%;
+  width: 37px;
+  height: 37px;
+}
+
+.arrow-back:hover {
+  cursor: pointer;
+  background-color: white;
+  transform: scale(124%);
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+}
