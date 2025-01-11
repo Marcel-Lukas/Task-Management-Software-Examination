@@ -21,7 +21,7 @@ body {
   height: 100%;
   width: calc(100% - 232px);
   margin-left: 232px;
-  margin-top: 96px;
+  margin-top: 70px;
   padding: 110px 96px 70px 96px;
   display: flex;
   flex-direction: column;
