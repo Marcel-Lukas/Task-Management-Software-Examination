@@ -6,20 +6,19 @@
 // }
 
 
-
 async function fetchContacts() {
   try {
-    let response = await fetch(`https://join-marcel-lukas-default-rtdb.europe-west1.firebasedatabase.app/contacts/.json`);
-    let text = await response.text(); // Rohdaten als Text
-    console.log("Rohe Antwort:", text);
+    const response = await fetch('https://join-marcel-lukas-default-rtdb.europe-west1.firebasedatabase.app/contacts/.json');
+    if (!response.ok) {
+      throw new Error(`Fehler beim Laden der Kontakte: ${response.status}`);
+    }
 
-    let datas = JSON.parse(text);
-    console.log(datas);
+    const data = await response.json();
+    console.log(data);
 
   } catch (error) {
-    console.error("Fehler:", error);
+    console.error('Fehler:', error);
   }
 }
 
 fetchContacts();
-
