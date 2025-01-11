@@ -17,121 +17,27 @@
     <link rel="stylesheet" type="text/css" href="../styles/fonts.css">
     <link rel="stylesheet" type="text/css" href="../styles/addTask.css">
     <link rel="stylesheet" type="text/css" href="../styles/desktopTemplate.css">
+    <link rel="stylesheet" type="text/css" href="../styles/addTaskButtons.css">
+    <link rel="stylesheet" type="text/css" href="../styles/assets.css">
 
     <script defer src="../main.js"></script>
-    <script defer src="../scripts/addTask.js"></script>
+    <script defer src="../scripts/desktopTemplate.js"></script>
+    <script defer src="../scripts/addTaskTemplate.js"></script>
     <script defer src="../scripts/addTaskButtons.js"></script>
     <script defer src="../scripts/addTaskFetchLoad.js"></script>
-    <script defer src="../scripts/addTaskTemplate.js"></script>
+    <script defer src="../scripts/addTask.js"></script>
+    <script defer src="../scripts/dbBackup.js"></script>
 
-    <script defer src="../scripts/desktopTemplate.js"></script>
-    
   </head>
 
-  <body>
-  
+  <body onload="initTemplateAddTask('add_task_template')">
+
     <div id="desktop_template"></div>
-  
-    <main>
-      <h1>Add Task</h1>
+    
+    <div onclick="closeTaskIfOutside(event)" id="add_task_content" class="content">
+      <div onclick="changeSubtasksImagesClick(event)" id="add_task_template"></div>
+    </div>
 
-      <div class="taskContent">
-
-        <div class="frame">
-          <div class="entryField">
-            <h6 class="required" >Title</h6>
-            <input class="required" type="text" placeholder="Enter a Titel">
-          </div>
-
-          <div class="entryField">
-            <h6 class="required">Description</h6>
-            <textarea placeholder="Enter a Description"></textarea>
-          </div>
-
-          <div class="entryField">
-            <h6>Assigned to</h6>
-            <div class="dropdown">
-              <div class="dropbutton">Select contacts to assign
-                <img class="dropIcon" src="/assets/img/png/arrow_drop_down.png">
-              </div>
-              <div class="dropdown-content">
-                <a href="#">Marcel</a>
-                <a href="#">Andreas</a>
-                <a href="#">Nicolaus</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="seperator"></div>
-
-        <div class="frame">
-          <div class="entryField">
-            <h6 class="required">Due date</h6>
-            <div class="inputDate">
-              <input type="date" class="date" id="dateInput">
-              <img class="dateIcon" src="/assets/img/png/calendar.png" id="dateIcon" onclick="showPicker()">
-            </div>
-          </div>
-
-          <div class="entryField">
-            <h6>Prio</h6>
-            <div class="prioBar">
-
-              <div class="prioButton urgent" onclick="toggleActive(this)">
-                <h3>Urgent</h3>
-                <img class="prioIcon urgent" src="/assets/img/png/prio-urgent.png">
-              </div>
-              <div class="prioButton medium" onclick="toggleActive(this)">
-                <h3>Medium</h3>
-                <img class="prioIcon" src="/assets/img/png/prio-medium.png">
-              </div>
-              <div class="prioButton low" onclick="toggleActive(this)">
-                <h3>Low</h3>
-                <img class="prioIcon" src="/assets/img/png/prio-low.png">
-              </div>
-            </div>
-          </div>
-
-          <div class="entryField">
-            <h6 class="required">Category</h6>
-            <div class="dropdown">
-              <div class="dropbutton">Select task category
-                <img class="dropIcon" src="/assets/img/png/arrow_drop_down.png">
-              </div>
-              <div class="dropdown-content">
-                <a href="#">Kat 1</a>
-                <a href="#">Kat 2</a>
-                <a href="#">Kat 3</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="entryField">
-            <h6>Subtasks</h6>
-            <input type="text" name="" id="" placeholder="Add new subtask">
-          </div>
-        </div>
-
-      </div>
-      
-      <div class="taskFooter">
-        <p>This field is required</p>
-
-        <div class="taskButtonBox">
-          <div class="taskButton dispose">
-            <h5>Clear</h5>
-            <img class="clear" src="/assets/img/png/close.png">
-          </div>
-          <div class="taskButton crate">
-            <h5>Create Task</h5>
-            <img class="check" src="/assets/img/png/check-summary.png">
-          </div>
-        </div>
-      </div>
-
-    </main>
-  
   </body>
   
 </html>
