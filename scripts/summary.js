@@ -30,5 +30,5 @@ function greetingHtml(greetingMassage) {
 
 
 function navigatonToBoard() {
-  window.location.href = "../board.html";
+  window.location.href = "../html/board.html";
 }
