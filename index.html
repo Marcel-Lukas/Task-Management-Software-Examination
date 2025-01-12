@@ -45,24 +45,21 @@
 
       <!-- Login Form -->
       <form class="logInForm" action="/login" method="POST">
-        <!-- Email Input -->
-        <input type="text" class="inputField" name="email" placeholder="Email" required>
 
-        <!-- Password Input -->
-        <input type="password" class="inputField" name="password" placeholder="Password" required>
-
-        <!-- Remember Me Checkbox -->
-        <div class="rememberMe">
-          <input type="checkbox" id="rememberMe" name="remember">
-          <label for="rememberMe">Remember me</label>
+        <div class="input-container">
+          <input type="text" class="inputField" name="email" placeholder="Email" required>
+          <input type="password" class="inputField" name="password" placeholder="Password" required>
         </div>
+
 
         <!-- Form Buttons -->
         <div class="formButtons">
           <button type="submit" class="btnPrimary">Log in</button>
           <button type="button" class="btnSecondary">Guest Log in</button>
         </div>
+
       </form>
+      
     </div>
   </main>
 

@@ -80,6 +80,12 @@ main {
     width: 422px;
 }
 
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
 .inputField {
   cursor: pointer;
   width: 100%;
