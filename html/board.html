@@ -13,153 +13,19 @@
     <link rel="manifest" href="../assets/img/favicon/site.webmanifest">
     <title>Board</title>
 
-    <link rel="stylesheet" type="text/css" href="../general.css">
-    <link rel="stylesheet" type="text/css" href="../styles/fonts.css">
-    <link rel="stylesheet" type="text/css" href="../styles/assets.css">
-    <link rel="stylesheet" type="text/css" href="../styles/board.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
     <link rel="stylesheet" type="text/css" href="../styles/desktopTemplate.css">
-
-    <link rel="stylesheet" type="text/css" href="../styles/addTask.css">
-    <link rel="stylesheet" type="text/css" href="../styles/addTaskButtons.css">
-
-
+    <link rel="stylesheet" type="text/css" href="../styles/fonts.css">
 
     <script defer src="../main.js"></script>
-    <script defer src="../scripts/desktopTemplate.js"></script>
-
-    <script defer src="../scripts/boardBasic.js"></script>
-    <script defer src="../scripts/boardTasks.js"></script>
-    <script defer src="../scripts/boardSingleTask.js"></script>
-    <script defer src="../scripts/boardTemplate.js"></script>
-    <script defer src="../scripts/boardAddTask.js"></script>
-    
-    <script defer src="../scripts/addTaskTemplate.js"></script>
-    <script defer src="../scripts/addTaskFetchLoad.js"></script>
-    <script defer src="../scripts/addTaskButtons.js"></script>
-    <script defer src="../scripts/addTask.js"></script>
-    <script defer src="../scripts/dbBackup.js"></script>
     
   </head>
 
-  <body onload="updateTasksOnBoard()">
-    <div id="desktop_template"></div>
-
-    <section class="content board">
-      <div class="d-flex-spbe-center">
-        <h1>Board</h1>
-        <div class="board-menue d-flex-spbe-center">
-          <div class="search-box pos-rel d-flex-spbe-center" id="search_box">
-            <input id="sought_task" oninput="updateTasksOnBoard(), clearSearchField('sought_task_mobile')" type="text" placeholder="Find Task"/>
-            <button class="input-button" id="sought_button" onclick="updateTasksOnBoard()">
-              <img class="magnifying-glass" src="../assets/img/png/magnifying-glass-default.png" alt="magnifiying glass"/>
-            </button>
-          </div>
-
-          <button class="btn-add-task" onclick="initTemplateAddTask('add_task_template', true); openAddTask('todo')">
-            
-            <div class="wh-32 d-flex-center">
-              <img src="../assets/img/png/add.png" alt="add task button" />
-            </div>
-          </button>
-        </div>
-      </div>
-
-      <div class="search-box-mobile pos-rel d-flex-spbe-center" id="search_box">
-        <input id="sought_task_mobile" oninput="updateTasksOnBoard(), clearSearchField('sought_task')" type="text" placeholder="Find Task"/>
-        <button class="input-button" id="sought_button" onclick="updateTasksOnBoard()">
-          <img class="magnifying-glass" src="../assets/img/png/magnifying-glass-default.png" alt="magnifiying glass"/>
-        </button>
-      </div>
-
-      <div id="task_not_found" class="task-not-found d-flex-center d-none">No task found</div>
-
-
-      <div id="kanban_board" class="kanban-board">
-        <div class="w-100 d-flex-column gap-12">
-          <div class="d-flex-spbe-center kanban-header font-s-20 font-w-700 font-c-66-82-110">
-            To do
-            <img onclick="initTemplateAddTask('add_task_template', true); openAddTask('todo')" class="add-board-btn" src="../assets/img/png/add-board-default.png" alt="add task button for todo status"/>
-          </div>
-          <div id="kanban_todo" class="kanban-tasks d-flex-column" ondrop="moveTo('todo')" ondragover="allowDrop(event); hightlight('todo')" ondragleave="removeHightlight('todo')"></div>
-        </div>
-
-        <div class="w-100 d-flex-column gap-12">
-          <div class="d-flex-spbe-center kanban-header font-s-20 font-w-700 font-c-66-82-110">
-            In progress
-            <img onclick="initTemplateAddTask('add_task_template', true); openAddTask('inprogress')" class="add-board-btn" src="../assets/img/png/add-board-default.png" alt="add task button for in progress status"/>
-          </div>
-          <div id="kanban_inprogress" class="kanban-tasks d-flex-column" ondrop="moveTo('inprogress')" ondragover="allowDrop(event); hightlight('inprogress')" ondragleave="removeHightlight('inprogress')"></div>
-        </div>
-
-        <div class="w-100 d-flex-column gap-12">
-          <div class="d-flex-spbe-center kanban-header font-s-20 font-w-700 font-c-66-82-110">
-            Await feedback
-            <img onclick="initTemplateAddTask('add_task_template', true); openAddTask('awaitfeedback')" class="add-board-btn" src="../assets/img/png/add-board-default.png" alt="add task button for awati feedback status"/>
-          </div>
-          <div id="kanban_awaitfeedback" class="kanban-tasks d-flex-column" ondrop="moveTo('awaitfeedback')" ondragover="allowDrop(event); hightlight('awaitfeedback')" ondragleave="removeHightlight('awaitfeedback')"></div>
-        </div>
-
-        <div class="w-100 d-flex-column gap-12">
-          <div class="d-flex-spbe-center kanban-header font-s-20 font-w-700 font-c-66-82-110">
-            Done
-            <div></div>
-          </div>
-          <div id="kanban_done" class="kanban-tasks d-flex-column" ondrop="moveTo('done')" ondragover="allowDrop(event); hightlight('done')" ondragleave="removeHightlight('done')"></div>
-        </div>
-      </div>
-    </section>
-
-
-    <section class="overlay d-flex-center d-none" id="board_task_overlay" onclick="toggleOverlay('board_task_overlay'); updateTasksOnBoard(); clearButton()">
-      <div id="single_task" class="single-task" onclick="bubblingPrevention(event)">
-    </div>
-    </section>
-
-
-    <section class="overlay d-flex-center d-none" id="board_delete_overlay" onclick="toggleOverlay('board_delete_overlay')">
-      <div class="delete-task d-flex-column-center gap-32" onclick="bubblingPrevention(event)">
-        <div class=" font-w-700 font-c-66-82-110">
-          Delete task permanently?
-        </div>
-        <div class="delte-task-button-area d-flex-center">
-          <div class="delete-btn" id="delete_yes_btn"></div>
-          <button class="clear-button" onclick="toggleOverlay('board_delete_overlay')">
-            NO
-          </button>
-        </div>
-      </div>
-    </section>
-
-
-    <section id="successfully_delete_task" class="overlay-delete d-flex-center d-none">
-      <div class="delete-message d-flex-center font-s-20 font-c-white">
-        You delete the task permanently
-      </div>
-    </section>
-
-    <section class="overlay d-flex-center d-none" id="edit_task_overlay" onclick="toggleOverlay('edit_task_overlay')">
-      <div onclick="bubblingPrevention(event)" class="edit-task-board-click" id="edit_task_board_click">
-        <div id="edit_task_board" class="single-edit-task content-overlay pos-rel" onclick="closeTaskIfOutside(event)">
-          <div id="edit_overflow" class="edit-overflow"><div onclick="changeSubtasksImagesClick(event)" class="pos-rel" id="edit_task_template"></div></div>
-          <div onclick="toggleOverlay('edit_task_overlay')" class="close-add-task-button d-flex-center">
-            <img src="../assets/img/png/close.png" alt="close button"/>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <section class="overlay d-flex-center d-none" id="board_addtask_overlay" onclick="toggleOverlay('board_addtask_overlay')">
-      <div onclick="bubblingPrevention(event)" class="add-task-board-click" id="add_task_board_click">
-        <div id="add_task_board" class="add-task-board content-overlay pos-rel" onclick="closeTaskIfOutside(event)">
-          <div onclick=" changeSubtasksImagesClick(event)" id="add_task_template"></div>
-          <div onclick="toggleOverlay('board_addtask_overlay')" class="close-add-task-button d-flex-center">
-            <img src="../assets/img/png/close.png" alt="close button"/>
-          </div>
-        </div>
-      </div>
-    </section>
+  <body onload="includeHTML()">
+    <div w3-include-html="../assets/templates/desktopTemplate.html"></div>
     
+    
+
   </body>
   
 </html>
