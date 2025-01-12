@@ -41,16 +41,17 @@
 
       <!-- Login Form -->
       <form class="logInForm" action="/login" method="POST">
+
         <!-- Email Input -->
-        <input type="text" class="inputField" name="email" placeholder="Email" required>
+        <div class="inputWrapper">
+          <input type="text" class="inputField" name="email" placeholder="Email" required>
+          <img src="assets/img/png/mail.png" alt="Email Icon" class="inputIcon">
+        </div>
 
         <!-- Password Input -->
-        <input type="password" class="inputField" name="password" placeholder="Password" required>
-
-        <!-- Remember Me Checkbox -->
-        <div class="rememberMe">
-          <input type="checkbox" id="rememberMe" name="remember">
-          <label for="rememberMe">Remember me</label>
+        <div class="inputWrapper">
+          <input type="password" class="inputField" name="password" placeholder="Password" required>
+          <img src="assets/img/png/lock.png" alt="Password Icon" class="inputIcon">
         </div>
 
         <!-- Form Buttons -->
@@ -64,9 +65,10 @@
 
   <!-- Footer Section -->
   <footer>
-    <span>Privacy Policy</span>
-    <span>Legal notice</span>
-  </footer>
+    <a href="html/privacyPolicy.html" class="footerLink">Privacy Policy</a>
+    <a href="html/legalnotice.html" class="footerLink">Legal notice</a>
+</footer>
+
 
 </body>
 

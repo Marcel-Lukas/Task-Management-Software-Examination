@@ -65,12 +65,13 @@
         font-size: 61px;
         text-decoration: underline;
         text-decoration-color: #29ABE2;
+        text-underline-offset: 24px;
     }
 
     .logInForm {
         display: flex;
         flex-direction: column;
-        gap: 8px;
+        gap: 20px;
         width: 422px;
     }
 
@@ -90,15 +91,10 @@
         box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.2);
     }
 
-    .rememberMe {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-    }
-
     .formButtons {
         display: flex;
         gap: 8px;
+        margin-top: 32px;
     }
 
     .btnPrimary {
@@ -152,6 +148,37 @@
         padding: 48px 115px;
     }
 
+    .inputWrapper {
+        position: relative;
+        width: 422px;
+    }
+    
+    .inputField {
+        width: 100%;
+        height: 48px;
+        padding: 8px 12px;
+        font-size: 16px;
+        border: 1px solid #A8A8A8;
+        border-radius: 5px;
+        box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.1);
+        padding-right: 40px;
+    }
+    
+    .inputField:focus {
+        border-color: #29ABE2;
+        outline: none;
+        box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.2);
+    }
+    
+    .inputIcon {
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 24px;
+        height: 24px;
+    }
+    
     footer {
         padding: 20px 0;
         text-align: center;
@@ -159,3 +186,16 @@
         background-color: #f6f7f8;
         color: #A8A8A8;
     }
+    
+    .footerLink {
+        margin: 0 10px;
+        color: #A8A8A8; 
+        text-decoration: none;
+        font-size: 16px;
+    }
+    
+    .footerLink:hover {
+        color: #29ABE2; 
+        font-weight: 500;
+    }
+    
