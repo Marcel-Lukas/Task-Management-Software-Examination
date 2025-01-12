@@ -9,41 +9,49 @@ html, body {
 
 
 /* Logo and nav styling */
-nav {
+
+.joinLogo {
     position: absolute;
-    top: 20px;
-    left: 20px;
-    width: calc(100% - 40px);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
+    top: 80px;
+    left: 77px;
 }
 
 .logoBlack {
-    width: 100.03px;
-    height: 121.97px;
+    width: 100px;
+    height: 122px;
 }
 
-nav div {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+.loginInContainer {
+  width: 279px;
+  height: 49px;
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  position: absolute;
+  top: 67px;
+  left: 1280px;
+  span {
+    font-size: 18px;
+  }
 }
 
 button {
-    padding: 8px 16px;
-    margin-right: 16px;
+    height: 49px;
+    width: 91px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 700;
     background-color: #2A3647;
     color: white;
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
 }
 
 button:hover {
+    cursor: pointer;
     background-color: #29ABE2;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
 }
+
 
 /* Main container */
 main {
