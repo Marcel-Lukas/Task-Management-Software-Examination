@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Logo Animation</title>
+  <style>
+    /* Grundlegendes CSS, damit das Logo zunächst in der Mitte ist */
+    #meinLogo {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 300px;             /* Anfangsbreite des Logos */
+      transform: translate(-50%, -50%);
+      transition: all 2s ease;  /* Die Animation erfolgt über 2 Sekunden */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Logo-Element -->
+  <img id="meinLogo" src="assets/img/png/logo-big.png" alt="Logo">
+
+  <script>
+    /**
+     * Diese Funktion startet die Animation:
+     * Das Logo bewegt sich in die obere linke Ecke (top/left = 0)
+     * und wird auf 100px Breite verkleinert.
+     */
+    function animateLogo() {
+      const logo = document.getElementById('meinLogo');
+      
+      // Neue Zielposition und -größe setzen
+      logo.style.top = '0';
+      logo.style.left = '0';
+      logo.style.width = '100px';
+      
+      // Damit das Logo nicht mehr aus der Mitte heraus verschoben wird,
+      // müssen wir das translate zurücksetzen
+      logo.style.transform = 'translate(0, 0)';
+    }
+
+    // Beispiel: Animation nach 1 Sekunde auslösen
+    setTimeout(animateLogo, 1000);
+  </script>
+
+</body>
+</html>
