@@ -1,161 +1,159 @@
-    /* Global styles */
-    html,
-    body {
-        height: 100%;
-        margin: 0;
-        background-color: #F6F7F8;
-        scroll-behavior: smooth;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
+html, body {
+    height: 100%;
+    background-color: #F6F7F8;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
-    * {
-        box-sizing: border-box;
-    }
 
-    /* Logo and nav styling */
-    nav {
-        position: absolute;
-        top: 20px;
-        left: 20px;
-        width: calc(100% - 40px);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 20px;
-    }
+/* Logo and nav styling */
+nav {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: calc(100% - 40px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
 
-    .logoBlack {
-        width: 100.03px;
-        height: 121.97px;
-    }
+.logoBlack {
+    width: 100.03px;
+    height: 121.97px;
+}
 
-    nav div {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
+nav div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
 
-    button {
-        padding: 8px 16px;
-        margin-right: 16px;
-        background-color: #2A3647;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-    }
+button {
+    padding: 8px 16px;
+    margin-right: 16px;
+    background-color: #2A3647;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
 
-    button:hover {
-        background-color: #29ABE2;
-    }
+button:hover {
+    background-color: #29ABE2;
+}
 
-    /* Main container */
-    main {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-grow: 1;
-        width: 100%;
-    }
+/* Main container */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    width: 100%;
+}
 
-    .h1LogIn {
-        font-size: 61px;
-        text-decoration: underline;
-        text-decoration-color: #29ABE2;
-    }
+.h1LogIn {
+    font-size: 61px;
+    text-decoration: underline;
+    text-decoration-color: #29ABE2;
+}
 
-    .logInForm {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        width: 422px;
-    }
+.logInForm {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 422px;
+}
 
-    .inputField {
-        width: 422px;
-        height: 48px;
-        padding: 8px 12px;
-        font-size: 16px;
-        border: 1px solid #A8A8A8;
-        border-radius: 5px;
-        box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.1);
-    }
+.inputField {
+    width: 422px;
+    height: 48px;
+    padding: 8px 12px;
+    font-size: 16px;
+    border: 1px solid #A8A8A8;
+    border-radius: 5px;
+    box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.1);
+}
 
-    .inputField:focus {
-        border-color: #29ABE2;
-        outline: none;
-        box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.2);
-    }
+.inputField:focus {
+    border-color: #29ABE2;
+    outline: none;
+    box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.2);
+}
 
-    .rememberMe {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-    }
+.rememberMe {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
 
-    .formButtons {
-        display: flex;
-        gap: 8px;
-    }
+.formButtons {
+    display: flex;
+    gap: 8px;
+}
 
-    .btnPrimary {
-        width: 100%;
-        height: 48px;
-        background-color: #2A3647;
-        color: white;
-        border: none;
-        border-radius: 10px;
-        cursor: pointer;
-        font-size: 21px;
-        text-align: center;
-        font-weight: 700;
-    }
+.btnPrimary {
+    width: 100%;
+    height: 48px;
+    background-color: #2A3647;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 21px;
+    text-align: center;
+    font-weight: 700;
+}
 
-    .btnPrimary:hover {
-        background-color: #29ABE2;
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-    }
+.btnPrimary:hover {
+    background-color: #29ABE2;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
 
-    .btnSecondary {
-        width: 100%;
-        height: 48px;
-        background-color: #ffffff;
-        color: #2A3647;
-        border: 1px solid #2A3647;
-        border-radius: 10px;
-        cursor: pointer;
-        font-size: 21px;
-        text-align: center;
-        font-weight: 700;
-    }
+.btnSecondary {
+    width: 100%;
+    height: 48px;
+    background-color: #ffffff;
+    color: #2A3647;
+    border: 1px solid #2A3647;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 21px;
+    text-align: center;
+    font-weight: 700;
+}
 
-    .btnSecondary:hover {
-        background-color: #ffffff;
-        border: 1px solid #29ABE2;
-        color: #29ABE2;
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-    }
+.btnSecondary:hover {
+    background-color: #ffffff;
+    border: 1px solid #29ABE2;
+    color: #29ABE2;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
 
-    .logInBox {
-        height: 493px;
-        width: 652px;
-        background-color: white;
-        border-radius: 30px;
-        box-shadow: 0px 0px 14px 3px #0000000A;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        gap: 32px;
-        padding: 48px 115px;
-    }
+.logInBox {
+    height: 493px;
+    width: 652px;
+    background-color: white;
+    border-radius: 30px;
+    box-shadow: 0px 0px 14px 3px #0000000A;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 32px;
+    padding: 48px 115px;
+}
 
-    footer {
-        padding: 20px 0;
-        text-align: center;
-        width: 100%;
-        background-color: #f6f7f8;
-        color: #A8A8A8;
-    }
+footer {
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+    background-color: #f6f7f8;
+    color: #A8A8A8;
+}
+
+footer > span:hover {
+  cursor: pointer;
+  color: #29ABE2;
+}
