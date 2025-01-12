@@ -56,8 +56,13 @@ main {
 
 .h1LogIn {
     font-size: 61px;
-    text-decoration: underline;
-    text-decoration-color: #29ABE2;
+}
+
+.blue-line {
+  width: 150px;
+  height: 3px;
+  background-color: #29ABE2;
+  margin-top: -20px;
 }
 
 .logInForm {
