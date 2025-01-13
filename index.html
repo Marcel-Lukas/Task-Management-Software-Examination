@@ -25,21 +25,19 @@
 </head>
 
 <body>
-  <!-- Navigation Section -->
+
+  <img id="animatedJoinLogo" src="assets/img/png/logo-big.png" alt="Join Logo">
+
   <nav>
-    <img src="assets/img/png/logo-big.png" alt="Logo" class="logoBlack">
-    <div>
       <span>Not a Join user?</span>
-      <button>Sign up</button>
-    </div>
+      <button class="signInBtn">Sign up</button>
   </nav>
 
-  <!-- Main Section -->
   <main>
     <div class="logInBox">
       <h1 class="h1LogIn">Log in</h1>
 
-      <!-- Login Form -->
+
       <form class="logInForm" action="/login" method="POST">
 
         <!-- Email Input -->
@@ -60,17 +58,27 @@
           <button type="button" class="btnSecondary">Guest Log in</button>
         </div>
       </form>
+
     </div>
   </main>
 
-  <!-- Footer Section -->
+
   <footer>
     <a href="html/privacyPolicy.html" class="footerLink">Privacy Policy</a>
     <a href="html/legalnotice.html" class="footerLink">Legal notice</a>
 </footer>
 
 
+
+  <script>
+    function animatedLogo() {
+      const logo = document.getElementById('animatedJoinLogo');
+      logo.style.top = '80px';
+      logo.style.left = '77px';
+      logo.style.width = '122px';
+      logo.style.transform = 'translate(0, 0)';
+    }
+    setTimeout(animatedLogo, 500);
+  </script>
 </body>
-
-
 </html>
