@@ -1,13 +1,13 @@
-html,
-body {
+html, body {
   height: 100%;
-  background-color: #f6f7f8;
+  background-color: #F6F7F8;
   scroll-behavior: smooth;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+
 
 nav {
   position: absolute;
@@ -21,8 +21,9 @@ nav {
   align-items: center;
 }
 
+
 .signInBtn {
-  background-color: #2a3647;
+  background-color: #2A3647;
   color: #ffffff;
   border: none;
   border-radius: 8px;
@@ -37,9 +38,10 @@ nav {
 
 .signInBtn:hover {
   cursor: pointer;
-  background-color: #29abe2;
+  background-color: #29ABE2;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
+
 
 /* Main container */
 
@@ -53,15 +55,20 @@ main {
 
 .h1LogIn {
   font-size: 61px;
-  text-decoration: underline;
-  text-decoration-color: #29abe2;
-  text-underline-offset: 24px;
+}
+
+.blue-line {
+width: 150px;
+height: 3px;
+background-color: #29ABE2;
+margin-top: -16px;
+border-radius: 4px;
 }
 
 .logInForm {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 32px;
   width: 422px;
 }
 
@@ -70,26 +77,27 @@ main {
   height: 48px;
   padding: 8px 12px;
   font-size: 16px;
-  border: 1px solid #d1d1d1;
+  border: 1px solid #D1D1D1;
   border-radius: 10px;
 }
 
 .inputField:focus {
-  border-color: #29abe2;
+  border-color: #29ABE2;
   outline: none;
   box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .formButtons {
   display: flex;
-  gap: 8px;
+  justify-content: center;
+  gap: 35px;
   margin-top: 32px;
 }
 
 .btnPrimary {
-  width: 100%;
+  width: 110px;
   height: 48px;
-  background-color: #2a3647;
+  background-color: #2A3647;
   color: white;
   border: none;
   border-radius: 10px;
@@ -100,16 +108,16 @@ main {
 }
 
 .btnPrimary:hover {
-  background-color: #29abe2;
+  background-color: #29ABE2;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 .btnSecondary {
-  width: 100%;
+  width: 177px;
   height: 48px;
   background-color: #ffffff;
-  color: #2a3647;
-  border: 1px solid #2a3647;
+  color: #2A3647;
+  border: 1px solid #2A3647;
   border-radius: 10px;
   cursor: pointer;
   font-size: 21px;
@@ -119,8 +127,8 @@ main {
 
 .btnSecondary:hover {
   background-color: #ffffff;
-  border: 1px solid #29abe2;
-  color: #29abe2;
+  border: 1px solid #29ABE2;
+  color: #29ABE2;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 }
 
@@ -129,7 +137,7 @@ main {
   width: 652px;
   background-color: white;
   border-radius: 30px;
-  box-shadow: 0px 0px 14px 3px #0000000a;
+  box-shadow: 0px 0px 14px 3px #0000000A;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -147,12 +155,12 @@ main {
   height: 48px;
   padding: 8px 12px;
   font-size: 16px;
-  border: 1px solid #d1d1d1;
+  border: 1px solid #D1D1D1;
   padding-right: 40px;
 }
 
 .inputField:focus {
-  border-color: #29abe2;
+  border-color: #29ABE2;
   outline: none;
   box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.2);
 }
@@ -167,7 +175,8 @@ main {
 }
 
 ::placeholder {
-  color: #d1d1d1;
+  color: #D1D1D1;
+  font-size: 20px;
 }
 
 footer {
@@ -175,18 +184,18 @@ footer {
   text-align: center;
   width: 100%;
   background-color: #f6f7f8;
-  color: #a8a8a8;
+  color: #A8A8A8;
 }
 
 .footerLink {
   margin: 0 10px;
-  color: #a8a8a8;
+  color: #A8A8A8;
   text-decoration: none;
   font-size: 16px;
 }
 
 .footerLink:hover {
-  color: #29abe2;
+  color: #29ABE2;
   font-weight: 500;
 }
 
@@ -195,40 +204,40 @@ footer {
 /* For Logo Animation */
 
 .logo-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgb(246, 247, 248);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: background-color 1333ms ease-out;
-  z-index: 1000;
+position: fixed;
+top: 0;
+left: 0;
+width: 100vw;
+height: 100vh;
+background-color: rgb(246, 247, 248);
+display: flex;
+justify-content: center;
+align-items: center;
+transition: background-color 1s ease-out;
+z-index: 1000;
 }
 
 .img-logo {
-  width: 274px;
-  height: 335px;
-  transition: all 1s ease-out;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  content: url(../assets/img/png/logo-big.png);
+width: 274px;
+height: 335px;
+transition: all 1s ease-out;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+content: url(../assets/img/png/logo-big.png);
 }
 
 .logo-small {
-  position: absolute;
-  width: 100px;
-  height: 122px;
-  top: 80px;
-  left: 77px;
-  transform: none;
-  content: url(../assets/img/png/logo-big.png);
+position: absolute;
+width: 100px;
+height: 122px;
+top: 80px;
+left: 77px;
+transform: none;
+content: url(../assets/img/png/logo-big.png);
 }
 
 .container-transparent {
-  background-color: transparent !important;
+background-color: transparent !important;
 }
