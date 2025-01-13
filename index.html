@@ -21,12 +21,15 @@
   <link rel="stylesheet" type="text/css" href="styles/login.css">
 
   <script defer src="main.js"></script>
+  <script defer src="scripts/accessEvents.js"></script>
 
 </head>
 
 <body>
 
-  <img id="animatedJoinLogo" src="assets/img/png/logo-big.png" alt="Join Logo">
+  <div class="logo-container">
+    <img class="img-logo"  alt="Join Logo"/>
+  </div>
 
   <nav>
       <span>Not a Join user?</span>
@@ -68,17 +71,5 @@
     <a href="html/legalnotice.html" class="footerLink">Legal notice</a>
 </footer>
 
-
-
-  <script>
-    function animatedLogo() {
-      const logo = document.getElementById('animatedJoinLogo');
-      logo.style.top = '80px';
-      logo.style.left = '77px';
-      logo.style.width = '122px';
-      logo.style.transform = 'translate(0, 0)';
-    }
-    setTimeout(animatedLogo, 500);
-  </script>
 </body>
 </html>
