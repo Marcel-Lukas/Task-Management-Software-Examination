@@ -54,11 +54,12 @@
 
         <!-- Password Input -->
         <div class="inputWrapper">
-          <input type="password" class="inputField" name="password" autocomplete="current-password" placeholder="Password" required>
+          <input id="inputPassword" type="password" class="inputField" name="password" autocomplete="current-password" placeholder="Password" required>
           <img 
-              onclick="toggleShowPassword()"
+              onclick="toggleCheckbox('showPassLogin'), toggleShowPassword()"
+              id="showPassLogin"
               src="assets/img/png/lock.png" 
-              alt="Password Icon" class="inputIcon">
+              alt="Password Icon" class="inputIcon pointer">
         </div>
 
         <!-- Remember me (muss doch mit rein der shit auch wenn nicht in Figma, habe nachgefragt) -->
@@ -113,11 +114,12 @@
 
         <!-- Password Input -->
         <div class="inputWrapper">
-          <input type="password" class="inputField" name="password" placeholder="Password" required>
+          <input id="signUpPassword" type="password" class="inputField" name="password" placeholder="Password" required>
           <img 
-              onclick="toggleShowPassword()"
+              onclick="toggleCheckbox('showPassSignUp'), toggleShowPassword()"
+              id="showPassSignUp"
               src="assets/img/png/lock.png" 
-              alt="Password Icon" class="inputIcon">
+              alt="Password Icon" class="inputIcon pointer">
         </div>
 
         <!-- Confirm Password Input -->

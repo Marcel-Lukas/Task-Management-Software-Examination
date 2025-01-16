@@ -31,18 +31,45 @@ function toggleAccessWindow() {
 
 
 
-// Wenn das Bild aktuell falsePath ist, auf 
-// truePath setzen, sonst zurück zu falsePath
-// Für Remember me & I accept the Legal notice
+// Um die png zu wechseln von Remember me & accept the Legal notice
+// und für Passwort Anzeigen (Auge und Schloss)
 
 function toggleCheckbox(imageId) {
   const img = document.getElementById(imageId);
   const falsePath = './assets/img/png/check-button-false.png';
-  const truePath  = './assets/img/png/check-button-true.png';
+  const truePath = './assets/img/png/check-button-true.png';
+  const lockPath = './assets/img/png/lock.png';
+  const visibilityPath = './assets/img/png/visibility.png';
 
-  if (img.src.includes("check-button-false.png")) {
-    img.src = truePath;
-  } else {
-    img.src = falsePath;
+  // Überprüfe, welcher Typ aktuell verwendet wird (Checkbox oder Lock/Visibility)
+  if (img.src.includes("check-button")) {
+    // Umschalten zwischen truePath und falsePath
+    img.src = img.src.includes("check-button-false.png") ? truePath : falsePath;
+  } else if (img.src.includes("lock") || img.src.includes("visibility")) {
+    // Umschalten zwischen lockPath und visibilityPath
+    img.src = img.src.includes("lock.png") ? visibilityPath : lockPath;
   }
+}
+
+
+
+// Um den Input Typ zu wechseln wegen Passwort Anzeigen lassen
+
+function toggleShowPassword() {
+  const passwordInput = document.getElementById("inputPassword");
+  const passwordsignUp = document.getElementById("signUpPassword");
+  
+  if (passwordInput.type === 'password') {
+    passwordInput.type = 'text';
+    passwordsignUp.type = 'text';
+  } else {
+    passwordInput.type = 'password';
+    passwordsignUp.type = 'password';
+  }
+}
+
+
+
+function loginAsGuest() {
+  window.location.href = "html/summary.html";
 }

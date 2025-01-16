@@ -214,6 +214,10 @@ border: solid 2px #29ABE2;
   height: 24px;
 }
 
+.pointer {
+cursor: pointer;
+}
+
 .inputIconExtrawurst {
 position: absolute;
 right: 15px;
