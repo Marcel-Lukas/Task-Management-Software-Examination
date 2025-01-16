@@ -9,3 +9,8 @@
 .d-none {
   display: none !important;
 }
+
+main {
+  margin: 180px 200px 0px 348px;
+  max-width: 1020px;
+}
