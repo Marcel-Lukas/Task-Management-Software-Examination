@@ -58,13 +58,16 @@ function toggleCheckbox(imageId) {
 function toggleShowPassword() {
   const passwordInput = document.getElementById("inputPassword");
   const passwordsignUp = document.getElementById("signUpPassword");
+  const passwordConfirm = document.getElementById("confirmPassword");
   
   if (passwordInput.type === 'password') {
     passwordInput.type = 'text';
     passwordsignUp.type = 'text';
+    passwordConfirm.type = 'text';
   } else {
     passwordInput.type = 'password';
     passwordsignUp.type = 'password';
+    passwordConfirm.type = 'password';
   }
 }
 

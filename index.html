@@ -124,13 +124,15 @@
 
         <!-- Confirm Password Input -->
         <div class="inputWrapper">
-          <input type="password" class="inputField" name="password" placeholder="Confirm Password" required>
+          <input id="confirmPassword" type="password" class="inputField" name="password" placeholder="Confirm Password" required>
           <img 
+              onclick="toggleCheckbox('showPassSignUpConfirm'), toggleShowPassword()"
+              id="showPassSignUpConfirm"
               src="assets/img/png/lock.png" 
-              alt="Password Icon" class="inputIcon">
+              alt="Password Icon" class="inputIcon pointer">
         </div>
 
-        <!-- Accept the Legal notice -->
+        <!-- Accept the Legal notice Check -->
         <div class="imgCheckbox">
           <img 
             onclick="toggleCheckbox('acceptLegalNotice')"
