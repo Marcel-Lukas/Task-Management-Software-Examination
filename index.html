@@ -4,10 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description"
-    content="Join - Die einfache und effiziente Plattform für Teamarbeit und Projektmanagement. Organisiere Aufgaben, kommuniziere mit deinem Team und steigere die Produktivität.">
-  <meta name="keywords"
-    content="Join, Projektmanagement, Teamarbeit, Aufgabenorganisation, Kommunikation, Produktivität, Trello-Alternative, Slack-Alternative">
+  <meta name="description" content="Join - Die einfache und effiziente Plattform für Teamarbeit und Projektmanagement. Organisiere Aufgaben, kommuniziere mit deinem Team und steigere die Produktivität.">
+  <meta name="keywords" content="Join, Projektmanagement, Teamarbeit, Aufgabenorganisation, Kommunikation, Produktivität, Trello-Alternative, Slack-Alternative">
   <meta name="author" content="Andreas Klepel, Marcel Lukas, Nicolaus Feldtmann">
   <link rel="icon" type="image/png" href="../assets/img/favicon/favicon-96x96.png" sizes="96x96">
   <link rel="icon" type="image/svg+xml" href="../assets/img/favicon/favicon.svg">
@@ -18,6 +16,7 @@
 
   <link rel="stylesheet" type="text/css" href="main.css">
   <link rel="stylesheet" type="text/css" href="styles/fonts.css">
+
   <link rel="stylesheet" type="text/css" href="styles/login.css">
 
   <script defer src="main.js"></script>
@@ -31,12 +30,15 @@
     <img class="img-logo"  alt="Join Logo"/>
   </div>
 
-  <nav>
-      <span>Not a Join user?</span>
-      <button class="signInBtn">Sign up</button>
-  </nav>
 
-  <main>
+  <section id="loginSection">
+    <nav>
+        <span>Not a Join user?</span>
+        <button 
+        onclick="toggleAccessWindow()"
+        class="signInBtn">Sign up</button>
+    </nav>
+
     <div class="logInBox">
       <h1 class="h1LogIn">Log in</h1>
       <div class="blue-line"></div>
@@ -46,31 +48,110 @@
 
         <!-- Email Input -->
         <div class="inputWrapper">
-          <input type="text" class="inputField" name="email" placeholder="Email" required>
+          <input type="text" class="inputField" name="email" placeholder="Email" autocomplete="e-mail" required>
           <img src="assets/img/png/mail.png" alt="Email Icon" class="inputIcon">
         </div>
 
         <!-- Password Input -->
         <div class="inputWrapper">
-          <input type="password" class="inputField" name="password" placeholder="Password" required>
-          <img src="assets/img/png/lock.png" alt="Password Icon" class="inputIcon">
+          <input type="password" class="inputField" name="password" autocomplete="current-password" placeholder="Password" required>
+          <img 
+              onclick="toggleShowPassword()"
+              src="assets/img/png/lock.png" 
+              alt="Password Icon" class="inputIcon">
+        </div>
+
+        <!-- Remember me (muss doch mit rein der shit auch wenn nicht in Figma, habe nachgefragt) -->
+        <div class="imgCheckbox">
+          <img 
+            onclick="toggleCheckbox('rememberMe')"
+            id="rememberMe" class="litte-button"
+            src="./assets/img/png/check-button-false.png" alt=""/>
+          Remember me
         </div>
 
         <!-- Form Buttons -->
         <div class="formButtons">
           <button type="submit" class="btnPrimary">Log in</button>
-          <button type="button" class="btnSecondary">Guest Log in</button>
+          <button 
+          onclick="loginAsGuest()"
+          type="button" 
+          class="btnSecondary">Guest Log in</button>
         </div>
       </form>
 
     </div>
-  </main>
+  </section>
+
+
+
+  <section id="signUpSection" class="d-none">
+
+    <div class="signUpBox">
+      <div class="signUpHead">
+        <img 
+        onclick="toggleAccessWindow()"
+        class="backArrow" src="assets/img/png/arrow-left-line.png" alt="">
+        <h1 class="h1LogIn">Sign up</h1>
+      </div>
+      <div class="blue-line"></div>
+
+
+      <form class="signUpForm">
+
+        <!-- Email Input -->
+        <div class="inputWrapper">
+          <input type="text" class="inputField" name="email" placeholder="Email" autocomplete="e-mail" required>
+          <img src="assets/img/png/mail.png" alt="Email Icon" class="inputIcon">
+        </div>
+
+        <!-- Name Input -->
+        <div class="inputWrapper">
+          <input type="text" class="inputField" name="email" placeholder="Name" autocomplete="name" required>
+          <img src="assets/img/png/person.png" alt="Person Icon" class="inputIconExtrawurst">
+        </div>
+
+        <!-- Password Input -->
+        <div class="inputWrapper">
+          <input type="password" class="inputField" name="password" placeholder="Password" required>
+          <img 
+              onclick="toggleShowPassword()"
+              src="assets/img/png/lock.png" 
+              alt="Password Icon" class="inputIcon">
+        </div>
+
+        <!-- Confirm Password Input -->
+        <div class="inputWrapper">
+          <input type="password" class="inputField" name="password" placeholder="Confirm Password" required>
+          <img 
+              src="assets/img/png/lock.png" 
+              alt="Password Icon" class="inputIcon">
+        </div>
+
+        <!-- Accept the Legal notice -->
+        <div class="imgCheckbox">
+          <img 
+            onclick="toggleCheckbox('acceptLegalNotice')"
+            id="acceptLegalNotice" class="litte-button"
+            src="./assets/img/png/check-button-false.png" alt=""/>
+            <span class="acceptLegalnoticeText">I accept the</span><a href="html/legalnotice.html" class="acceptLegalnotice">Legal notice</a>
+        </div>
+
+        <!-- Form Buttons -->
+        <div class="formButtons">
+          <button type="submit" class="btnPrimary">Sign up</button>
+        </div>
+      </form>
+
+    </div>
+
+  </section>
 
 
   <footer>
     <a href="html/privacyPolicy.html" class="footerLink">Privacy Policy</a>
     <a href="html/legalnotice.html" class="footerLink">Legal notice</a>
-</footer>
+  </footer>
 
 </body>
 </html>

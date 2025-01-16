@@ -8,7 +8,6 @@ html, body {
   align-items: center;
 }
 
-
 nav {
   position: absolute;
   top: 67px;
@@ -20,7 +19,6 @@ nav {
   gap: 35px;
   align-items: center;
 }
-
 
 .signInBtn {
   background-color: #2A3647;
@@ -40,6 +38,48 @@ nav {
   cursor: pointer;
   background-color: #29ABE2;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+
+/* For Logo Animation */
+
+.logo-container {
+position: fixed;
+top: 0;
+left: 0;
+width: 100vw;
+height: 100vh;
+background-color: rgb(246, 247, 248);
+display: flex;
+justify-content: center;
+align-items: center;
+transition: background-color 1s ease-out;
+z-index: 1000;
+}
+
+.img-logo {
+width: 274px;
+height: 335px;
+transition: all 1s ease-out;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+content: url(../assets/img/png/logo-big.png);
+}
+
+.logo-small {
+position: absolute;
+width: 100px;
+height: 122px;
+top: 80px;
+left: 77px;
+transform: none;
+content: url(../assets/img/png/logo-big.png);
+}
+
+.container-transparent {
+background-color: transparent !important;
 }
 
 
@@ -63,6 +103,7 @@ height: 3px;
 background-color: #29ABE2;
 margin-top: -16px;
 border-radius: 4px;
+border: solid 2px #29ABE2;
 }
 
 .logInForm {
@@ -91,7 +132,6 @@ border-radius: 4px;
   display: flex;
   justify-content: center;
   gap: 35px;
-  margin-top: 32px;
 }
 
 .btnPrimary {
@@ -174,12 +214,37 @@ border-radius: 4px;
   height: 24px;
 }
 
+.inputIconExtrawurst {
+position: absolute;
+right: 15px;
+top: 50%;
+transform: translateY(-50%);
+width: 18px;
+height: 18px;
+}
+
 ::placeholder {
   color: #D1D1D1;
   font-size: 20px;
 }
 
+.imgCheckbox {
+margin-left: 32px;
+display: flex;
+gap: 8px;
+align-items: center;
+}
+
+.litte-button {
+width: 25px;
+height: 25px;
+border-radius: 3px;
+cursor: pointer;
+}
+
 footer {
+  position: fixed;
+  bottom: 25px;
   padding: 20px 0;
   text-align: center;
   width: 100%;
@@ -191,53 +256,71 @@ footer {
   margin: 0 10px;
   color: #A8A8A8;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 17px;
 }
 
 .footerLink:hover {
   color: #29ABE2;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 
+/* Sign up Section */
 
-/* For Logo Animation */
-
-.logo-container {
-position: fixed;
-top: 0;
-left: 0;
-width: 100vw;
-height: 100vh;
-background-color: rgb(246, 247, 248);
+.signUpBox {
+height: 640px;
+width: 630px;
 display: flex;
-justify-content: center;
+flex-direction: column;
 align-items: center;
-transition: background-color 1s ease-out;
-z-index: 1000;
+background-color: white;
+border-radius: 30px;
+box-shadow: 0px 0px 14px 3px #0000000A;
+gap: 32px;
+padding: 48px;
 }
 
-.img-logo {
-width: 274px;
-height: 335px;
-transition: all 1s ease-out;
+.signUpForm {
+display: flex;
+flex-direction: column;
+align-items: center;
+width: 422px;
+gap: 32px;
+}
+
+.signUpHead {
+display: flex;
+align-items: center;
+justify-content: center;
+width: 100%;
+}
+
+.backArrow {
 position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-content: url(../assets/img/png/logo-big.png);
+height: 32px;
+width: 32px;
+border-radius: 50%;
+margin-right: 500px;
+transition: 150ms ease-in-out;
 }
 
-.logo-small {
-position: absolute;
-width: 100px;
-height: 122px;
-top: 80px;
-left: 77px;
-transform: none;
-content: url(../assets/img/png/logo-big.png);
+.backArrow:hover {
+cursor: pointer;
+background-color: #f1f1f1;
+box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+transform: scale(114%);
 }
 
-.container-transparent {
-background-color: transparent !important;
+.acceptLegalnoticeText {
+color: #A8A8A8;
+}
+
+.acceptLegalnotice {
+color: #29ABE2;
+text-decoration: none;
+}
+
+.acceptLegalnotice:hover {
+cursor: pointer;
+text-decoration: underline;
 }
