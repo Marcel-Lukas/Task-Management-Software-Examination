@@ -1,0 +1,41 @@
+
+h1 {
+  margin-bottom: 16px;
+  margin-top: 0;
+  font-size: 61px;
+  font-weight: 700;
+}
+
+h2 {
+  margin: 0px;
+  font-size: 27px;
+  font-weight: 700;
+}
+
+h3 {
+  margin: 16px 0px 8px 0px;
+}
+
+li {
+  margin: 0px 8px;
+  list-style: square;
+}
+
+.highlightText {
+  color: #29abe2;
+}
+
+.content-legal-notice {
+  color: black;
+  overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.imprint {
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+}
