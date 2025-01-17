@@ -18,13 +18,57 @@ h3{
     align-items: center;
 }
 
-.findTask{
+.searchField{
+    display: flex;
+    align-items: center;
     height: 48px;
     width: 280px;
     border-radius: 10px;
     margin: 0px 24px 0px 0px;
     border: solid 1px rgb(168, 168, 168);
-    background: url(/assets/img/png/magnifying-glass-default.png) no-repeat right;
+}
+
+.searchField:hover{
+    cursor: pointer;
+}
+
+.searchField.focus{
+    border: solid 1px rgb(41, 171, 226);
+    border-radius: 10px;
+}
+
+.findSeperator{
+    background-color: rgb(209, 209, 209);
+    width: 1px;
+    height: 32px;
+}
+
+.magnifyTask{
+    width: 32px;
+    height: 32px;
+    margin: 0px 12px 0px 12px;
+}
+
+.magnifyTask:hover{
+    content: url(/assets/img/png/magnifying-glass-hover.png);
+}
+
+.findTask{
+    height: 46px;
+    width: 220px;
+    border-radius: 10px;
+    border: none;
+    font-size: 20px;
+    font-weight: 400;
+    padding: 0px 0px 0px 16px;
+}
+
+.findTask:hover{
+    cursor: pointer;
+}
+
+.findTask:focus{
+    outline: none;
 }
 
 .addButton{

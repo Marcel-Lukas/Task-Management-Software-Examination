@@ -11,8 +11,10 @@
     <link rel="shortcut icon" href="../assets/img/favicon/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/favicon/apple-touch-icon.png">
     <link rel="manifest" href="../assets/img/favicon/site.webmanifest">
+    <script src="/scripts/board.js"></script>
     <title>Board</title>
 
+    <link rel="stylesheet" type="text/css" href="/styles/board.css">
     <link rel="stylesheet" type="text/css" href="../main.css">
     <link rel="stylesheet" type="text/css" href="../styles/desktopTemplate.css">
     <link rel="stylesheet" type="text/css" href="../styles/fonts.css">
@@ -23,6 +25,50 @@
 
   <body onload="includeHTML()">
     <div w3-include-html="../assets/templates/desktopTemplate.html"></div>
+
+    <main>
+
+      <div class="boardHead">
+        <h1>Board</h1>
+
+        <div class="taskInteract">
+          <div class="searchField" onclick="openInput()">
+            <input class="findTask" type="text" id="findTask" placeholder="Find Task">
+            <div class="findSeperator"></div>
+            <img class="magnifyTask" src="/assets/img/png/magnifying-glass-default.png">
+          </div>
+
+          <div class="addButton">Add Task <img class="addCros" src="/assets/img/png/add.png"></div>
+
+        </div>
+      </div>
+
+      <div class="boardNav">
+        <div class="navObject">
+          <h3>To do</h3>
+          <img class="addIcon" src="/assets/img/png/add-board-active.png">
+        </div>
+        <div class="navObject">
+          <h3>In progress</h3>
+          <img class="addIcon" src="/assets/img/png/add-board-active.png">
+        </div>
+        <div class="navObject">
+          <h3>Await feedback</h3>
+          <img class="addIcon" src="/assets/img/png/add-board-active.png">
+        </div>
+        <div class="navObject">
+          <h3>Done</h3>
+          <img class="addIcon" src="/assets/img/png/add-board-active.png">
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="boardColumn"></div>
+        <div class="boardColumn"></div>
+        <div class="boardColumn"></div>
+        <div class="boardColumn"></div>
+      </div>
+    </main>
     
     
 
