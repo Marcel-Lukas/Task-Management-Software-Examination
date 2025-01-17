@@ -14,3 +14,18 @@ main {
   margin: 180px 200px 0px 348px;
   max-width: 1020px;
 }
+
+.arrow-back {
+  height: 37px;
+  width: 37px;
+  border-radius: 50%;
+  margin-right: 20px;
+  transition: 150ms ease-in-out;
+}
+
+.arrow-back:hover {
+  cursor: pointer;
+  background-color: rgba(236, 236, 236, 0.5);
+  box-shadow: 0px 0px 12px rgba(95, 95, 95, 0.5);
+  transform: scale(116%);
+}
