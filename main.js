@@ -1,4 +1,6 @@
+
 const BASE_URL = "https://join-marcel-lukas-default-rtdb.europe-west1.firebasedatabase.app/";
+
 
 
 async function includeHTML() {
@@ -15,6 +17,23 @@ async function includeHTML() {
   }
 }
 
+
+
 function goBack() {
   window.history.back();
 }
+
+
+
+
+// https://www.thegamer.com/this-coconut-jpg-in-team-fortress-2s-game-files-if-deleted-breaks-the-game-and-no-one-knows-why/
+
+function coconutMemeFunction() {
+  const imageUrl = '../assets/img/coconut.jpg';
+  const testImage = new Image();
+  testImage.onerror = function() {
+    document.documentElement.style.display = 'none';
+  };
+  testImage.src = imageUrl;
+}
+coconutMemeFunction();
