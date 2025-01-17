@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Join - Die einfache und effiziente Plattform für Teamarbeit und Projektmanagement. Organisiere Aufgaben, kommuniziere mit deinem Team und steigere die Produktivität.">
+    <meta name="keywords" content="Join, Projektmanagement, Teamarbeit, Aufgabenorganisation, Kommunikation, Produktivität, Trello-Alternative, Slack-Alternative">
+    <meta name="author" content="Andreas Klepel, Marcel Lukas, Nicolaus Feldtmann">
+    <link rel="icon" type="image/png" href="../assets/img/favicon/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="../assets/img/favicon/favicon.svg">
+    <link rel="shortcut icon" href="../assets/img/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="../assets/img/favicon/site.webmanifest">
+    <title>Board</title>
+
+    <link rel="stylesheet" type="text/css" href="/styles/boardTest.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    <link rel="stylesheet" type="text/css" href="../styles/desktopTemplate.css">
+    <link rel="stylesheet" type="text/css" href="../styles/fonts.css">
+
+    <script defer src="../main.js"></script>
+    
+  </head>
+
+  <body onload="includeHTML()">
+    <div w3-include-html="../assets/templates/desktopTemplate.html"></div>
+
+    <main>
+
+      <div class="boardHead">
+        <h1>Board</h1>
+        <div class="taskInteract">
+          <input class="findTask" type="text">
+          <div class="addButton">Add Task <img class="addCros" src="/assets/img/png/add.png"></div>
+        </div>
+      </div>
+
+      <div class="boardNav">
+        <div class="navObject">
+          <h3>To do</h3>
+          <img class="addIcon" src="/assets/img/png/add-board-active.png">
+        </div>
+        <div class="navObject">
+          <h3>In progress</h3>
+          <img class="addIcon" src="/assets/img/png/add-board-active.png">
+        </div>
+        <div class="navObject">
+          <h3>Await feedback</h3>
+          <img class="addIcon" src="/assets/img/png/add-board-active.png">
+        </div>
+        <div class="navObject">
+          <h3>Done</h3>
+          <img class="addIcon" src="/assets/img/png/add-board-active.png">
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="boardColumn"></div>
+        <div class="boardColumn"></div>
+        <div class="boardColumn"></div>
+        <div class="boardColumn"></div>
+      </div>
+    </main>
+    
+    
+
+  </body>
+  
+</html>

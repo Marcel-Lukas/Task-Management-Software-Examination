@@ -1,0 +1,78 @@
+h1{
+    font-size: 72px;
+    font-weight: 700;
+}
+
+h3{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.boardHead{
+    display: flex;
+    justify-content: space-between;
+}
+
+.taskInteract{
+    display: flex;
+    align-items: center;
+}
+
+.findTask{
+    height: 48px;
+    width: 280px;
+    border-radius: 10px;
+    margin: 0px 24px 0px 0px;
+    border: solid 1px rgb(168, 168, 168);
+    background: url(/assets/img/png/magnifying-glass-default.png) no-repeat right;
+}
+
+.addButton{
+    background-color: rgb(42, 54, 71);
+    color: white;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 8px;
+    border-radius: 10px;
+}
+
+.addButton:hover{
+    cursor: pointer;
+    background-color: rgb(41, 171, 226);
+    box-shadow: 1px 3px 8px -3px rgba(0, 0, 0, 0.75);
+}
+
+.boardNav{
+    display: flex;
+    justify-content: space-between;
+}
+
+.content{
+    display: flex;
+}
+
+.navObject{
+    display: flex;
+    justify-content: space-between;
+    width: 246px;
+    margin: 40px 12px 12px 12px;
+}
+
+.addIcon{
+    height: 24px;
+    width: 24px;
+}
+
+.addIcon:hover{
+    cursor: pointer;
+    content: url(/assets/img/png/add-board-hover.png);
+}
+
+.boardColumn{
+    border: solid 1px red;
+    height: 688px;
+    width: 246px;
+    margin: 0px 12px 0px 12px;
+}
