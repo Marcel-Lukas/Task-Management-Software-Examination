@@ -10,6 +10,10 @@
   display: none !important;
 }
 
+.active {
+  background-color: #091931 !important;
+}
+
 main {
   margin: 180px 200px 0px 348px;
   max-width: 1020px;
