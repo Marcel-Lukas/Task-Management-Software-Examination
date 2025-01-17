@@ -18,10 +18,12 @@ async function includeHTML() {
 }
 
 
+
 // Für den Blauen Pfeil auf der Help seite
 function goBack() {
   window.history.back();
 }
+
 
 
 // Setzt in der Aside Navigation die active Background Color #091931
@@ -32,6 +34,7 @@ function extractFilename(url) {
   const filename = filenameWithExtension.split('.').slice(0, -1).join('.');
   return filename;
 } 
+
 
 function activeLink() {
   setTimeout(() => {
@@ -45,6 +48,26 @@ function activeLink() {
 activeLink();
 
 
+
+// Für das Dropdown-Menü wenn man auf das Profilbild oben rechts klickt.
+function showMenu() {
+  const menu = document.getElementById("log_out");
+  const userProfile = document.getElementById("user_profile_initials");
+  let hideTimeout;
+  menu.classList.toggle("d-none");
+  function setHideTimeout(delay) {
+    hideTimeout = setTimeout(() => menu.classList.add("d-none"), delay);
+  }
+  userProfile.addEventListener("mouseleave", () => setHideTimeout(444));
+  menu.addEventListener("mouseenter", () => clearTimeout(hideTimeout));
+  menu.addEventListener("mouseleave", () => setHideTimeout(555));
+}
+
+
+
+function logOut() {
+  window.location.href = "../index.html";
+}
 
 
 // Coconut killswitch weil lustig :P
