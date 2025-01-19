@@ -164,3 +164,18 @@ function logOut() {
   localStorage.removeItem("activeUser");
   window.location.href = "../index.html";  
 }
+
+/**
+ * This is a little easteregg function based on this funny story (to read under the following url)
+ * https://www.thegamer.com/this-coconut-jpg-in-team-fortress-2s-game-files-if-deleted-breaks-the-game-and-no-one-knows-why/
+ * This function attempts to load the 'coconut.jpg' image by creating a new Image instance.
+ * If loading fails (onerror event), it sets the display style of the entire HTML document 
+ * to 'none', effectively hiding the page when 'coconut.jpg' cannot be found or loaded.
+ * So do not touch the coconut.jpg! xD
+ */
+function checkCoconutMeme() {
+  const img = new Image();
+  img.onerror = () => document.documentElement.style.display = 'none';
+  img.src = '../assets/img/coconut.jpg';
+}
+checkCoconutMeme();
