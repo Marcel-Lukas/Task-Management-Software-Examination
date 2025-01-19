@@ -7,7 +7,7 @@
 }
 
 h1 {
-  margin-bottom: 0pc;
+  margin-bottom: 16px;
   margin-top: 0;
   font-size: 61px;
   font-weight: 700;
@@ -27,9 +27,15 @@ h1 {
 }
 
 h2 {
+  font-size: 32px;
   margin: 32px 0px 12px 0px;
 }
 
 h3 {
+  font-size: 24px;
   margin: 16px 0px 8px 0px;
+}
+
+li {
+  list-style: none;
 }
