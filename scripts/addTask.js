@@ -18,6 +18,7 @@ async function openAddTaskDialogFeedback() {
 
 /**
  * This function sets a delays between functions
+ * 
  * @param {number} ms - This variable is the time of the delay in miliseconds
  * @returns - the Timeout
  */
@@ -27,6 +28,7 @@ function sleep(ms) {
 
 /**
  * This function is getting id´s from elements
+ * 
  * @returns - all variables set
  */
 function getTaskFormData() {
@@ -48,6 +50,7 @@ async function handleTaskCreationCompletion() {
 
 /**
  * This function is mapping through the Array subTasks
+ * 
  * @returns - an Object 
  */
 function getSubtasks() {  
@@ -60,6 +63,7 @@ function getSubtasks() {
 
 /**
  * This function renders the active User and all contacts 
+ * 
  * @param {string} contacts - is a variable with all informations about the Contacts from the Database
  */
 function displayContacts(contacts) {
@@ -117,7 +121,6 @@ function addUserToTask(CheckButtonId, CheckTaskButton, bgChange, activUserId) {
 
 /**
  * This function proves if the Contact is selected or not
- * 
  * @param {NumberId} contactId - is the contact Id 
  */
 function addContactAssigned(contactId) {
@@ -129,7 +132,6 @@ function addContactAssigned(contactId) {
 
 /**
  * This function proves if the active User is selected or not
- * 
  * @param {NumberId} activUserId - is the active User Id 
  */
 function addUserAssigned(activUserId) {
@@ -141,7 +143,6 @@ function addUserAssigned(activUserId) {
 
 /**
  * This function removes the selected Contact if you onclick it agian
- * 
  * @param {number} index - is the length of the Array
  */
 function removeContactAssigned(index) {
@@ -153,7 +154,6 @@ function removeContactAssigned(index) {
 
 /**
  * This function removes the selected User if you onclick it agian
- * 
  * @param {number} index - is the length of the Array
  */
 function removeUserAssigned(index) {
@@ -201,7 +201,6 @@ function searchContact() {
 
 /**
  * This function handles the selected Priority
- * 
  * @param {string} priority - is the Priority the User has selected
  */
 function handleSelectedPriority(priority) {
@@ -210,7 +209,6 @@ function handleSelectedPriority(priority) {
 
 /**
  * This function sets the selected Category after onclick
- * 
  * @param {string} category - is the Text the User has selected in Category
  */
 function selectCategory(category) {
@@ -220,8 +218,7 @@ function selectCategory(category) {
 }
 
 /**
- * This function saves the Input the User has made at Subtasks
- *  
+ * This function saves the Input the User has made at Subtasks 
  * @param {number} index - is the Index Number of the Array
  */
 function saveInput(index) {
@@ -230,6 +227,9 @@ function saveInput(index) {
   toggleSubtasksImgs(index);
   handleInputBlur(subInput, index);
   editSubTaskIndex = null;
+  // if (subInput == "") {
+  //   deleteSubtask(index);
+  // }
 }
 
 /**
@@ -251,7 +251,6 @@ function editSubtask(li, index) {
 
 /**
  * This function proves if there are allready changes in the Array or not
- * 
  * @param {number} index - is the Id of the selected Subtask to edit
  */
 function handlePreviousEdit(index) {
@@ -295,8 +294,7 @@ function handleInputBlur(li, index) {
 }
 
 /**
- *This function saves all changes after editing a subtask
- *  
+ *This function saves all changes after editing a subtask 
  * @param {ElementId} subtasksInput - is the Inputfield on focus
  * @param {NumberId} index - is the Id of the Element
  */
@@ -307,7 +305,6 @@ function saveChanges(subtasksInput, index) {
 
 /**
  * This function removes Subtasks from the List
- * 
  * @param {number} index - is the Id of the selected Subtask to edit
  */
 function removeSubtask(index) {
