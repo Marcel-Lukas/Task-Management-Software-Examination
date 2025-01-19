@@ -148,3 +148,24 @@ function handleLoginError() {
   document.getElementById("login_password").classList.add("border-alert");
   console.error(errorMessage);
 }
+
+/**
+ * This function continuously generates snowflakes on the log in and sign up start page for 
+ * winter fler, especially in December and January. The starting position, size, opacity 
+ * and animation duration of each snowflake are chosen randomly to simulate natural snowfall. 
+ * The snowflakes are attached to an element with the ID “snow-content” and removed 
+ * after 9 seconds to avoid clutter. By calling this function every 99 milliseconds, you 
+ * can achieve a uniform snowflake animation on the screen.
+ */
+const createSnowflake = () => {
+  if (![0, 11].includes(new Date().getMonth())) return;
+  const t = document.getElementById("snow-content"), e = document.createElement("div");
+  e.className = "snowflakes"; e.textContent = "❄";
+  const r = Math.random(), r2 = Math.random(), r3 = Math.random();
+  e.style.left = `${100 * r}vw`; e.style.top = `${-80 * r - 20}px`;
+  e.style.animationDuration = `${7 * r2 + 3}s`; e.style.fontSize = `${14 * r2 + 12}px`;
+  e.style.opacity = `${0.5 * r3 + 0.5}`;
+  setTimeout(() => e.remove(), 9000);
+  t.appendChild(e);
+};
+setInterval(createSnowflake, 99);
