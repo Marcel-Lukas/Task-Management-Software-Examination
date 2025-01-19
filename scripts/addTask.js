@@ -18,7 +18,6 @@ async function openAddTaskDialogFeedback() {
 
 /**
  * This function sets a delays between functions
- * 
  * @param {number} ms - This variable is the time of the delay in miliseconds
  * @returns - the Timeout
  */
@@ -28,7 +27,6 @@ function sleep(ms) {
 
 /**
  * This function is getting id´s from elements
- * 
  * @returns - all variables set
  */
 function getTaskFormData() {
@@ -50,7 +48,6 @@ async function handleTaskCreationCompletion() {
 
 /**
  * This function is mapping through the Array subTasks
- * 
  * @returns - an Object 
  */
 function getSubtasks() {  
@@ -63,7 +60,6 @@ function getSubtasks() {
 
 /**
  * This function renders the active User and all contacts 
- * 
  * @param {string} contacts - is a variable with all informations about the Contacts from the Database
  */
 function displayContacts(contacts) {
@@ -234,9 +230,6 @@ function saveInput(index) {
   toggleSubtasksImgs(index);
   handleInputBlur(subInput, index);
   editSubTaskIndex = null;
-  // if (subInput == "") {
-  //   deleteSubtask(index);
-  // }
 }
 
 /**
