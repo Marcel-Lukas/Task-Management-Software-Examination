@@ -29,7 +29,7 @@
         <div id="assigned_inactiv" onclick="openSelect(); bubblingPrevention(event)">
           <div class="div-input">Select contacts to assign</div>
           <div class="hover-circle d-flex-center pos-abs">
-            <img src="../assets/img/png/arrow_drop_down.png" alt="Drop down arrow" />
+            <img src="../assets/img/png/arrow_drop_down.png" alt="Down arrow" />
           </div>
         </div>
         <div id="assigned_activ" class="d-none">
@@ -108,16 +108,12 @@
             <img src="../assets/img/png/arrow_drop_down.png" alt="Drop down arrow" />
           </div>
         </div>
-        <div
-          id="category_activ"
-          class="d-none"
-          onclick="closeSelectCategory()"
-        >
+        <div id="category_activ" class="d-none" onclick="closeSelectCategory()">
           <div class="div-input">Select task category</div>
           <div class="hover-circle d-flex-center pos-abs">
             <img
               src="../assets/img/png/arrow-drop-down-up.png"
-              alt="Drop down arrow upsidedown"
+              alt="Arrow upsidedown"
             />
           </div>
           <div id="category_task_contant" class="category-field"></div>
@@ -174,9 +170,12 @@
   </div>
 </div>
 <div id="bottom_order" class="bottom-order">
-  <span id="alert_field" class="alert-field"
-    ><span class="required-sign">*</span>This field is required</span
-  >
+
+  <span id="alert_field" class="alert-field">
+    <span class="required-sign">*</span>
+    This field is required
+  </span>
+
   <div id="bottom_button_order" class="bottom-button-order">
     <button id="clear_button" onclick="clearButton()" class="clear-button">
       Clear
@@ -187,19 +186,12 @@
       </div>
     </button>
     <div class="create-button-div" id="create_button_div">
-      <button
-        onclick="enableButton()"
-        id="create_button"
-        class="create-task-button"
-      >
+      <button onclick="enableButton()" id="create_button" class="create-task-button">
         <span>Create Task</span>
         <img src="../assets/img/png/create-check-mark.png" alt="Checkmark" />
       </button>
     </div>
   </div>
 </div>
-<div
-  id="task_added_overlay"
-  class="add-task-overlay d-flex-center d-none"
-></div>
+<div id="task_added_overlay" class="add-task-overlay d-flex-center d-none"></div>
 </div>

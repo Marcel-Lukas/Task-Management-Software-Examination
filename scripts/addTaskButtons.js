@@ -259,11 +259,11 @@ function processInvalidForm() {
 }
 
 /** This function disables days past by in the calendar */
-function setDate(){
-let today = new Date();
-let dd = String(today.getDate()).padStart(2, "0");
-let mm = String(today.getMonth() + 1).padStart(2, "0");
-let yyyy = today.getFullYear();
-let formattedDate = `${yyyy}-${mm}-${dd}`;
-document.getElementById("due_date").setAttribute("min", formattedDate);
+function setDate() {
+  let today = new Date();
+  let dd = String(today.getDate()).padStart(2, "0");
+  let mm = String(today.getMonth() + 1).padStart(2, "0");
+  let yyyy = today.getFullYear();
+  let formattedDate = `${yyyy}-${mm}-${dd}`;
+  document.getElementById("due_date").setAttribute("min", formattedDate);
 }

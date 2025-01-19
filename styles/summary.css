@@ -1,10 +1,10 @@
 body {
   background-color: #f5f6f7;
 }
-.content{
-  margin-top: clamp(19px, 9vh, 96px);
-}
 
+.content{
+  margin-top: clamp(18px, 9vh, 96px);
+}
 
 .d-flex {
   display: flex;
@@ -80,14 +80,15 @@ span {
   justify-content: center;
   align-items: center;
   gap: clamp(10px, 3vw, 18px);
-  transition: transform 0.08s ease-in-out;
+  transition: transform 175ms ease-in-out;
   box-shadow: 0 0 4px 0px rgba(0, 0, 0, 0.1);
 }
 
 .upper-task-block:hover {
   cursor: pointer;
   background-color: #2a3647;
-  transform: scale(1.1);
+  transform: scale(108%);
+  box-shadow: 0px 0px 16px rgba(43, 43, 43, 0.7);
 }
 
 .upper-task-block:hover .circel {
@@ -127,14 +128,15 @@ span {
   justify-content: center;
   align-items: center;
   gap: clamp(13px, 9vw, 61px);
-  transition: transform 0.08s ease-in-out;
+  transition: transform 175ms ease-in-out;
   box-shadow: 0 0 4px 0px rgba(0, 0, 0, 0.1);
 }
 
 .priority-block:hover {
   cursor: pointer;
   background-color: #2a3647;
-  transform: scale(1.1);
+  transform: scale(106%);
+  box-shadow: 0px 0px 16px rgba(43, 43, 43, 0.7);
 }
 
 .priority-block:hover span {
@@ -167,14 +169,15 @@ span {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  transition: transform 0.08s ease-in-out;
+  transition: transform 175ms ease-in-out;
   box-shadow: 0 0 4px 0px rgba(0, 0, 0, 0.1);
 }
 
 .task-in-block:hover {
   cursor: pointer;
   background-color: #2a3647;
-  transform: scale(1.1);
+  transform: scale(106%);
+  box-shadow: 0px 0px 16px rgba(43, 43, 43, 0.7);
 }
 
 .task-in-block:hover span {
