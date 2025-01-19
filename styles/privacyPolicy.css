@@ -1,13 +1,8 @@
-body {
-  margin: 0px;
-}
-
 .content-policy {
   overflow: scroll;
-  gap: 21px;
 }
 
-.content-policy::-webkit-scrollbar {
+::-webkit-scrollbar {
   display: none;
 }
 
@@ -21,19 +16,20 @@ h1 {
   font-weight: 700;
 }
 
-.policeLink {
-  height: 46px;
-  display: flex;
-  width: 100%;
-  background-color: #091931;
-  align-items: center;
-  font-weight: 400;
-  color: #a8a8a8;
+.link {
+  text-decoration: none;
+  color: #29abe2;
 }
 
-.headline {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.link:hover {
+  cursor: pointer;
+  text-decoration: underline;
 }
 
+h2 {
+  margin: 32px 0px 12px 0px;
+}
+
+h3 {
+  margin: 16px 0px 8px 0px;
+}
