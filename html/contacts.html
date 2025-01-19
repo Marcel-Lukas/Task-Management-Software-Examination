@@ -5,27 +5,256 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Join - Die einfache und effiziente Plattform für Teamarbeit und Projektmanagement. Organisiere Aufgaben, kommuniziere mit deinem Team und steigere die Produktivität.">
     <meta name="keywords" content="Join, Projektmanagement, Teamarbeit, Aufgabenorganisation, Kommunikation, Produktivität, Trello-Alternative, Slack-Alternative">
-    <meta name="author" content="Andreas Klepel, Marcel Lukas, Nicolaus Feldtmann">
+    <meta name="author" content="Marcel Lukas">
     <link rel="icon" type="image/png" href="../assets/img/favicon/favicon-96x96.png" sizes="96x96">
     <link rel="icon" type="image/svg+xml" href="../assets/img/favicon/favicon.svg">
     <link rel="shortcut icon" href="../assets/img/favicon/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/favicon/apple-touch-icon.png">
     <link rel="manifest" href="../assets/img/favicon/site.webmanifest">
-    <title>Contacts</title>
+    <title>contacts</title>
 
-    <link rel="stylesheet" type="text/css" href="../main.css">
-    <link rel="stylesheet" type="text/css" href="../styles/desktopTemplate.css">
-    <link rel="stylesheet" type="text/css" href="../styles/fonts.css">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../styles/contacts.css" />
+    <link rel="stylesheet" href="../styles/contactsDialog.css" />
+    <link rel="stylesheet" href="../styles/contactsMobile.css" />
+    <link rel="stylesheet" href="../styles/fonts.css" />
+    <link rel="stylesheet" href="../styles/desktopTemplate.css" />
+    <link rel="stylesheet" href="../styles/media.css" />
+    <link rel="stylesheet" href="../styles/media/mediaContacts.css" />
+    <link rel="stylesheet" href="../styles/media/mediaDesktopTemplate.css" />
 
-    <script defer src="../main.js"></script>
-    
+    <script src="../script.js"></script>
+    <script src="../scripts/contacts.js"></script>
+    <script src="../scripts/contactsOperations.js"></script>
+    <script src="../scripts/contactsMobile.js"></script>
+    <script src="../scripts/contactsDialogs.js"></script>
+    <script src="../scripts/contactsTemplates.js"></script>
+    <script src="../scripts/desktopTemplate.js"></script>
+    <script src="../scripts/dbBackup.js"></script>
+
   </head>
+  <body>
+    <div id="desktop_template"></div>
+    <div class="content">
+      <div class="d-flex">
+        <div class="contact-box">
+          <button onclick="openDialog()" class="add-contact">
+            Add new contact
+            <img src="../assets/img/png/person_add.png" alt="" />
+          </button>
+          <div id="contact_list"></div>
+        </div>
+        <div id="contact_info">
+          <div class="text-box">
+            <h1>Contacts</h1>
+            <div class="text-seperator"></div>
+            <span class="info-text">Better with a Team</span>
+          </div>
+          <div class="contacts-info-box"></div>
+        </div>
+      </div>
+    </div>
 
-  <body onload="includeHTML()">
-    <div w3-include-html="../assets/templates/desktopTemplate.html"></div>
-    
-    
+    <section
+      class="overlay d-flex-center d-none"
+      id="contact_delete_overlay"
+      onclick="toggleOverlay('contact_delete_overlay')"
+    >
+      <div
+        class="delete-contact d-flex-column-center gap-32"
+        onclick="bubblingPrevention(event)"
+      >
+        <div class="font-w-700 font-c-66-82-110">Delete contact permanently?</div>
+        <div class="delte-contact-button-area d-flex-center">
+          <div class="delete-btn" id="delete_yes_btn"></div>
+          <button
+            class="clear-button"
+            onclick="toggleOverlay('contact_delete_overlay')"
+          >
+            NO
+          </button>
+        </div>
+      </div>
+    </section>
 
+    <dialog id="dialog_contacts">
+      <div class="dialog-left">
+        <img
+          class="logo-dialog"
+          src="../assets/img/png/Join logo vector.png"
+          alt=""
+        />
+        <h2>Add contact</h2>
+        <span class="dialog-text">Tasks are better with a team!</span>
+        <div class="dialo-text-seperator"></div>
+      </div>
+      <div class="dialog-right">
+        <img
+          class="unknown-user"
+          src="../assets/img/png/unknown-user.png"
+          alt=""
+        />
+        <div class="dialog-content-right">
+          <div onclick="closeDialog()" class="close-cross">
+            <img class="cross" src="../assets/img/png/close.png" alt="" />
+          </div>
+          <div class="input-fields-contacts">
+            <div>
+              <input
+                id="name"
+                class="input-name"
+                type="text"
+                placeholder="Name"
+              />
+              <div class="field-alert" id="field_alert_name"></div>
+            </div>
+            <div>
+              <input
+                id="email"
+                class="input-email"
+                type="email"
+                placeholder="Email"
+              />
+              <div class="field-alert" id="field_alert_email"></div>
+            </div>
+            <div>
+              <input
+                id="phone"
+                class="input-phone"
+                type="number"
+                min="0"
+                placeholder="Phone"
+              />
+              <div class="field-alert" id="field_alert_phone"></div>
+            </div>
+          </div>
+
+          <div class="button-contacts">
+            <button onclick="closeDialog()" class="button-cancel">
+              Cancel
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 14 14"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  class="close-icon-button"
+                  d="M7.06917 7.00008L12.3122 12.2431M1.82617 12.2431L7.06917 7.00008L1.82617 12.2431ZM12.3122 1.75708L7.06817 7.00008L12.3122 1.75708ZM7.06817 7.00008L1.82617 1.75708L7.06817 7.00008Z"
+                  stroke="#2A3647"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  ƒ
+                />
+              </svg>
+            </button>
+            <button onclick="validateForm()" class="button-create">
+              Create contact
+              <img
+                class="check-icon-button"
+                src="../assets/img/png/check.png"
+                alt="check"
+              />
+            </button>
+          </div>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog id="dialog_edit">
+      <div class="dialog-left">
+        <img
+          class="logo-dialog"
+          src="../assets/img/png/Join logo vector.png"
+          alt=""
+        />
+        <h2>Edit contact</h2>
+        <div class="dialo-text-seperator"></div>
+      </div>
+      <div class="dialog-right">
+        <div id="big_letter_circle"></div>
+        <div class="dialog-content-right">
+          <div onclick="closeDialogEdit()" class="close-cross">
+            <img class="cross" src="../assets/img/png/close.png" alt="" />
+          </div>
+          <div class="input-fields-contacts">
+            <div>
+              <input
+                id="inputEditName"
+                class="input-name"
+                type="text"
+                placeholder="Name"
+              />
+              <div class="field-alert" id="edit_field_alert_name"></div>
+            </div>
+            <div>
+              <input
+                id="inputEditEmail"
+                class="input-email"
+                type="email"
+                placeholder="Email"
+              />
+              <div class="field-alert" id="edit_field_alert_email"></div>
+            </div>
+            <div>
+              <input
+                id="inputEditPhone"
+                class="input-phone"
+                type="number"
+                min="0"
+                placeholder="Phone"
+              />
+              <div class="field-alert" id="edit_field_alert_phone"></div>
+            </div>
+          </div>
+          <div id="button_edit_dialog" class="button-delete-save"></div>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog id="succesfully_created"></dialog>
+
+    <div
+      onclick="closeDialog(), closeDialogEdit()"
+      id="grey_background"
+      class="grey-background hidden"
+    ></div>
+
+    <div id="mobile_contact_info" class="mobile-contact-info d-none">
+      <div class="text-box">
+        <h1>Contacts</h1>
+        <div class="text-seperator"></div>
+        <span class="info-text">Better with a Team</span>
+        <img
+          id="arrow_back"
+          onclick="goBackMobile()"
+          class="arrow-back"
+          src="../assets/img/png/arrow-left-line.png"
+          alt=""
+        />
+      </div>
+      <div class="mobile-contacts-info-box"></div>
+      <div onclick="openMobileMenu()" class="mobile-delete-edit">
+        <img src="../assets/img/png/three_dots.png" alt="" />
+      </div>
+    </div>
+
+    <div id="mobile_menu" class="mobile-menu">
+      <img
+        class="mobile-edit-img"
+        src="../assets/img/png/edit-default.png"
+        alt="edit"
+      />
+      <img
+        class="mobile-delete-img"
+        src="../assets/img/png/delete-default.png"
+        alt="delete"
+      />
+    </div>
+
+    <div onclick="openDialog()" class="mobile-add-contact">
+      <img src="../assets/img/png/person_add.png" alt="" />
+    </div>
   </body>
-  
 </html>

@@ -1,0 +1,151 @@
+@media screen and (max-width: 1240px) {
+  header {
+    width: calc(100% - clamp(100px, 15vw, 144px));
+    left: clamp(100px, 15vw, 144px);
+    padding: 20px 40px 20px 63px;
+  }
+  aside {
+    width: clamp(100px, 15vw, 144px);
+  }
+
+  .icon-bar {
+    height: unset;
+  }
+
+  .box-icons {
+    margin-bottom: 30px;
+    width: clamp(100px, 15vw, 144px);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 46px;
+    padding: 13px 0px 0px 0px;
+    box-sizing: border-box;
+    font-size: clamp(12px, 2vw, 16px);
+    flex-direction: column;
+  }
+
+  .link-legal-credits {
+    padding-left: clamp(0px, 1vw, 18px);
+  }
+
+  .link-policy-credits {
+    padding-left: clamp(0px, 1vw, 18px);
+  }
+
+  .help {
+    display: none;
+  }
+
+  .icon-box {
+    justify-content: flex-end;
+  }
+
+  .credit-box {
+    width: unset;
+  }
+
+  .credit {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 777px) {
+  header {
+    left: 0;
+    width: 100%;
+    height: 80px;
+    padding: 20px 16px;
+    z-index: 98;
+  }
+
+  header span {
+    display: none;
+  }
+
+  .icon-box {
+    width: unset;
+  }
+
+  .icon-box a {
+    display: none;
+  }
+
+  .logo-mobile {
+    display: block;
+  }
+
+  .log-out {
+    left: calc(93% - 171px);
+    top: 61px;
+  }
+
+  aside {
+    width: clamp(320px, 100%, 777px);
+    height: 80px;
+    bottom: 0px;
+    top: unset;
+    padding: 0px 9px;
+  }
+
+  .icon-bar {
+    height: 80px;
+    gap: 10px;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .box-icons {
+    width: clamp(66px, 13vw, 99px);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: unset;
+    padding: 0;
+    box-sizing: border-box;
+    flex-direction: column;
+  }
+
+  .link-sidebar.disabled {
+    margin: 4px 0px 2px;
+  }
+
+  .logo-sidebar {
+    display: none;
+  }
+
+  .credit-box {
+    display: none;
+  }
+
+  .summary-link {
+    padding: 15px 0px;
+    display: flex;
+    border-radius: 9px;
+    gap: 10px;
+  }
+
+  .addTask-link {
+    padding: 15px 0px;
+    display: flex;
+    border-radius: 9px;
+    gap: 10px;
+  }
+
+  .board-link {
+    padding: 15px 0px;
+    display: flex;
+    border-radius: 9px;
+    gap: 10px;
+  }
+
+  .contacts-link {
+    padding: 15px 0px;
+    display: flex;
+    border-radius: 9px;
+    gap: 10px;
+  }
+  .greeting {
+    display: none;
+  }
+}

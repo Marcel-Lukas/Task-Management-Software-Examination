@@ -5,29 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Join - Die einfache und effiziente Plattform für Teamarbeit und Projektmanagement. Organisiere Aufgaben, kommuniziere mit deinem Team und steigere die Produktivität.">
     <meta name="keywords" content="Join, Projektmanagement, Teamarbeit, Aufgabenorganisation, Kommunikation, Produktivität, Trello-Alternative, Slack-Alternative">
-    <meta name="author" content="Andreas Klepel, Marcel Lukas, Nicolaus Feldtmann">
+    <meta name="author" content="Marcel Lukas">
     <link rel="icon" type="image/png" href="../assets/img/favicon/favicon-96x96.png" sizes="96x96">
     <link rel="icon" type="image/svg+xml" href="../assets/img/favicon/favicon.svg">
     <link rel="shortcut icon" href="../assets/img/favicon/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/favicon/apple-touch-icon.png">
     <link rel="manifest" href="../assets/img/favicon/site.webmanifest">
-    <title>Summary</title>
+    <title>summary</title>
 
-    <link rel="stylesheet" type="text/css" href="../main.css">
-    <link rel="stylesheet" type="text/css" href="../styles/desktopTemplate.css">
-    <link rel="stylesheet" type="text/css" href="../styles/fonts.css">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../styles/summary.css" />
+    <link rel="stylesheet" href="../styles/fonts.css" />
+    <link rel="stylesheet" href="../styles/desktopTemplate.css" />
+    <link rel="stylesheet" href="../styles/media.css" />
+    <link rel="stylesheet" href="../styles/media/mediaSummary.css" />
+    <link rel="stylesheet" href="../styles/media/mediaDesktopTemplate.css" />
 
-    <link rel="stylesheet" type="text/css" href="../styles/summary.css">
+    <script src="../scripts/desktopTemplate.js"></script>
+    <script src="../script.js"></script>
+    <script src="../scripts/summary.js"></script>
+    <script src="../scripts/dbBackup.js"></script>
 
-    <script defer src="../main.js"></script>
-    <script defer src="../scripts/summery.js"></script>
-    
   </head>
-
-  <body onload="includeHTML()">
-    <div w3-include-html="../assets/templates/desktopTemplate.html"></div>
-    
-    <main>
+  <body>
+    <div id="desktop_template"></div>
+    <div class="content summary">
       <div class="head">
         <h1>Join 360</h1>
         <div class="seperator-blue"></div>
@@ -36,22 +38,25 @@
       <div class="d-flex center">
         <div class="content-tasks">
           <div class="to-do-done-block">
-            
             <div onclick="navigatonToBoard()" class="upper-task-block">
               <div class="circel edit">
-                <img class="edit" src="../assets/img/png/edit.png" alt=""/>
+                <img class="edit" src="../assets/img/png/edit.png" alt="" />
               </div>
               <div class="number-block">
-                <span id="count_to_do" class="number-of-tasks">2</span>
+                <span id="count_to_do" class="number-of-tasks"></span>
                 <span>To-do</span>
               </div>
             </div>
             <div onclick="navigatonToBoard()" class="upper-task-block">
               <div class="circel check">
-                <img class="check" src="../assets/img/png/check-summary.png" alt=""/>
+                <img
+                  class="check"
+                  src="../assets/img/png/check-summary.png"
+                  alt=""
+                />
               </div>
               <div class="number-block">
-                <span id="count_done" class="number-of-tasks">1</span>
+                <span id="count_done" class="number-of-tasks"></span>
                 <span>Done</span>
               </div>
             </div>
@@ -59,38 +64,40 @@
           <div onclick="navigatonToBoard()" class="priority-block">
             <div class="priority-and-nummber">
               <div class="circel-priority">
-                <img src="../assets/img/png/Prio-urgent-white.png" alt=""/>
+                <img src="../assets/img/png/Prio-urgent-white.png" alt="" />
               </div>
               <div class="number-block">
-                <span id="count_priority_urgent" class="number-of-tasks">1</span>
+                <span id="count_priority_urgent" class="number-of-tasks"></span>
                 <span class="font-s16">Urgent</span>
               </div>
             </div>
             <div class="seperator-grey"></div>
             <div class="deadline">
-              <span id="deadline_date" class="date">February 16, 2025</span>
+              <span id="deadline_date" class="date"></span>
               <p>Upcoming Deadline</p>
             </div>
           </div>
           <div class="task-block">
             <div onclick="navigatonToBoard()" class="task-in-block">
-              <span id="count_tasks" class="number-of-tasks">5</span>
+              <span id="count_tasks" class="number-of-tasks"></span>
               <span class="width-86">Tasks in Board</span>
             </div>
             <div onclick="navigatonToBoard()" class="task-in-block">
-              <span id="count_progress" class="number-of-tasks">1</span>
-              <span class="width-86">Tasks in Progress</span>
+              <span id="count_progress" class="number-of-tasks"></span>
+              <span class="width-86"
+                >Tasks in <br />
+                Progress</span
+              >
             </div>
             <div onclick="navigatonToBoard()" class="task-in-block">
-              <span id="count_feedback" class="number-of-tasks">1</span>
+              <span id="count_feedback" class="number-of-tasks"></span>
               <span class="width-86">Awaiting Feedback</span>
             </div>
           </div>
         </div>
         <h3 class="greeting" id="greetings"></h3>
       </div>
-    </main>
-
+    </div>
+    <dialog id="greeting_mobile" class="greeting-mobile d-none"></dialog>
   </body>
-  
 </html>

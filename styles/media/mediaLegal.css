@@ -1,0 +1,29 @@
+@media screen and (max-width: 1440px) {
+  .content {
+    padding-inline: clamp(39px, 3vw, 96px);
+  }
+}
+
+@media screen and (max-width: 1240px) {
+  .content {
+    padding: 110px 30px 70px;
+  }
+}
+
+@media screen and (max-width: 777px) {
+  .content {
+    height: calc(100% - 65px);
+    width: 100%;
+    margin: 80px 0px 80px;
+    padding: 48px 16px 0px;
+  }
+
+  .arrow-back {
+    left: calc(100% - 54px);
+    top: 150px;
+  }
+
+  h1 {
+    font-size: clamp(36px, 3vw, 61px);
+  }
+}

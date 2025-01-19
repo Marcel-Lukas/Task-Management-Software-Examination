@@ -1,9 +1,7 @@
-/* Header Template */
-
 header {
-  position: absolute;
   top: 0;
   left: 232px;
+  position: absolute;
   font-size: 20px;
   display: flex;
   width: calc(100% - 232px);
@@ -15,26 +13,16 @@ header {
   align-items: center;
   box-sizing: border-box;
   background-color: white;
-  position: fixed;
 }
 
 .help {
   width: 32px;
   height: 32px;
-  transition: 222ms ease-in-out;
 }
 
 .help:hover {
-  cursor: pointer;
-  transform: scale(126%);
-}
-
-.icon-box {
-  width: 104px;
-  height: 56px;
-  gap: 16px;
-  display: flex;
-  align-items: center;
+  scale: 1.3;
+  transition: 125ms;
 }
 
 .user-profile-initials-box {
@@ -51,12 +39,17 @@ header {
 }
 
 .user-profile-initials-box:hover {
-  cursor: pointer;
   background-color: rgb(225, 230, 237);
+  cursor: pointer;
 }
 
-
-/* Popup Menu Header */
+.icon-box {
+  width: 104px;
+  height: 56px;
+  gap: 16px;
+  display: flex;
+  align-items: center;
+}
 
 .log-out {
   z-index: 1;
@@ -69,24 +62,21 @@ header {
   top: 69px;
   left: calc(100% - 254px);
   font-size: clamp(16px, 3vw, 20px);
-  box-shadow: 0px 0px 12px rgba(255, 255, 255, 0.9);
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+  border-bottom: 1px solid white;
+  border-top: none;
 }
 
 #log_out a {
   text-decoration: none;
   padding: 8px 16px;
   color: #cdcdcd;
-  border-radius: 8px;
 }
 
 #log_out a:hover {
-  cursor: pointer;
-  background-color: #364b69;
+  background-color: #2a3d59;
 }
-
-
-
-/* Site Navigation */
 
 aside {
   top: 0;
@@ -101,11 +91,10 @@ aside {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  position: fixed;
 }
 
 .logo-sidebar {
-  width: clamp(70px, 10vw, 100px);
+  width: clamp(70px, 10vw, 100.03px);
 }
 
 .icon-bar {
@@ -134,13 +123,14 @@ aside {
   font-size: clamp(12px, 2vw, 16px);
 }
 
+.box-icons path {
+  fill: #cdcdcd;
+}
+
 .link-sidebar:hover {
   cursor: pointer;
   background-color: #2a3d59;
 }
-
-
-/* PrivacyPolicy & LegalNotice */
 
 .credit-box {
   width: 100%;
@@ -150,6 +140,44 @@ aside {
   justify-content: flex-end;
   box-sizing: border-box;
   gap: 8px;
+}
+
+.link-policy-credits {
+  text-decoration: none;
+  color: #a8a8a8;
+  padding-left: 52px;
+}
+
+.link-policy-credits:hover {
+  font-weight: 700;
+  cursor: pointer;
+  color: #29abe2;
+}
+
+.link-policy-credits.disabled {
+  pointer-events: none; 
+  font-weight: normal; 
+  cursor: default;
+  color: #a8a8a8;
+}
+
+.link-legal-credits {
+  text-decoration: none;
+  color: #a8a8a8;
+  padding-left: 52px;
+}
+
+.link-legal-credits:hover {
+  font-weight: 700;
+  cursor: pointer;
+  color: #29abe2;
+}
+
+.link-legal-credits.disabled {
+  pointer-events: none !important;
+  font-weight: normal !important;
+  cursor: default !important;
+  color: #a8a8a8 !important;
 }
 
 .credit {
@@ -164,14 +192,39 @@ aside {
   font-size: clamp(12px, 1.5vw, 16px);
 }
 
-.link-credits {
-  text-decoration: none;
-  color: #a8a8a8;
-  padding-left: 52px;
+.link-sidebar.disabled {
+  pointer-events: none; 
+  background-color: #091931; 
+  color: #ffffff; 
 }
 
-.link-credits:hover {
-  font-weight: 600;
-  cursor: pointer;
-  color: #29abe2;
+.link-sidebar.disabled:hover {
+  cursor: default; 
+  background-color: #2a3d59;
+}
+
+.disabled {
+  pointer-events: none; 
+  color: grey; 
+  cursor: not-allowed; 
+}
+
+.bg-color {
+  background-color: rgb(225, 230, 237) !important;
+}
+
+a:hover {
+  font-weight: 400;
+}
+
+.logo-mobile {
+  display: none;
+}
+
+.d-flex{
+  display: flex;
+}
+
+.d-none{
+  display: none;
 }
