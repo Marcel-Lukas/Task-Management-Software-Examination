@@ -240,9 +240,14 @@ function getCategoryValue() {
  * @returns - true or false of completion
  */
 function isFormComplete(input, category) {
+  let today = new Date();
+  today.setHours(0, 0, 0, 0);
+  let selectedDate = new Date(input.date);
+  selectedDate.setHours(0, 0, 0, 0);
   return (
     input.input !== "" &&
     input.date !== "" &&
+    selectedDate >= today && 
     (category === "Technical Task" || category === "User Story")
   );
 }
@@ -262,8 +267,11 @@ function processInvalidForm() {
 function setDate() {
   let today = new Date();
   let dd = String(today.getDate()).padStart(2, "0");
-  let mm = String(today.getMonth() + 1).padStart(2, "0");
+  let mm = String(today.getMonth() + 1).padStart(2, "0"); 
   let yyyy = today.getFullYear();
   let formattedDate = `${yyyy}-${mm}-${dd}`;
-  document.getElementById("due_date").setAttribute("min", formattedDate);
+  let dueDateInput = document.getElementById("due_date");
+  dueDateInput.setAttribute("min", formattedDate); 
+  dueDateInput.placeholder = "Wählen Sie ein Fälligkeitsdatum"; 
+  dueDateInput.value = ""; 
 }

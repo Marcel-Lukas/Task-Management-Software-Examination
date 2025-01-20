@@ -333,9 +333,15 @@ function requiredTitle() {
 function requiredDate() {
   let date = document.getElementById("due_date");
   let alertDate = document.getElementById("date_field_alert");
-  if (date.value.trim() == "") {
-    date.classList.add("alert-border");
-    alertDate.classList.remove("d-none");
+  let today = new Date();
+  if (date.value.trim() == "" || new Date(date.value) < today) {
+      date.classList.add("alert-border");
+      alertDate.classList.remove("d-none");
+      return false;
+  } else {
+      date.classList.remove("alert-border");
+      alertDate.classList.add("d-none");
+      return true;
   }
 }
 
