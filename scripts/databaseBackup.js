@@ -239,8 +239,8 @@ let dbBackupContacts = [
     phone: "0176-8165542",
   },
   {
-    color: "#19FF82",
-    email: "bill67@gmail.com",
+    color: "#59C248",
+    email: "bill67@microsoft.com",
     id: 2,
     initials: "BG",
     name: "Bill Gates",
