@@ -150,9 +150,8 @@ function handleLoginError() {
 }
 
 /**
- * This function continuously generates snowflakes on the log in and sign up start page for 
- * winter fler, especially in December and January. The snowflakes are attached to an 
- * element with the ID “snow-content” and removed after 9 seconds to avoid clutter.
+ * This function continuously generates snowflakes on the log in and 
+ * sign up start page for winter fler, especially in December and January.
  */
 const createSnowflake = () => {
   if (![0, 11].includes(new Date().getMonth())) return;
