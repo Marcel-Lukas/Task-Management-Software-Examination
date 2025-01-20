@@ -232,10 +232,10 @@ let dbBackupTask = [
 let dbBackupContacts = [
   {
     color: "#01687E",
-    email: "a.schreiner@web.de",
+    email: "adam.schuster@web.de",
     id: 1,
     initials: "AS",
-    name: "Anna Schreiner",
+    name: "Adam Schuster",
     phone: "0176-8165542",
   },
   {
