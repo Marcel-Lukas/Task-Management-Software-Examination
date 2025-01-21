@@ -81,6 +81,7 @@ input{
   border-radius: 10px;
   display: flex;
   align-items: center;
+  color: #d1d1d1;
 }
 
 ::placeholder {
