@@ -4,15 +4,6 @@
     --clr: rgb(41, 171, 226);
 }
 
-.container {
-    position: relative;
-    top: 100px;
-    height: 400px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    animation: animateColor 5s linear infinite ;
-}
 
 
 
@@ -21,6 +12,7 @@
     width: 300px;
     z-index: 100;
     filter: drop-shadow(0 0 35px var(--clr));
+    pointer-events: none;
 }
 
 .container .cloud h2 {
@@ -101,37 +93,10 @@
         text-shadow: -180px 0 0 var(--clr), 180px 0 var(--clr);
     }
 }@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-*
-{
-    margin: 0;
-    padding:0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
 
 :root{
     --clr: #0f0;
 }
-
-body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: #000;
-    transform: scale(0.6);
-}
-
-.container {
-    position: relative;
-    top: 100px;
-    height: 400px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    animation: animateColor 5s linear infinite ;
-}
-
 
 
 .container .cloud {

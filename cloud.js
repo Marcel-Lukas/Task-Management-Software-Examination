@@ -28,5 +28,5 @@ function rain() {
 
 setInterval(function(){
     rain()
-},20);
+},200);
 
