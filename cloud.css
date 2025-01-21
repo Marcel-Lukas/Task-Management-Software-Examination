@@ -1,45 +1,45 @@
-:root{
-    --clr: rgb(66, 233, 15);
-}
-
-.container .cloud {
+.cloud {
     position: relative;
     z-index: 1;
     pointer-events: none;
     width: 640px;
 }
 
-.container .cloud .drop{
+.drop {
   position: absolute;
-  top: -90px;
-  color: var(--clr);
-  transform-origin: bottom;
-  animation: animate 777ms linear infinite;
+  top: -58px;
+  animation: animate 1444ms linear infinite;
   background-color: rgba(0, 0, 0, 0.65);
 }
 
 @keyframes animate {
     0%{
-        transform: translateY(0) scaleY(0);
-        
+        transform: translateY(0) scaleY(-0.1);
     }
     10%{
-        transform: translateY(10px) scaleY(0.2);
-        
+        transform: translateY(0) scaleY(0.2);
     }
     20%{
-        transform: translateY(30px) scaleY(0.5);
+        transform: translateY(0) scaleY(0.5);
     }
-    
     70%{
         transform: translateY(200px) scaleY(0.7);
-        
     }
     80%{
-        transform: translateY(300px) scaleY(1);
-        
+        transform: translateY(300px) scaleY(1); 
     }
     100%{
-        transform: translateY(600px) scaleY(0);
+        transform: translateY(480px) scaleY(0);
     }
+}
+
+#login_email, 
+#login_password,
+h1, .blue-line
+ {
+  z-index: 3;
+}
+
+h1 {
+  filter: drop-shadow(0px 0px 8px #ffffff);
 }
