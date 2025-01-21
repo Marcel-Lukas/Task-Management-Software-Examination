@@ -272,6 +272,5 @@ function setDate() {
   let formattedDate = `${yyyy}-${mm}-${dd}`;
   let dueDateInput = document.getElementById("due_date");
   dueDateInput.setAttribute("min", formattedDate); 
-  dueDateInput.placeholder = "Wählen Sie ein Fälligkeitsdatum"; 
   dueDateInput.value = ""; 
 }
