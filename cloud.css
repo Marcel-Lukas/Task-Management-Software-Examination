@@ -41,7 +41,7 @@
         transform-origin: bottom;
     }
     100%{
-        transform: translateY(300px) scaleY(0);
+        transform: translateY(600px) scaleY(0);
         transform-origin: bottom;
         text-shadow: -180px 0 0 var(--clr), 180px 0 var(--clr);
     }
