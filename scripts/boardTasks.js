@@ -21,6 +21,12 @@ function cleanBoard() {
  */
 async function renderTasksInStatusArea() {
   let tasksToRender = await filterUserTasks();
+  
+  // Entfernen Sie den ersten Task aus der Liste zum Rendern
+  if (tasksToRender.length > 0) {
+    tasksToRender = tasksToRender.slice(1);
+  }
+
   tasksToRender = filterSoughtTaskToRender(tasksToRender);
   noTaskFound(tasksToRender);
   let contacts = await fetchData("contacts");

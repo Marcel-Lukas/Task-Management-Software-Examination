@@ -62,17 +62,7 @@ async function deleteData(path = "", id) {
  * @param {string} path - The API endpoint path
  * @returns {Number} - New ID
  */
-async function getNewId(path = "") {
-  let response = await fetch(`${BASE_URL}/${path}/.json`);
-  let responseToJson = await response.json();
-  let newUserId;
-  if (responseToJson == null) {
-    newUserId = 1;
-  } else {
-    newUserId = countId(responseToJson);
-  }
-  return newUserId;
-}
+
 
 /**
  * Calculates the next available ID based on the last entry in the response.
