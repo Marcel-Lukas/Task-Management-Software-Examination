@@ -18,11 +18,11 @@ function cleanBoard() {
 
 /**
  * Renders filtered tasks in their respective status areas on the Kanban board.
+ * IGNORS FIRST TASK IN API
  */
 async function renderTasksInStatusArea() {
   let tasksToRender = await filterUserTasks();
   
-  // Entfernen Sie den ersten Task aus der Liste zum Rendern
   if (tasksToRender.length > 0) {
     tasksToRender = tasksToRender.slice(1);
   }
