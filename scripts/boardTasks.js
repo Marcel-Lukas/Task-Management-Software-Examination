@@ -18,22 +18,24 @@ function cleanBoard() {
 
 /**
  * Renders filtered tasks in their respective status areas on the Kanban board.
- * IGNORS FIRST TASK IN API
+ * First element is removed so that the first entry in the API is not 
+ * lost during deletion actions.
  */
 async function renderTasksInStatusArea() {
-  let tasksToRender = await filterUserTasks();
-  
-  if (tasksToRender.length > 0) {
-    tasksToRender = tasksToRender.slice(1);
+  try {
+    let userTasks = await filterUserTasks();
+    if (userTasks.length > 0) {
+      userTasks = userTasks.slice(1);
+    }
+    userTasks = filterSoughtTaskToRender(userTasks);
+    noTaskFound(userTasks);
+    const contacts = await fetchData("contacts");
+    STATUSES.forEach((status) => {
+      renderStatusArea(status, userTasks, contacts);
+    });
+  } catch (error) {
+    console.error("Fehler beim Rendern der Tasks:", error);
   }
-
-  tasksToRender = filterSoughtTaskToRender(tasksToRender);
-  noTaskFound(tasksToRender);
-  let contacts = await fetchData("contacts");
-
-  STATUSES.forEach((status) =>
-    renderStatusArea(status, tasksToRender, contacts)
-  );
 }
 
 /**
