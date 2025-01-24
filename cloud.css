@@ -49,7 +49,7 @@ h1 {
 #travoltaGif {
   position: absolute;
   z-index: 2;
-  top: 49px;
+  top: 65px;
   left: 490px;
 }
 
@@ -128,3 +128,31 @@ canvas {
 }
 
 
+#danceGif {
+  height: 333px;
+  border-radius: 33px;
+  box-shadow: 12px 8px 16px rgba(0, 0, 0, 0.9);
+  position: absolute;
+  z-index: 2;
+  top: 111px;
+  left: -380px;
+  animation: dance 2222ms infinite;
+}
+
+@keyframes dance {
+  0% {
+    transform: translateX(0) rotate(0deg);
+  }
+  25% {
+    transform: translateX(-33px) translateY(-11px) rotate(-11deg);
+  }
+  50% {
+    transform: translateX(22px) translateY(22px) rotate(5deg);
+  }
+  75% {
+    transform: translateX(-11px) translateY(11px) rotate(-9deg);
+  }
+  100% {
+    transform: translateX(0) rotate(0deg);
+  }
+}

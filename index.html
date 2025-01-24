@@ -57,9 +57,13 @@
   <form id="Login" onsubmit="loginAsUser(); return false" class="access-window window-login d-flex-column-center container">
     <div class="access-headline d-flex-column-center">
 
-      <div class="cloud"></div>
+      <div id="matrix" class="cloud"></div>
+
       <div><img id="zaunDude" src="zaun-dude.png" alt=""></div>
+
       <div><img id="travoltaGif" src="travolta.gif" alt=""></div>
+
+      <div><img class="d-none" id="danceGif" src="dance.gif" alt=""></div>
 
       <h1>Log in</h1>
       <div class="blue-line"></div>
@@ -162,7 +166,36 @@
 
   
   <script src="stars.js"></script>
+  <audio id="canTell" src="CanTell.mp3" style="display: none"></audio>
 
+
+
+  <script>
+    window.addEventListener("load", () => {
+        const audio = document.querySelector("#canTell");
+        const danceGif = document.querySelector("#danceGif");
+        const travoltaGif = document.querySelector("#travoltaGif");
+        const matrixshit = document.querySelector("#matrix");
+        const zaunDude = document.querySelector("#zaunDude");
+        audio.volume = 0.4;
+
+        audio.play()
+            .then(() => {
+                setTimeout(() => {
+                    danceGif.classList.remove("d-none");
+                }, 2777);
+                setTimeout(() => {
+                    danceGif.classList.add("d-none");
+                    travoltaGif.classList.add("d-none");
+                    matrixshit.classList.add("d-none");
+                    zaunDude.classList.add("d-none");
+                }, 160000);
+            })
+            .catch(error => {
+                console.error("Audio konnte nicht abgespielt werden:", error);
+            });
+      });
+  </script>
 
 </body>
 
