@@ -48,7 +48,7 @@ h1 {
 
 #travoltaGif {
   position: absolute;
-  z-index: 222;
+  z-index: 2;
   top: 33px;
   left: 500px;
 }
