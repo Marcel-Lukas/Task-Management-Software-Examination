@@ -156,3 +156,13 @@ canvas {
     transform: translateX(0) rotate(0deg);
   }
 }
+
+
+#typeEffekt {
+  position: absolute;
+  top: -120px;
+  left: -290px;
+  font-size: 33px;
+  color: rgb(41, 41, 41);
+  text-shadow: 0px 0px 12px rgb(255, 255, 255);
+}
