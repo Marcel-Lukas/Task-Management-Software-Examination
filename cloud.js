@@ -1,3 +1,9 @@
+let audioTadaa = new Audio ('tadaa.mp3');
+
+function tadaa() {
+    audioTadaa.play();
+}
+
 function randomText(){
     let text = ("1010101011010101MATRIXアイウエカキクケコセタトナヌネハヒフヘマミムメモヤユヨラリルレロワヲングゴズゼゾダデドバビブベパピプペ")
     letters =text[Math.floor(Math.random() * text.length)];
