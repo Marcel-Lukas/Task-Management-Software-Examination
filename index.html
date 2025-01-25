@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
@@ -13,12 +13,6 @@
   <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png">
   <link rel="manifest" href="assets/img/favicon/site.webmanifest">
   <title>Join - Projektmanagement</title>
-
-  <link rel="stylesheet" href="cloud.css">
-  <script src="cloud.js"></script>
-  <script defer src="core2.js"></script>
-  <script defer src="typewriter.js"></script>
-  <script defer src="shit.js"></script>
 
   <link rel="stylesheet" href="./style.css" />
   <link rel="stylesheet" href="./styles/fonts.css" />
@@ -38,9 +32,6 @@
 </head>
 
 <body onload="initAccess()">
-  <canvas id="starCanvas"></canvas>
-  <div id="snow-content"></div>
-  <div><h1 id="typeEffektZwei"></h1></div>
 
   <div class="logo-container">
     <img class="img-logo" alt="join logo" />
@@ -48,6 +39,7 @@
 
   <div id="change_access" class="change-access d-flex-spbe-center">
     <div class="font-c-black">Not a Join user?</div>
+
     <button class="font-s-16"
       onclick="toggleAccessWindow(), resetSignupFormInputs(), resetSignupAlert(), removeNoticeButtonBg()">
       Sign up
@@ -60,22 +52,14 @@
   </div>
 
   <form id="Login" onsubmit="loginAsUser(); return false" class="access-window window-login d-flex-column-center container">
+
     <div class="access-headline d-flex-column-center">
-
-      <div id="matrix" class="cloud"></div>
-
-      <div><img id="zaunDude" src="zaun-dude.png" alt=""></div>
-      <h1 id="typeEffekt"></h1>
-
-      <div><img id="travoltaGif" src="travolta.gif" alt=""></div>
-
-      <div><img class="d-none" id="danceGif" src="dance.gif" alt=""></div>
-
       <h1>Log in</h1>
       <div class="blue-line"></div>
     </div>
 
     <div class="content-area w-100 d-flex-column-center">
+
       <div class="input-space-login w-100 d-flex-column-center">
         <div class="w-100 d-flex-column pos-rel">
           <input id="login_email" type="e-mail" placeholder="Email" autocomplete="e-mail" required />
@@ -114,7 +98,6 @@
     <img class="litte-button wh-32 d-flex-center arrow"
       onclick="toggleAccessWindow(), resetLoginAlert(), resetLoginFormInputs(), checkRememberMeData()"
       src="./assets/img/png/arrow-left-line.png" alt="back arrow" />
-
     <div class="access-headline d-flex-column-center">
       <h1>Sign up</h1>
       <div class="blue-line"></div>
@@ -162,54 +145,11 @@
 
     <button class="signup-btn" type="submit">Sign up</button>
   </form>
-
   <div id="successfully_signed_up" class="overlay d-flex-center d-none">
     <div class="signup-message d-flex-center font-s-20 font-c-white">
       You Signed Up successfully
     </div>
   </div>
-
-
-  
-  <script src="stars.js"></script>
-
-  <canvas id="canvassn" width="400" height="400"></canvas>
-
-  <audio id="canTell" src="CanTell.mp3" style="display: none"></audio>
-
-  <div><img id="bitch" src="giphy.gif" alt=""></div>
-  <div><img id="bitchzwei" src="giphyzwei.gif" alt=""></div>
-
-  <div><img id="zaunDudeZwei" src="zaun-dude.png" alt=""></div>
-
-
-
-  <script>
-    window.addEventListener("load", () => {
-        const audio = document.querySelector("#canTell");
-        const danceGif = document.querySelector("#danceGif");
-        const travoltaGif = document.querySelector("#travoltaGif");
-        const matrixshit = document.querySelector("#matrix");
-        const zaunDude = document.querySelector("#zaunDude");
-        audio.volume = 0.1;
-
-        audio.play()
-            .then(() => {
-                setTimeout(() => {
-                    danceGif.classList.remove("d-none");
-                }, 2777);
-                setTimeout(() => {
-                    danceGif.classList.add("d-none");
-                    travoltaGif.classList.add("d-none");
-                    matrixshit.classList.add("d-none");
-                    zaunDude.classList.add("d-none");
-                }, 160000);
-            })
-            .catch(error => {
-                console.error("Audio konnte nicht abgespielt werden:", error);
-            });
-      });
-  </script>
 
 </body>
 
