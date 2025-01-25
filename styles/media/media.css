@@ -32,6 +32,10 @@
     margin-left: 0;
   }
 
+  aside{
+    visibility: hidden;
+  }
+
   footer{
     visibility: visible;
   }
