@@ -33,12 +33,6 @@
     }
 }
 
-#login_email, 
-#login_password,
-h1, .blue-line
- {
-  z-index: 3;
-}
 
 h1 {
   filter: drop-shadow(0px 0px 8px #ffffff);
