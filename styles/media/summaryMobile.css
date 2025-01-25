@@ -1,0 +1,20 @@
+@media screen and (max-width: 1440px) {
+    .greeting{
+        padding: 56px 0px 0px 32px;
+    }
+}
+
+@media screen and (max-width: 1240px) {
+    .content {
+        margin: 0px 270px 0px 270px;
+    }
+
+    header{
+        width: calc(100% - 107px);
+    }
+
+    aside{
+        height: 128vh;
+    }
+
+}

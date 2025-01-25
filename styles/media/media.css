@@ -7,13 +7,14 @@
 @media screen and (max-width: 1440px) {
   .content {
     padding-inline: clamp(16px, 1vw, 96px);
+  
   }
 }
 
 @media screen and (max-width: 1240px) {
   .content {
     width: calc(100% - 144px);
-    margin-left: 144px;
+    margin-left: 0px;
   }
 }
 
@@ -29,6 +30,10 @@
     width: 100%;
     margin-top: 80px;
     margin-left: 0;
+  }
+
+  footer{
+    visibility: visible;
   }
 
   h1 {

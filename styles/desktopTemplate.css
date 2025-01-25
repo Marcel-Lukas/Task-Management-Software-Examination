@@ -228,3 +228,9 @@ a:hover {
 .d-none{
   display: none;
 }
+
+footer{
+  background-color: rgb(42, 54, 71);
+  width: 1210px;
+  height: 40px;
+}

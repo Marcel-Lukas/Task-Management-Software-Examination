@@ -206,3 +206,11 @@ a:hover {
 .gap-32 {
   gap: 32px;
 }
+
+footer{
+  visibility: hidden;
+}
+
+.icon-bar-footer{
+  display: flex;
+}
