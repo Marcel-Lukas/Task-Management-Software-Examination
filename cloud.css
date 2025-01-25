@@ -266,3 +266,12 @@ h1 {
 ::-webkit-scrollbar {
   display: none;
 }
+
+#bitchzwei {
+  height: 400px;
+  position: absolute;
+  overflow-x: hidden;
+  top:  560px;
+  right: 150px;
+  z-index: -2;
+}
