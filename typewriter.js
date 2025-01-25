@@ -14,3 +14,20 @@ greetingsTypewriter
     .pauseFor(1000)
     .deleteAll()
     .start();
+
+
+
+
+
+
+const greetingsZwei = document.querySelector("#typeEffektZwei");
+
+const greetingsTypewriterZwei = new Typewriter(greetingsZwei, {
+    loop: true,
+});
+
+greetingsTypewriterZwei
+    .typeString('Hier könnte ihre Werbung stehen!')
+    .pauseFor(2222)
+    .deleteAll()
+    .start();
