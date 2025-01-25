@@ -28,8 +28,6 @@
 @media screen and (max-width: 777px) {
   .content {
     width: 100%;
-    margin-top: 80px;
-    margin-left: 0;
   }
 
   aside{
@@ -38,6 +36,12 @@
 
   footer{
     visibility: visible;
+    width: max-content;
+  }
+
+  .box-icons{
+    flex-direction: column;
+    width: 24px;
   }
 
   h1 {

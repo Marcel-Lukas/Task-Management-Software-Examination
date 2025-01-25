@@ -11,10 +11,31 @@
 
     header{
         width: calc(100% - 107px);
+        left: 232;
     }
 
     aside{
         height: 128vh;
     }
+}
 
+@media screen and (max-width: 770px) {
+
+    .greeting{
+        visibility: hidden;
+    }
+    
+    .summary{
+        margin: 0px;
+        padding: 110px 0px 70px 8px;;
+    }
+
+    header{
+        left: 0;
+    }
+
+    .upper-task-block{
+        width: 186px;
+        height: 110px;
+    }
 }
