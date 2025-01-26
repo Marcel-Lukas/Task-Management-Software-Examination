@@ -28,6 +28,20 @@
 @media screen and (max-width: 777px) {
   .content {
     width: 100%;
+    margin: 0px;
+  }
+
+  .number-of-tasks{
+    font-size: 48px;
+  }
+
+  header{
+    left: 0;
+    width: calc(100% - 0px);
+  }
+
+  span{
+    font-size: 14px;
   }
 
   aside{
@@ -36,7 +50,21 @@
 
   footer{
     visibility: visible;
-    width: max-content;
+    width: calc(100% - 0px);
+    height: 80px;
+    position:fixed;
+    bottom:0;
+  }
+
+  .icon-bar-footer{
+    justify-content: space-around;
+  }
+
+  .link-sidebar{
+    display: flex;
+    justify-content: center;
+    height: 76px;
+    width: 76px;
   }
 
   .box-icons{

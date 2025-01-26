@@ -6,12 +6,7 @@
 
 @media screen and (max-width: 1240px) {
     .content {
-        margin: 0px 270px 0px 270px;
-    }
-
-    header{
-        width: calc(100% - 107px);
-        left: 232;
+        margin: 0px 0px 0px 270px;
     }
 
     aside{
@@ -21,21 +16,93 @@
 
 @media screen and (max-width: 770px) {
 
+    .head{
+        flex-direction: column;
+        align-items: normal;
+    }
+
+    .header-span{
+        display: none;
+    }
+
+    h1{
+        font-size: 47px;
+    }
+
+    h2{
+        font-size: 20px;
+        margin: 8px 0px 8px 0px;
+    }
+
+    .seperator-blue{
+        display: none;
+    }
+
+    .seperator-horizontal{
+        visibility: visible;
+        width: 100px;
+        border: 1.5px solid #29abe2;
+    }
+
     .greeting{
-        visibility: hidden;
+        display: none;
+    }
+
+    .content-tasks{
+        height: 384px;
+        width: 396px;
+    }
+
+    .center{
+        justify-content: center;
     }
     
     .summary{
         margin: 0px;
         padding: 110px 0px 70px 8px;;
     }
+   
+    .task-in-block{
+        height: 116px;
+        width: 116px;
+    }
 
-    header{
-        left: 0;
+    .task-in-block:hover{
+        transform: none;
     }
 
     .upper-task-block{
         width: 186px;
         height: 110px;
+    }
+
+    .circel{
+        width:40px;
+        height: 40px;
+    }
+
+    .priority-block{
+        gap: 0;
+        justify-content: space-around;
+    }
+
+    .circel-priority{
+        width: 40px;
+        height: 40px;
+    }
+
+    img{
+        width: 22px;
+    }
+
+    .summary-link{
+        border-radius: 10px;
+    }
+}
+
+@media screen and (max-width:450px) {
+    
+    .content-tasks{
+        width: 280px;
     }
 }

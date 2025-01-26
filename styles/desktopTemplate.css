@@ -1,7 +1,7 @@
 header {
   top: 0;
   left: 232px;
-  position: absolute;
+  position: fixed;
   font-size: 20px;
   display: flex;
   width: calc(100% - 232px);
