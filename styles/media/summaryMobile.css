@@ -9,16 +9,55 @@
         margin: 0px 0px 0px 270px;
     }
 
+    .greeting{
+        display: none;
+    }
+
     aside{
         height: 128vh;
     }
 }
 
-@media screen and (max-width: 770px) {
+@media screen and (max-width: 860px) {
+       
+    .task-in-block{
+        height: 116px;
+        width: 116px;
+    }
+
+    .number-of-tasks{
+        font-size: 48px;
+    }
+
+    .width-86{
+        font-size: 16px;
+    }
+
+    .summary{
+        padding: 110px 0px 70px 0px;
+    }
+
+    .priority-block{
+        gap: 0;
+        justify-content: space-around;
+    }
+
+    .upper-task-block{
+        width: 186px;
+        height: 110px;
+    }
+
+    .content-tasks{
+        width: auto;
+    }
+}
+
+@media screen and (max-width: 777px) {
 
     .head{
         flex-direction: column;
         align-items: normal;
+        padding: 0px 0px 32px 8px;
     }
 
     .header-span{
@@ -44,10 +83,6 @@
         border: 1.5px solid #29abe2;
     }
 
-    .greeting{
-        display: none;
-    }
-
     .content-tasks{
         height: 384px;
         width: 396px;
@@ -59,31 +94,16 @@
     
     .summary{
         margin: 0px;
-        padding: 110px 0px 70px 8px;;
-    }
-   
-    .task-in-block{
-        height: 116px;
-        width: 116px;
+        padding: 110px 0px 70px 0px;
     }
 
     .task-in-block:hover{
         transform: none;
     }
 
-    .upper-task-block{
-        width: 186px;
-        height: 110px;
-    }
-
     .circel{
         width:40px;
         height: 40px;
-    }
-
-    .priority-block{
-        gap: 0;
-        justify-content: space-around;
     }
 
     .circel-priority{
@@ -101,7 +121,7 @@
 }
 
 @media screen and (max-width:450px) {
-    
+
     .content-tasks{
         width: 280px;
     }

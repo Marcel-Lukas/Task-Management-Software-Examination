@@ -26,6 +26,10 @@
 }
 
 @media screen and (max-width: 777px) {
+  body{
+    position: relative;
+  }
+
   .content {
     width: 100%;
     margin: 0px;
@@ -38,6 +42,7 @@
   header{
     left: 0;
     width: calc(100% - 0px);
+    height: 80px;
   }
 
   span{
@@ -45,7 +50,7 @@
   }
 
   aside{
-    visibility: hidden;
+    display: none;
   }
 
   footer{
