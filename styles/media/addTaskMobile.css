@@ -99,6 +99,27 @@
     .dividing-bar{
         margin: 0px 24px;
     }
+
+    .urgent-button{
+        width: 64px;
+        flex-direction: column-reverse;
+        padding: 12px 0px 24px 0px;
+        gap: 0;
+    }
+
+    .clicked-medium{
+        width: 64px;
+        flex-direction: column-reverse;
+        padding: 12px 0px 24px 0px;
+        gap: 0;
+    }
+
+    .low-button{
+        width: 64px;
+        flex-direction: column-reverse;
+        padding: 12px 0px 24px 0px;
+        gap: 0;
+    }
 }
 
 @media screen and (max-width: 777px) {
@@ -110,7 +131,7 @@
         margin: 56px 0px 0px 0px;
         max-height: 472px;
         overflow-y: scroll;
-        width: -webkit-fill-available;
+        width: auto;
     }
 
     .add-task-form-left{
@@ -177,19 +198,19 @@
 @media screen and (max-width: 450px) {
 
     input{
-        width: 200px;
+        width: 280px;
     }
 
     textarea{
-        width: 200px;
+        width: 280px;
     }
 
     .assigned-container{
-        width: 200px;
+        width: 280px;
     }
 
     .pos-rel{
-        width: 200px;
+        width: 280px;
     }
 
     .prio-span{
@@ -212,11 +233,11 @@
     }
 
     .add-task-form-left{
-        width: 200px;
+        width: 282px;
     }
 
     .add-task-form-right{
-        width: 280px;
+        width: 282px;
     }
 
     .bottom-order{
