@@ -1,0 +1,36 @@
+@media screen and (max-width: 1440px) {
+
+    .headerBox{
+        width: 964px;
+    }
+
+    .task-card-area{
+        width: 188px;
+    }
+}
+
+@media screen and (max-width: 1240px) {
+
+    .kanban-header{
+        justify-content: space-around;
+        width: 190px;
+        font-size: 18px;
+    }
+
+    .kanban-tasks{
+        align-items: center;
+    }
+
+    .d-felx-column{
+        width: 220px;
+    }
+
+    .kanban-board{
+        justify-content: start;
+    }
+}
+
+@media screen and(max-width: 1240px) {
+
+
+}
