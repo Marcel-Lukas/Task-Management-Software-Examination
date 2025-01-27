@@ -248,6 +248,7 @@ li {
   max-width: 976px;
   display: flex;
   justify-content: space-between;
+  background-color: rgb(246, 247, 248);
 }
 .bottom-edit-order {
   height: 56px;

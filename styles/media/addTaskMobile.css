@@ -1,0 +1,245 @@
+@media screen and(max-width:1440px) {
+    
+}
+
+@media screen and (max-width:1240px) {
+
+    .add_task_content{
+        margin-left: 232px;;
+    }
+
+    .pos-rel{
+        width: 280px;
+    }
+
+    .urgent-button{
+        width: 96px;
+    }
+
+    .clicked-medium{
+        width: 96px;
+    }
+
+    .low-button{
+        width: 96px;
+    }
+
+    .prio-span{
+        font-size: 16px;
+    }
+
+    img{
+        width: 12pxS;
+    }
+
+    .subtasks-container{
+        width: 212px;
+    }
+
+    .assigned-container{
+        width: 212px;
+    }
+
+    input{
+        padding-right: 0;
+        width: 212px;
+        font-size: 12px;
+    }
+
+    .div-input{
+        font-size: 12px;
+    }
+
+    textarea{
+        width: 212px;
+        font-size: 12px;
+    }
+
+    .content-order{
+        width: 720px;
+    }
+
+    .bottom-order{
+        width: 720px;
+    }
+
+    .div-button-order{
+        width: 110%;
+    }
+
+}
+
+@media screen and (max-width: 1024px) {
+
+    h1{
+        margin: 0px 0px 0px 114px;
+    }
+
+    .pos-rel{
+        width: 212px;
+    }
+
+    .add_task_content{
+        margin-left: 232px;;
+    }
+
+    .bottom-order{
+        width: 502px;
+    }
+    
+    .content-order{
+        margin: 0px 0px 0px 114px;
+        width: 556px;
+    }
+
+    .bottom-order{
+        margin: 0px 0px 0px 88px;
+    }
+
+    .dividing-bar{
+        margin: 0px 24px;
+    }
+}
+
+@media screen and (max-width: 777px) {
+    
+    .content-order{
+        display: grid;
+        justify-content: center;
+        flex-direction: column;
+        margin: 56px 0px 0px 0px;
+        max-height: 472px;
+        overflow-y: scroll;
+        width: -webkit-fill-available;
+    }
+
+    .add-task-form-left{
+        width: 364px;
+    }
+
+    .add-task-form-right{
+        width: 364px;
+    }
+
+    .dividing-bar{
+        display: none;
+    }
+
+    input{
+        width: 396px;
+    }
+
+    textarea{
+        width: 396px;
+    }
+
+    .assigned-container{
+        width: 396px;
+    }
+
+    .pos-rel{
+        width: 396px;
+    }
+
+    h1{
+        position: fixed;
+        margin: 0px 0px 0px 0px
+    }
+
+    .bottom-order{
+        margin: 16px 0px 0px 0px;
+        width: 448px;
+        height: 72px;
+        z-index: 1;
+        position: absolute;
+        justify-content: end;
+    }
+
+    .bottom-button-order{
+        margin: 0px 16px 0px 0px;
+    }
+
+    .add-task-form-left{
+        width: inherit;
+    }
+
+    .create-task-button{
+        width: 183px;
+        height: 56px;
+    }
+
+    .clear-button{
+        width: 110px;
+        height: 56px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+
+    input{
+        width: 200px;
+    }
+
+    textarea{
+        width: 200px;
+    }
+
+    .assigned-container{
+        width: 200px;
+    }
+
+    .pos-rel{
+        width: 200px;
+    }
+
+    .prio-span{
+        font-size: 12px;
+    }
+
+    .urgent-button{
+        width: 88px;
+        height: 36px;
+    }
+
+    .clicked-medium{
+        width: 88px;
+        height: 36px;
+    }
+
+    .low-button{
+        width: 88px;
+        height: 36px;
+    }
+
+    .add-task-form-left{
+        width: 200px;
+    }
+
+    .add-task-form-right{
+        width: 280px;
+    }
+
+    .bottom-order{
+        width: 280px;
+    }
+
+    .create-task-button{
+        width: 136px;
+    }
+
+    .subtasks-container{
+        width: 115px;
+    }
+
+    .div-button-order{
+        flex-direction: column;
+    }
+
+    .order-content{
+        width: 353px;
+    }
+
+    .form-child-order{
+        width: 200px;
+    }
+}
