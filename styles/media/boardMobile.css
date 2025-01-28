@@ -84,20 +84,18 @@
     .upperHeaderRow{
         display: flex;
         align-items: center;
-        width: 100%;
+        width: 70%;
         justify-content: space-between;
     }
 
     .search-box{
-        width: 180px;
+        width: 640px;
         height: 36px;
     }
 
     .inputBoard{
         height: 48px;
-        width: 396px;
-        right: 0px;
-        left: 126%;
+        width: 420px;
     }
 
     .kanban-board{
@@ -127,6 +125,7 @@
     .task-card{
         min-height: 244px;
         max-height: 244px;
+        width: 252px;
         padding: 8px 12px 8px 12px;
     }
 
@@ -136,5 +135,40 @@
 
     .board-menue{
         justify-content: center;
+        width: 415px;
+    }
+
+    .d-flex-column{
+        overflow-x: scroll ;
+    }
+}
+
+@media screen and (max-width: 777px) {
+
+    .headerBox{
+        width: auto;
+    }
+
+    .kanban-board{
+        width: auto;
+    }
+
+        .upperHeaderRow{
+            margin: 8px 0px 8px 0px;
+        }
+}
+
+@media screen and (max-width: 450px) {
+
+    .inputBoard{
+        width: 288px;
+    }
+
+    .search-box{
+        width: 288px;
+    }
+
+    .board-menue{
+        width: auto;
     }
 }
