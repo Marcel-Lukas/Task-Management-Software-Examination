@@ -44,10 +44,23 @@
 
     <section class="content board">
       <div class="d-flex-spbe-center headerBox">
-        <h1>Board</h1>
+        <div class="upperHeaderRow">
+          <h1>Board</h1>
+          
+          <button
+          class="btn-add-task-mobile"
+          onclick="initTemplateAddTask('add_task_template', true); openAddTask('todo')"
+        >
+          <div class="wh-32 d-flex-center">
+            <img src="../assets/img/png/add.png" alt="add task button" />
+          </div>
+        </button>
+
+        </div>
         <div class="board-menue d-flex-spbe-center">
           <div class="search-box pos-rel d-flex-spbe-center" id="search_box">
             <input
+              class="input inputBoard"
               id="sought_task"
               oninput="updateTasksOnBoard(), clearSearchField('sought_task_mobile')"
               type="text"

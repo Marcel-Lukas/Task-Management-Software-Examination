@@ -21,7 +21,11 @@
 @media screen and (max-width: 1024px) {
   .content {
     width: calc(100% - clamp(100px, 15vw, 144px));
-    margin-left: clamp(100px, 15vw, 144px);
+    margin-left: clamp(100px, 28vw, 248px);
+  }
+
+  h1{
+    font-size: 48px;
   }
 }
 

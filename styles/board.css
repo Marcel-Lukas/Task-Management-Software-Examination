@@ -49,6 +49,10 @@
   content: "Add Task";
 }
 
+.btn-add-task-mobile{
+  visibility: hidden;
+}
+
 .kanban-board {
   display: flex;
   justify-content: space-between;
