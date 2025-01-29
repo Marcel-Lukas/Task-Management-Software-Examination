@@ -1,8 +1,3 @@
-/**
- * Adds an event listener that triggers when the DOM is fully loaded.
- * Upon triggering, the template is loaded, the user interface is initialized,
- * and an event listener for window resizing is added.
- */
 document.addEventListener("DOMContentLoaded", async () => {
   await loadTemplate();
   initializeUserInterface();
@@ -10,24 +5,16 @@ document.addEventListener("DOMContentLoaded", async () => {
   window.addEventListener("resize", handleResize);
 });
 
-/**
- * Adds an event listener that is triggered on clicks in the user menu.
- */
+
 document.addEventListener("click", handleClickUserMenu);
 
-/**
- * Loads the desktop template and inserts the content into the corresponding HTML element.
- * @returns {Promise<void>}
- */
+
 async function loadTemplate() {
   const response = await fetch("../assets/templates/desktopTemplate.html");
   document.getElementById("desktop_template").innerHTML = await response.text();
 }
 
-/**
- * Initializes the user interface by updating the user's initials,
- * setting the body's visibility to visible, updating sidebar icons, and initializing links.
- */
+
 function initializeUserInterface() {
   updateInitials();
   document.body.style.visibility = "visible";
@@ -36,9 +23,7 @@ function initializeUserInterface() {
   handleResize(); 
 }
 
-/**
- * Updates the icons in the sidebar based on the current page.
- */
+
 function updateSidebarIcons() {
   const currentPage = window.location.pathname.split("/").pop();
   const pages = ["summary", "board", "contacts", "addTask"];
@@ -47,11 +32,7 @@ function updateSidebarIcons() {
   updatePageState("legalNotice.html", ".legal-notice-link", currentPage);
 }
 
-/**
- * Updates the icon status based on the current page.
- * @param {string} page - The name of the page.
- * @param {string} currentPage - The name of the current page.
- */
+
 function updateIconState(page, currentPage) {
   const link = document.querySelector(`.${page}-link`);
   const icon = link?.querySelector("img");
@@ -63,12 +44,7 @@ function updateIconState(page, currentPage) {
   }
 }
 
-/**
- * Updates the status of a link in the sidebar based on the current page.
- * @param {string} page - The name of the page.
- * @param {string} selector - The CSS selector of the link.
- * @param {string} currentPage - The name of the current page.
- */
+
 function updatePageState(page, selector, currentPage) {
   const link = document.querySelector(selector);
   if (link) {
@@ -78,17 +54,13 @@ function updatePageState(page, selector, currentPage) {
   }
 }
 
-/**
- * Handles window resizing and adjusts the display accordingly.
- */
+
 function handleResize() {
   hideSidebarAtMobile();
   addHelpToMenu();
 }
 
-/**
- * Hides the sidebar on mobile devices and when no active user is present.
- */
+
 function hideSidebarAtMobile() {
   if (!localStorage.getItem("activeUser") && window.innerWidth < 770) {
     document.getElementById("sidebar")?.style.setProperty("display", "none", "important");
@@ -97,9 +69,7 @@ function hideSidebarAtMobile() {
   }
 }
 
-/**
- * Adds the help element to the menu based on screen size.
- */
+
 function addHelpToMenu() {
   const isMobile = window.matchMedia("(max-width: 1240px)").matches;
   const helpDiv = document.getElementById("help_mobile");
@@ -113,20 +83,13 @@ function addHelpToMenu() {
   }
 }
 
-/**
- * Initializes links in the user interface.
- */
+
 function initializeLinks() {
   setupLink("policy_link", "privacyPolicy.html", handleLinkClick);
   setupLink("legal_link", "legalNotice.html", handleLinkClick);
 }
 
-/**
- * Sets up a link with a click handler or disables the link.
- * @param {string} id - The ID of the link.
- * @param {string} page - The target page of the link.
- * @param {Function} clickHandler - The click handler for the link.
- */
+
 function setupLink(id, page, clickHandler) {
   const link = document.getElementById(id);
   if (link && !window.location.pathname.includes(page)) {
@@ -136,11 +99,7 @@ function setupLink(id, page, clickHandler) {
   }
 }
 
-/**
- * Handles a click on a link by preventing the default action,
- * disabling the link, and then redirecting to the page.
- * @param {Event} event - The click event.
- */
+
 function handleLinkClick(event) {
   event.preventDefault();
   const link = event.currentTarget;
@@ -151,10 +110,7 @@ function handleLinkClick(event) {
   }, 100);
 }
 
-/**
- * Handles clicks in the user menu and shows or hides the logout option.
- * @param {Event} event - The click event.
- */
+
 function handleClickUserMenu(event) {
   const initials = document.getElementById("user_profile_initials");
   const logOut = document.getElementById("log_out");
@@ -166,31 +122,19 @@ function handleClickUserMenu(event) {
   }
 }
 
-/**
- * Toggles the visibility of the logout element.
- * @param {HTMLElement} logOut - The logout element.
- * @param {HTMLElement} initials - The initials element.
- */
+
 function toggleVisibility(logOut, initials) {
   logOut.classList.toggle("d-none");
   initials.classList.toggle("bg-color");
 }
 
-/**
- * Updates the user's initials in the user interface.
- */
+
 function updateInitials() {
   const initials = JSON.parse(localStorage.getItem("activeUser"))?.initials;
   document.getElementById("user_profile_initials").textContent = initials || "";
 }
 
-/**
- * Hides specific HTML elements if no active user is found in the local storage.
- * 
- * This function checks if an "activeUser" exists in local storage. If not, 
- * it hides the elements with the IDs 'header_icons', 'icon_bar', and 'arrow_back' 
- * by adding the 'd-none' class to them.
- */
+
 function legalNoticeWithoutUser() {
   const checkIfUserIsLogged = localStorage.getItem("activeUser");
   if (!checkIfUserIsLogged) {

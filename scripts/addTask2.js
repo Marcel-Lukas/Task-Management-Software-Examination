@@ -1,8 +1,3 @@
-/**
- * This function activates all prio functions to handle them
- *
- * @param {string} priority - text of the selected prio button
- */
 function selectPrio(priority) {
   let prios = ["low", "medium", "urgent"];
   prios.forEach((prio) => resetPrio(prio));
@@ -11,11 +6,7 @@ function selectPrio(priority) {
   handleSelectedPriority(selectedButton);
 }
 
-/**
- * This function resets the selection of a prio button
- *
- * @param {string} prio - text of the selected prio button
- */
+
 function resetPrio(prio) {
   let prioButton = document.getElementById(`${prio}_span`);
   let prioColoredRef = document.getElementById(`prio_${prio}_colored`);
@@ -26,11 +17,7 @@ function resetPrio(prio) {
   prioWhiteRef.classList.add("d-none");
 }
 
-/**
- * This function sets the selection of a prio button
- *
- * @param {string} priority - text of the selected prio button
- */
+
 function setPrio(priority) {
   let prioButton = document.getElementById(`${priority}_span`);
   let prioColoredRef = document.getElementById(`prio_${priority}_colored`);
@@ -41,7 +28,7 @@ function setPrio(priority) {
   prioWhiteRef.classList.remove("d-none");
 }
 
-/** This function opens a select window */
+
 function openSelect() {
   if ((onclick = true)) {
     document.getElementById("assigned_inactiv").classList.add("d-none");
@@ -49,7 +36,7 @@ function openSelect() {
   }
 }
 
-/** This function closes a select window */
+
 function closeSelect() {
   if ((onclick = true)) {
     document.getElementById("assigned_activ").classList.add("d-none");
@@ -57,7 +44,7 @@ function closeSelect() {
   }
 }
 
-/** This function opens a select window */
+
 function openSelectCategory() {
   if ((onclick = true)) {
     document.getElementById("category_inactiv").classList.add("d-none");
@@ -66,7 +53,7 @@ function openSelectCategory() {
   }
 }
 
-/** This function closes a select window */
+
 function closeSelectCategory() {
   if ((onclick = true)) {
     document.getElementById("category_activ").classList.add("d-none");
@@ -74,7 +61,7 @@ function closeSelectCategory() {
   }
 }
 
-/** This function changes the subtasks images */
+
 function openSubtasks() {
   if ((onclick = true)) {
     document.getElementById("subtasks_inactiv_img").classList.add("d-none");
@@ -82,7 +69,7 @@ function openSubtasks() {
   }
 }
 
-/** This function resets all Fields and selections to default */
+
 function clearButton() {
   document.getElementById("title_input").value = "";
   document.getElementById("description_textarea").value = "";
@@ -98,8 +85,8 @@ function clearButton() {
   document.getElementById("subtasks_list").innerHTML = "";
 }
 
-/** This function handles the actions after adding a subtask */
-function addSubtasksHandle() {
+
+function addSubtasksManage() {
   toggleSubtaskIcons();
   let subtasksInput = document.getElementById("subtasks_input").value;
 
@@ -109,17 +96,13 @@ function addSubtasksHandle() {
   }
 }
 
-/** This function toggles the subtask images */
+
 function toggleSubtaskIcons() {
   document.getElementById("subtasks_inactiv_img").classList.remove("d-none");
   document.getElementById("subtasks_activ_img").classList.add("d-none");
 }
 
-/**
- * This function add a subtask to the list below
- *
- * @param {string} subtasksInput - is the text input
- */
+
 function addSubtaskToList(subtasksInput) {
   subTasks.push(subtasksInput);
   let ids = subTasks.length;
@@ -129,26 +112,22 @@ function addSubtaskToList(subtasksInput) {
   );
 }
 
-/** This function allows the user to enter the value with the enter key */
+
 function enterValue() {
   openSubtasks();
   let subtasksInput = document.getElementById("subtasks_input");
   subtasksInput.addEventListener("keydown", function (event) {
     if (event.key === "Enter") {
       event.preventDefault();
-      addSubtasksHandle();
+      addSubtasksManage();
       document.getElementById("subtasks_inactiv_img").classList.add("d-none");
       document.getElementById("subtasks_activ_img").classList.remove("d-none");
     }
   });
 }
 
-/**
- * This function adds and removes d-none
- *
- * @param {Object} event - PointerEvent
- */
-function changeSubtasksImagesClick(event) {
+
+function changeSubtasksImages(event) {
   if (
     event.target.id === "add_task_board" ||
     "edit_task_board" ||
@@ -159,27 +138,19 @@ function changeSubtasksImagesClick(event) {
   }
 }
 
-/**
- * This function prevents from executing on the Parend element
- *
- * @param {Object} event - PointerEvent
- */
-function changeSubtasksImagesClickPrevention(event) {
+
+function changeSubtasksImgPrevention(event) {
   event.stopPropagation();
 }
 
-/** This function cancels the subtask and changes the element back to default */
+
 function cancelSubtasks() {
   document.getElementById("subtasks_inactiv_img").classList.remove("d-none");
   document.getElementById("subtasks_activ_img").classList.add("d-none");
   document.getElementById("subtasks_input").value = "";
 }
 
-/**
- * This function allows the user to delet a subtask
- *
- * @param {number} id - Id of the subtask list element
- */
+
 function deleteSubtask(id) {
   document.getElementById(`listItem_${id}`).remove();
   document.getElementById(`listItem_input_${id}`).remove();
@@ -187,11 +158,7 @@ function deleteSubtask(id) {
   editSubTaskIndex = null;
 }
 
-/**
- * This function toggles the images of the list elements
- *
- * @param {number} id - Id of the subtask list element
- */
+
 function toggleSubtasksImgs(id) {
   document.getElementById(`list_imgs_activ_${id}`).classList.toggle("d-none");
   document.getElementById(`list_imgs_inactiv_${id}`).classList.toggle("d-none");
@@ -200,7 +167,7 @@ function toggleSubtasksImgs(id) {
   document.getElementById(`input_subtask_${id}`).classList.toggle("d-none");
 }
 
-/** This function enables the create task button */
+
 function enableButton() {
   let input = getInputValues();
   let category = getCategoryValue();
@@ -211,11 +178,7 @@ function enableButton() {
   }
 }
 
-/**
- * This function gets the Input values
- *
- * @returns - the values as key
- */
+
 function getInputValues() {
   return {
     input: document.getElementById("title_input").value.trim(),
@@ -223,22 +186,12 @@ function getInputValues() {
   };
 }
 
-/**
- * This function gets the Category value
- *
- * @returns - the inner text of the element
- */
+
 function getCategoryValue() {
   return document.getElementById("category").innerText;
 }
 
-/**
- * This function checks if the elements are filled and valid
- *
- * @param {string} input - key for the title and date value
- * @param {string} category - key for the category text
- * @returns - true or false of completion
- */
+
 function isFormComplete(input, category) {
   let today = new Date();
   today.setHours(0, 0, 0, 0);
@@ -252,18 +205,18 @@ function isFormComplete(input, category) {
   );
 }
 
-/** This function precesses through the valid form */
+
 function processValidForm() {
   resetrequiredFields();
   createTask();
 }
 
-/** This function precesses through the invalid form */
+
 function processInvalidForm() {
   requiredFields();
 }
 
-/** This function disables days past by in the calendar */
+
 function setDate() {
   let today = new Date();
   let dd = String(today.getDate()).padStart(2, "0");
@@ -273,4 +226,121 @@ function setDate() {
   let dueDateInput = document.getElementById("due_date");
   dueDateInput.setAttribute("min", formattedDate); 
   dueDateInput.value = ""; 
+}
+
+
+
+async function initTemplateAddTask(domLocation, clear) {
+  let response = await fetch("../assets/templates/taskTemplate.html");
+  let data = await response.text();
+  document.getElementById(domLocation).innerHTML = data;
+  clearTemplate(clear);
+  getContacts();
+  setDate();
+  if (clear) {
+      clearButton();
+      renderEditButtons();
+  }
+}
+
+
+function clearTemplate(clear) {
+  if (clear === true) {
+      document.getElementById('edit_task_template').innerHTML = "";
+  } else if (clear === false) {
+      document.getElementById('add_task_template').innerHTML = "";
+  }
+}
+
+function renderEditButtons(){
+  document.getElementById("content_order").classList.add("content-order");
+  document.getElementById("content_order").classList.remove("edit-content-order");
+  document.getElementById('bottom_button_order').classList.remove('edit-bottom-button-order');
+  document.getElementById('create_button_div').classList.remove('edit-ok-button');
+}
+
+
+async function createTask() {
+  let taskData = collectTaskFormData();
+  let taskId = await getNewId("tasks");
+
+  setTaskData(taskData, taskId);
+  await manageTaskCreationCompletion(taskId);
+}
+
+
+function setTaskData(taskData, taskId) {
+  putTasksContent(
+    taskData.title,
+    taskData.description,
+    taskData.dueDate,
+    taskId,
+    taskData.assignedTo,
+    taskData.categorySeleced
+  );
+  putTaskToUser(taskId);
+}
+
+
+async function putTaskToUser(taskId) {
+  if (!activeUser.tasks.includes(taskId)) {
+    activeUser.tasks.push(taskId);
+    localStorage.setItem("activeUser", JSON.stringify(activeUser));
+    try {
+      await updateUserTaskInDatabase(activeUser.id, taskId);
+    } catch (error) {
+      console.error("Fehler beim Hinzufügen des Tasks:", error);
+      activeUser.tasks.pop();
+      localStorage.setItem("activeUser", JSON.stringify(activeUser));
+    }
+  }
+}
+
+
+async function updateUserTaskInDatabase(userId, taskId) {
+  if (userId != 0) {
+    let path = `users/${userId - 1}/tasks/${activeUser.tasks.length - 1}`;
+    return postData(path, taskId);
+  }
+}
+
+
+function putTasksContent(title, description, dueDate, taskId, assignedTo, categorySeleced) {
+  postData(`tasks/${taskId - 1}/`, {
+    title: title,
+    description: description,
+    date: dueDate,
+    priority: selectedPrio,
+    category: categorySeleced,
+    id: taskId,
+    subtasks: collectSubtasks(),
+    assigned: assignedTo,
+    status: taskStatus,
+    user: Number(userId[0]),
+  });
+}
+
+
+async function getContacts() {
+  document.getElementById("contact_contant").innerHTML = "";
+  let contacts = await fetchData("contacts");
+  let userContacts = activeUser.contacts;
+  let contactsToRender = contacts.filter((contact) =>
+    userContacts.includes(contact.id)
+  );
+  window.allContacts = contactsToRender;
+  showContacts(contactsToRender);
+}
+
+
+async function updateSelectedContactsDisplay() {
+  let newContacts = await fetchData("contacts");
+  let selectedList = document.getElementById("selected_contacts");
+  selectedList.innerHTML = "";
+  let userContacts = activeUser.contacts;
+  let contactsToRender = newContacts.filter((contact) =>
+    userContacts.includes(contact.id)
+  );
+  window.allContacts = contactsToRender;
+  displaySelectedContacts(contactsToRender, selectedList);
 }

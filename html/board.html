@@ -26,15 +26,15 @@
 
     <script src="../main.js"></script>
     <script src="../scripts/desktopTemplate.js"></script>
+    
     <script src="../scripts/board.js"></script>
     <script src="../scripts/boardTasks.js"></script>
-    <script src="../scripts/boardSingleTask.js"></script>
-    <script src="../scripts/boardTemplate.js"></script>
-    <script src="../scripts/boardAddTask.js"></script>
-    <script src="../scripts/addTaskTemplate.js"></script>
-    <script src="../scripts/addTaskFetchLoad.js"></script>
-    <script src="../scripts/addTaskButtons.js"></script>
-    <script src="../scripts/addTask.js"></script>
+    <script src="../scripts/boardTemplates.js"></script>
+
+    <script defer src="../scripts/addTask1.js"></script> 
+    <script defer src="../scripts/addTask2.js"></script> 
+    <script defer src="../scripts/addTaskTemplates.js"></script>
+
     <script src="../scripts/databaseBackup.js"></script>
     
   </head>
@@ -261,7 +261,7 @@
         >
           <div id="edit_overflow" class="edit-overflow">
             <div
-              onclick="changeSubtasksImagesClick(event)"
+              onclick="changeSubtasksImages(event)"
               class="pos-rel"
               id="edit_task_template"
             ></div>
@@ -292,7 +292,7 @@
           onclick="closeTaskIfOutside(event)"
         >
           <div
-            onclick=" changeSubtasksImagesClick(event)"
+            onclick=" changeSubtasksImages(event)"
             id="add_task_template"
           ></div>
           <div

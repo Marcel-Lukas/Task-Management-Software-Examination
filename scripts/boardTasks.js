@@ -1,14 +1,9 @@
-/**
- * Updates the Kanban board by cleaning it and rendering tasks in their respective status areas.
- */
 async function updateTasksOnBoard() {
   cleanBoard();
   await renderTasksInStatusArea();
 }
 
-/**
- * Cleans the Kanban board by removing all tasks from each status column.
- */
+
 function cleanBoard() {
   STATUSES.forEach((status) => {
     let statusColumn = document.getElementById(`kanban_${status}`);
@@ -16,9 +11,7 @@ function cleanBoard() {
   });
 }
 
-/**
- * Renders filtered tasks in their respective status areas on the Kanban board.
- */
+
 async function renderTasksInStatusArea() {
   let tasksToRender = await filterUserTasks();
   tasksToRender = filterSoughtTaskToRender(tasksToRender);
@@ -30,11 +23,7 @@ async function renderTasksInStatusArea() {
   );
 }
 
-/**
- * Filters tasks assigned to the active user.
- *
- * @returns {Object} An array of task objects assigned to the active user
- */
+
 async function filterUserTasks() {
   let userTasks = activeUser.tasks;
   let allTasks = await fetchData("tasks");
@@ -43,15 +32,9 @@ async function filterUserTasks() {
   return tasksToRender;
 }
 
-/**
- * Filters tasks based on a search query in their title or description.
- *
- * @param {Object} tasksToRender - An array of task objects to filter
- * @returns {Object} An array of filtered task objects matching the search query
- */
+
 function filterSoughtTaskToRender(tasksToRender) {
   let soughtTask = getSoughtTask();
-
   if (soughtTask.length != 0) {
     return tasksToRender.filter(
       (task) =>
@@ -59,15 +42,10 @@ function filterSoughtTaskToRender(tasksToRender) {
         task.description.toLowerCase().includes(soughtTask)
     );
   }
-
   return tasksToRender;
 }
 
-/**
- * Retrieves the search query from both desktop and mobile input fields.
- *
- * @returns {string} The lowercase search query
- */
+
 function getSoughtTask() {
   let soughtedTaskDesktop = document.getElementById("sought_task").value;
   let soughtedTaskMobile =
@@ -75,15 +53,10 @@ function getSoughtTask() {
   return (soughtedTaskDesktop || soughtedTaskMobile).toLowerCase();
 }
 
-/**
- * User feedback for no task found.
- * 
- * @param {Object} tasksToRender - all filtered user tasks
- */
+
 function noTaskFound(tasksToRender){
   let noTaskField = document.getElementById("task_not_found");
   let kanbanField = document.getElementById("kanban_board");
-
   noTaskField.classList.add('d-none');
   kanbanField.classList.remove('d-none');
 
@@ -93,17 +66,10 @@ function noTaskFound(tasksToRender){
   }  
 }
 
-/**
- * Renders tasks in a specific status area on the Kanban board.
- *
- * @param {string} status - The status of the tasks to render
- * @param {Array} tasks - An array of all tasks
- * @param {Array} contacts - An array of contact objects
- */
+
 function renderStatusArea(status, tasks, contacts) {
   let statusArea = document.getElementById(`kanban_${status}`);
   statusArea.innerHTML = "";
-
   let statusTasks = tasks.filter((task) => task.status == status);
 
   if (statusTasks == "") {
@@ -113,49 +79,27 @@ function renderStatusArea(status, tasks, contacts) {
   }
 }
 
-/**
- * Renders individual tasks in a specific status area.
- *
- * @param {Array} tasks - An array of tasks to render
- * @param {HTMLElement} area - The HTML element to render tasks in
- * @param {Array} contacts - An array of contact objects
- */
+
 function renderStatusTasks(tasks, area, contacts) {
   tasks.forEach((task) => {
     let shortDescription = shortenDescription(task.description);
     let categoryColor = task.category.replace(/\s+/g, "").toLowerCase();
 
-    area.innerHTML += generateTasksOnBoard(
-      task.id,
-      task.title,
-      shortDescription,
-      task.category,
-      categoryColor,
-      task.priority
-    );
+    area.innerHTML += generateTasksOnBoard(task.id, task.title, shortDescription, task.category, categoryColor, task.priority);
     displaySubtasks(task);
     displayAssigneesForTask(task, contacts);
     displayStatusArrows(task);
   });
 }
 
-/**
- * Shortens a task description to a maximum of 6 words.
- *
- * @param {string} description - The full task description
- * @returns {string} - The shortened description
- */
+
 function shortenDescription(description) {
   let words = description.split(/\s+/);
   if (words.length <= 6) return description;
   return words.slice(0, 6).join(" ") + "...";
 }
 
-/**
- * Displays subtasks for a given task on the Kanban board.
- *
- * @param {Object} task - The task object containing subtasks
- */
+
 function displaySubtasks(task) {
   let subtaskArea = document.getElementById(`subtasks_${task.id}`);
   subtaskArea.innerHTML = "";
@@ -164,12 +108,7 @@ function displaySubtasks(task) {
   addSubtasksOnBoardTasks(subtaskArea, task);
 }
 
-/**
- * Adds subtasks to a task card on the Kanban board.
- *
- * @param {HTMLElement} subtaskArea - The DOM element to render subtasks in
- * @param {Object} task - The task object containing subtasks
- */
+
 function addSubtasksOnBoardTasks(subtaskArea, task) {
   if (task.subtasks || Array.isArray(task.subtasks)) {
     subtaskArea.classList.remove("d-none");
@@ -184,13 +123,7 @@ function addSubtasksOnBoardTasks(subtaskArea, task) {
   }
 }
 
-/**
- * Updates the visual progress bar for subtasks on a task card.
- *
- * @param {number} taskId - The ID of the task
- * @param {number} sumDoneSubtasks - The number of completed subtasks
- * @param {number} sumAllSubtasks - The total number of subtasks
- */
+
 function updateSubtasksBar(taskId, sumDoneSubtasks, sumAllSubtasks) {
   let taskElement = document.getElementById(`task_${taskId}`);
   let subtasksBar = taskElement.querySelector(".task-subtasks-bar");
@@ -199,12 +132,7 @@ function updateSubtasksBar(taskId, sumDoneSubtasks, sumAllSubtasks) {
   subtasksBar.style.setProperty("--progress", `${percentage}%`);
 }
 
-/**
- * Displays assignees for a given task on the Kanban board.
- *
- * @param {Object} task - The task object
- * @param {Array} contacts - An array of contact objects
- */
+
 function displayAssigneesForTask(task, contacts) {
   let assignedField = document.getElementById(`assignees_task_${task.id}`);
   assignedField.innerHTML = "";
@@ -213,22 +141,15 @@ function displayAssigneesForTask(task, contacts) {
     (contact) =>
       activeUser.contacts.includes(contact.id)
   );
-
   if (task.assigned) {
     let assignees = task.assigned.filter((data) => data !== null);
     displayAssignees(assignees, validContacts, assignedField, maxDisplayed);
     displayCount(task, assignees, maxDisplayed);
   }
-
   displayUser(task, assignedField);
 }
 
-/**
- * Determines the maximum number of assignees to display on a task card.
- *
- * @param {Object} task - The task object
- * @returns {number} - The maximum number of assignees to display
- */
+
 function determineMaxDisplayed(task) {
   if (task.user === activeUser.id) {
     return 2;
@@ -236,27 +157,14 @@ function determineMaxDisplayed(task) {
   return 3;
 }
 
-/**
- * Renders assignees on a task card up to a maximum number.
- *
- * @param {Array} assignees - An array of assignee IDs
- * @param {Array} contacts - An array of contact objects
- * @param {HTMLElement} assignedField - The HTML element to render assignees in
- * @param {number} maxDisplayed - The maximum number of assignees to display
- */
+
 function displayAssignees(assignees, contacts, assignedField, maxDisplayed) {
   assignees
     .slice(0, maxDisplayed)
     .forEach((contactId) => renderAssignee(contactId, contacts, assignedField));
 }
 
-/**
- * Renders a single assignee on a task card.
- *
- * @param {string} contactId - The ID of the contact to render
- * @param {Array} contacts - An array of contact objects
- * @param {HTMLElement} assignedField - The HTML element to render the assignee in
- */
+
 function renderAssignee(contactId, contacts, assignedField) {
   let contact = contacts.find((c) => c.id === contactId);
 
@@ -265,13 +173,7 @@ function renderAssignee(contactId, contacts, assignedField) {
   }
 }
 
-/**
- * Displays the count of additional assignees if there are more than the maximum displayed.
- *
- * @param {Object} task - The task object
- * @param {Array} assignees - An array of assignee IDs
- * @param {number} maxDisplayed - The maximum number of assignees displayed
- */
+
 function displayCount(task, assignees, maxDisplayed) {
   let numberField = document.getElementById(`assignees_number_${task.id}`);
   numberField.innerHTML = "";
@@ -282,35 +184,216 @@ function displayCount(task, assignees, maxDisplayed) {
   }
 }
 
-/**
- * Displays the active user on the task card if they are assigned to the task.
- *
- * @param {Object} task - The task object
- * @param {HTMLElement} assignedField - The DOM element to render the user in
- */
+
 function displayUser(task, assignedField) {
   if (task.user === activeUser.id) {
     assignedField.innerHTML += generateUserField(activeUser);
   }
 }
 
-/**
- * Displays status change arrows on a task card based on its current status.
- *
- * @param {Object} task - The task object
- */
+
 function displayStatusArrows(task) {
   let taskCard = document.getElementById(`task_card_${task.id}`);
   let arrowTop = document.getElementById(`arrow_area_top_${task.id}`);
   let arrowBottom = document.getElementById(`arrow_area_bottom_${task.id}`);
-
   if (task.status != "todo") {
     arrowTop.innerHTML = generateArrowTop(task);
     taskCard.classList.add("task-arrow-top");
   }
-
   if (task.status != "done") {
     arrowBottom.innerHTML = generateArrowBottom(task);
     taskCard.classList.add("task-arrow-bottom");
   }
+}
+
+
+// Single Task
+async function openSingleTask(taskId) {
+  let tasks = await fetchData("tasks");
+  let singleTask = tasks.find((task) => task.id === taskId);
+  let categoryColor = singleTask.category.replace(/\s+/g, "").toLowerCase();
+  let contacts = await fetchData("contacts");
+
+  displaySingleTask(singleTask, categoryColor);
+  displaySingleRecipients(singleTask, contacts);
+  displaySingleSubtasks(singleTask.subtasks, taskId);
+  toggleOverlay("board_task_overlay");
+}
+
+
+function displaySingleTask(singleTask, categoryColor) {
+  let singleTaskArea = document.getElementById(`single_task`);
+  singleTaskArea.innerHTML = "";
+
+  singleTaskArea.innerHTML += generateSingleTasks(
+    singleTask,
+    categoryColor
+  );
+}
+
+
+function displaySingleRecipients(singleTask, contacts) {
+  let assigneeField = document.getElementById("single_assignee");
+  assigneeField.innerHTML = "";
+  let hasAssignees = displayRecipientsAndUsers(
+    singleTask,
+    contacts,
+    assigneeField
+  );
+
+  if (!hasAssignees) {
+    assigneeField.innerHTML = generateNoAssigneeField();
+  }
+}
+
+
+function displayRecipientsAndUsers(singleTask, contacts, assigneeField) {
+  let hasUserAssignees = displayUserAsRecipients(singleTask, assigneeField);
+  let hasContactAssignees = displayContactAsRecipients(
+    singleTask,
+    contacts,
+    assigneeField
+  );
+
+  return hasUserAssignees || hasContactAssignees;
+}
+
+
+function displayUserAsRecipients(singleTask, assigneeField) {
+  if (singleTask.user === activeUser.id) {
+    assigneeField.innerHTML += generateSingleUserAsAssignee();
+    return true;
+  }
+  return false;
+}
+
+
+function displayContactAsRecipients(singleTask, contacts, assigneeField) {
+  let recipients = singleTask.assigned || [];
+  let validContacts = contacts.filter(
+    (contact) =>
+      recipients.includes(contact.id) && activeUser.contacts.includes(contact.id)
+  );
+
+  validContacts.forEach(
+    (contact) => (assigneeField.innerHTML += generateSingleAssignee(contact))
+  );
+
+  return validContacts.length > 0;
+}
+
+
+function displaySingleSubtasks(subtasks, taskId) {
+  let subtaskField = document.getElementById("single_subtask");
+  subtaskField.innerHTML = "";
+
+  if (subtasks) {
+    subtasks.forEach((subtask) => {
+      subtaskField.innerHTML += generateSingleSubtasks(subtask, taskId);
+    });
+  } else {
+    subtaskField.innerHTML = generateNoSubtaskField();
+  }
+}
+
+
+async function updateSubtaskStatus(taskId, subId) {
+  toggleCheckButton(`task_${taskId}_subtask_${subId}`, "button");
+
+  let checkButton = document.getElementById(
+    `task_${taskId}_subtask_${subId}`
+  );
+  let isChecked = checkButton.src.includes("true");
+
+  let tasks = await fetchData("tasks");
+  let task = tasks.find((task) => task.id === taskId);
+
+  task.subtasks[subId - 1].done = isChecked;
+
+  await postUpdatedTask(task);
+}
+
+
+function openDeleteDialog(taskId) {
+  toggleOverlay("board_delete_overlay");
+
+  let yesButton = document.getElementById("delete_yes_btn");
+  yesButton.innerHTML = generateDeleteButton(taskId);
+}
+
+
+async function deleteTask(taskId) {
+  let users = await fetchData("users");
+  if (taskId >= 1 && taskId <= 10) {
+    await deleteTaskOnlyforUser(taskId, users);
+  } else {
+    await deleteTaskforAllUsers(taskId, users);
+  }
+  deleteTaskInLocalStorage(taskId);
+  await showSuccessfullyDelete();
+  toggleOverlay("board_delete_overlay");
+  toggleOverlay("board_task_overlay");
+  window.location.reload();
+}
+
+
+async function deleteTaskOnlyforUser(taskId, users) {
+  if (activeUser.id === 0) {
+    return;
+  }
+  users = users.map((user) => removeTaskFromUser(user, taskId));
+  await postData("users", users);
+}
+
+
+function removeTaskFromUser(user, taskId) {
+  if (user.id === activeUser.id) {
+    return {
+      ...user,
+      tasks: user.tasks.filter((task) => task !== taskId),
+    };
+  }
+  return user;
+}
+
+
+async function deleteTaskforAllUsers(taskId, users) {
+  await deleteData("tasks", taskId);
+  if (activeUser.id === 0) {
+    return;
+  }
+  users = removeTaskFromUsers(users, taskId);
+  await postData("users", users);
+}
+
+
+function removeTaskFromUsers(users, taskId) {
+  return users.map((user) => ({
+    ...user,
+    tasks: user.tasks.filter((task) => task !== taskId),
+  }));
+}
+
+
+function deleteTaskInLocalStorage(taskId) {
+  let activeUser = JSON.parse(localStorage.getItem("activeUser"));
+  activeUser.tasks = activeUser.tasks.filter((task) => task !== taskId);
+  localStorage.setItem("activeUser", JSON.stringify(activeUser));
+}
+
+
+function showSuccessfullyDelete() {
+  return new Promise((resolve) => {
+    let overlay = document.getElementById("successfully_delete_task");
+    overlay.classList.remove("d-none");
+    overlay.classList.add("active");
+    setTimeout(() => {
+      overlay.classList.add("visible");
+      setTimeout(() => {
+        overlay.classList.remove("active", "visible");
+        overlay.classList.add("d-none");
+        resolve();
+      }, 1333);
+    }, 50);
+  });
 }

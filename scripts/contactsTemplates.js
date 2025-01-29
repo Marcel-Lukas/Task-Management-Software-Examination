@@ -1,12 +1,3 @@
-/**
- * Generates HTML to display the contact information of the active user.
- * @param {Object} user - The user object.
- * @param {number} user.id - The unique ID of the user.
- * @param {string} user.initials - The initials of the user.
- * @param {string} user.name - The full name of the user.
- * @param {string} user.email - The email address of the user.
- * @returns {string} The HTML string representing the active user's contact.
- */
 function generateActiveUserContact(user){
   const limitNameLength = limitTextLength(user.name);
   const limitEmailLength = limitTextLength(user.email);
@@ -21,16 +12,7 @@ function generateActiveUserContact(user){
     `;
 }
 
-/**
- * Generates HTML for a general contact.
- * @param {Object} contact - The contact object.
- * @param {number} contact.id - The unique ID of the contact.
- * @param {string} contact.initials - The initials of the contact.
- * @param {string} contact.name - The full name of the contact.
- * @param {string} contact.email - The email address of the contact.
- * @param {string} contact.color - The background color for the initials.
- * @returns {string} The HTML string representing the contact.
- */
+
 function generateContact(contact) {
   const limitNameLength = limitTextLength(contact.name);
   const limitEmailLength = limitTextLength(contact.email);
@@ -46,27 +28,13 @@ function generateContact(contact) {
     `;
 }
 
-/**
- * Generates a letter box to group contacts by their initials.
- * @param {string} initials - The initials to be displayed.
- * @returns {string} The HTML string for the letter box.
- */
+
 function generateLetterBox(initials) {
   return `<div class="letter-box">${initials}</div>
               <div class="contact-seperator"></div>`;
 }
 
-/**
- * Generates detailed contact information for display.
- * @param {Object} contact - The contact object.
- * @param {number} contact.id - The unique ID of the contact.
- * @param {string} contact.initials - The initials of the contact.
- * @param {string} contact.name - The full name of the contact.
- * @param {string} contact.email - The email address of the contact.
- * @param {string} contact.phone - The phone number of the contact.
- * @param {string} contact.color - The background color for the initials.
- * @returns {string} The HTML string representing the contact information.
- */
+
 function generateContactInfo(contact) {
   const phone = contact.phone !== undefined ? contact.phone : "";
   return `
@@ -108,13 +76,7 @@ function generateContactInfo(contact) {
       `;
 }
 
-/**
- * Generates the large letter circle for displaying the active contact.
- * @param {Object} contact - The contact object.
- * @param {string} contact.initials - The initials of the contact.
- * @param {string} contact.color - The background color for the initials.
- * @returns {string} The HTML string for the large letter circle.
- */
+
 function generateBigLetterCircle(contact) {
   return `
       <div id="for_active_use_dialog_circel" class="edit-big-letter-circle" style="background-color: ${contact.color}";>${contact.initials}
@@ -122,12 +84,7 @@ function generateBigLetterCircle(contact) {
       `;
 }
 
-/**
- * Generates the buttons for editing and deleting a contact.
- * @param {Object} contact - The contact object.
- * @param {number} contact.id - The unique ID of the contact.
- * @returns {string} The HTML string for the buttons (Delete and Save).
- */
+
 function generateButtonsInContactInfo(contact) {
   return `
     <button onclick="openDeleteDialog(${contact.id})" id="user_display_info" class="button-delete">
@@ -144,40 +101,21 @@ function generateButtonsInContactInfo(contact) {
     `;
 }
 
-/**
- * Generates the mobile menu with edit and delete icons for a contact.
- * @param {Object} contact - The contact object.
- * @param {number} contact.id - The unique ID of the contact.
- * @returns {string} The HTML string for the mobile menu.
- */
+
 function generateMobileMenu(contact){
   return ` <img onclick="openDialogEdit(${contact.id})" class="mobile-edit-img" src="../assets/img/png/edit-default.png" alt="edit">
       <img onclick="openDeleteDialog(${contact.id})" id="user_delete_mobile" class="mobile-delete-img" src="../assets/img/png/delete-default.png" alt="delete"></img>`;
   
 }
 
-/**
- * Generates HTML for a delete button for a specific contact.
- *
- * @param {number} contactId - The ID of the contact to be deleted.
- * @returns {string} HTML string representing a delete button with an onclick event.
- */
+
 function generateDeleteButton(contactId) {
   return `<button class="clear-button"
            onclick="deleteContact(${contactId});toggleOverlay('contact_delete_overlay'); closeDialogEdit() ">YES
       </button>`;
 }
 
-/**
- * Generates an HTML string that indicates the status of a contact operation.
- *
- * @param {string} operation - The type of operation performed on the contact.
- *                              It can be one of the following values:
- *                              - "created" for a newly added contact,
- *                              - "edited" for an updated contact,
- *                              - "deleted" for a removed contact.
- * @returns {string} An HTML string that displays a success message.
- */
+
 function generateSuccesssfullyHtml(operation){
   return `<span>Contacts successfully ${operation}</span>`;
 }
