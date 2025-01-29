@@ -1,0 +1,72 @@
+@media screen and (max-width: 777px) {
+
+    #dialog_edit{
+        width: 100%;
+        height: 100%;
+        border-radius: 0px;
+        flex-direction: column;
+        border-radius: 0;
+    }
+    
+    .dialog-left{
+        width: auto;
+        border-radius: 0;
+        height: 40%;
+    }
+
+    .dialog-right{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .dialog-content-right{
+        margin: 0;
+        align-items: center;
+    }
+
+    .logo-dialog{
+        display: none;
+    }
+
+    .edit-big-letter-circle{
+        margin: 0;
+        position: relative;
+        top: -64px;
+        border: solid 3px rgb(255, 255, 255);
+    }
+
+    .input-fields-contacts{
+        margin: 0;
+    }
+
+    .button-contacts{
+        justify-content: center;
+        margin: 0px 0px 72px 0px;
+    }
+
+    .button-cancel{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 450px) {
+
+    input{
+        font-size: 16px;
+    }
+
+    .input-name{
+        width: 288px;
+        background-position: 246px 17px;
+    }
+
+    .input-email{
+        width: 288px;
+        background-position: 246px 17px;
+    }
+
+    .input-phone{
+        width: 288px;
+        background-position: 246px 17px;
+    }
+}
