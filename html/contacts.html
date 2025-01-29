@@ -21,7 +21,8 @@
     <link rel="stylesheet" href="../styles/desktopTemplate.css" />
 
     <link rel="stylesheet" href="../styles/media/media.css"/>
-    <link rel="stylesheet" href="../styles/media/contactsMobile.css">
+    <link rel="stylesheet" href="../styles/media/contactsMainMobile.css">
+    <link rel="stylesheet" href="../styles/media/addToContacs.css">
 
     <script src="../main.js"></script>
     <script src="../scripts/contacts.js"></script>
@@ -37,7 +38,7 @@
     <div id="desktop_template"></div>
     <div class="content">
       <div class="d-flex">
-        <div class="contact-box">
+        <div class="contact-box" id="contacBox">
           <button onclick="openDialog()" class="add-contact">
             Add new contact
             <img src="../assets/img/png/person_add.png" alt="" />
@@ -46,10 +47,12 @@
         </div>
         <div class="contactInfo" id="contact_info">
           <div class="text-box">
-            <h1>Contacts</h1>
-            <div class="text-seperator"></div>
-            <span class="info-text">Better with a Team</span>
-            <div class="seperator-horizontal"></div>
+            <div class="innerTextBox">
+              <h1>Contacts</h1>
+              <div class="text-seperator"></div>
+              <span class="info-text">Better with a Team</span>
+              <div class="seperator-horizontal"></div>
+            </div>
           </div>
           <div class="contacts-info-box"></div>
         </div>
@@ -78,7 +81,7 @@
       </div>
     </section>
 
-    <dialog id="dialog_contacts">
+    <dialog id="dialog_contacts" class="dialogContacts">
       <div class="dialog-left">
         <img
           class="logo-dialog"
@@ -224,9 +227,12 @@
 
     <div id="mobile_contact_info" class="mobile-contact-info d-none">
       <div class="text-box">
-        <h1>Contacts</h1>
-        <div class="text-seperator"></div>
-        <span class="info-text">Better with a Team</span>
+        <div class="innerTextBox">
+          <h1>Contacts</h1>
+          <div class="text-seperator"></div>
+          <span class="info-text">Better with a Team</span>
+          <div class="seperator-horizontal"></div>
+        </div>
         <img
           id="arrow_back"
           onclick="goBackMobile()"

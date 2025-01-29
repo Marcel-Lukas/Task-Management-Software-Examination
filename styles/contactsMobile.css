@@ -25,7 +25,7 @@
     background-color: rgb(245, 246, 247);
     top: 80px;
     left: 0px;
-    bottom: 80px;
+    bottom: -15px;
     z-index: 97;
     width: 100%;
   }
@@ -91,3 +91,4 @@
     border-radius: 9px;
     padding: 9px 6px 9px 9px ;
   }
+  

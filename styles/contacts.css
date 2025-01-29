@@ -125,6 +125,12 @@ h3 {
   align-items: center;
 }
 
+.innerTextBox{
+  display: flex;
+  gap: clamp(10px, 1vw, 30px);
+  align-items: center;
+}
+
 .text-seperator {
   height: 59px;
   width: 3px;

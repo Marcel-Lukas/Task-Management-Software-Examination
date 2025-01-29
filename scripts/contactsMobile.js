@@ -63,3 +63,4 @@ function openMobileMenu() {
     document.addEventListener("click", handleClickOutside);
   }, 0);
 }
+
