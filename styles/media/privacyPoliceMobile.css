@@ -1,0 +1,27 @@
+@media screen and (max-width: 1240px) {
+
+    .content{
+        width: auto;
+    }
+
+    .arrow-back{
+        top: 97px;
+        left: calc(100% - 48px);
+        position: fixed;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    
+    h1{
+        width: 288px;
+    }
+    
+    h2{
+        width: 288px;
+    }
+
+    h3{
+        width: 288px;
+    }
+}
