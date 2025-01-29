@@ -1,5 +1,8 @@
-@media screen and(max-width:1440px) {
+@media screen and (max-width:1440px) {
     
+    .content{
+        padding: 8px 96px 70px 24px;
+    }
 }
 
 @media screen and (max-width:1240px) {
@@ -88,8 +91,9 @@
     }
     
     .content-order{
-        margin: 0px 0px 0px 114px;
+        margin: 0px 0px 0px 8px;
         width: 556px;
+        bottom: 0px;
     }
 
     .bottom-order{
