@@ -16,6 +16,10 @@
     width: calc(100% - 144px);
     position: relative;
   }
+
+  .text-box{
+    gap: clamp(5px, 0vw, 30px);
+  }
 }
 
 @media screen and (max-width: 1024px) {
@@ -40,6 +44,17 @@
   .header-span{
     display: none;
   }
+
+  
+  .seperator-blue{
+    display: none;
+}
+  
+  .seperator-horizontal{
+    visibility: visible;
+    width: 100px;
+    border: 1.5px solid #29abe2;
+}
 
   .content{
     padding: 80px 0px 0px 8px;

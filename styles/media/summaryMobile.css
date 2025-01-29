@@ -59,16 +59,6 @@
         margin: 8px 0px 8px 0px;
     }
 
-    .seperator-blue{
-        display: none;
-    }
-
-    .seperator-horizontal{
-        visibility: visible;
-        width: 100px;
-        border: 1.5px solid #29abe2;
-    }
-
     .content-tasks{
         height: 384px;
         width: 396px;

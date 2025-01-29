@@ -1,0 +1,51 @@
+@media screen and (max-width:1240px) {
+
+    .text-box{
+        flex-direction: column;
+        align-items: unset;
+    }
+
+    .text-seperator{
+        display: none;
+    }
+
+    .seperator-horizontal{
+        visibility: visible;
+        width: 100px;
+        border: 1.5px solid #29abe2;
+    }
+
+    .contact-box{
+        width: clamp(305px, 27vw, 456px);
+    }
+}
+
+@media screen and (max-width:555px) {
+
+    .contactInfo{
+        display: none;
+    }
+
+    .contact-box{
+        width: 100%;
+    }
+
+    .letter-box{
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+
+    .contacts{
+        gap: 8px;
+    }
+
+    .contact-seperator{
+        width: clamp(224px, 23vw, 352px);
+    }
+
+    .contact-email{
+        font-size: 12px;
+    }
+}
