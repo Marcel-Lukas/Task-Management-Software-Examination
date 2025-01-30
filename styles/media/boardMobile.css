@@ -118,14 +118,14 @@
     }
 
     .task-card-area{
-        width: 252px;
-        height: 244px;
+        width: 262px;
+        height: 262px;
     }
 
     .task-card{
-        min-height: 244px;
-        max-height: 244px;
-        width: 252px;
+        min-height: 256px;
+        max-height: 256px;
+        width: 256px;
         padding: 8px 12px 8px 12px;
     }
 
@@ -141,6 +141,10 @@
     .d-flex-column{
         overflow-x: scroll ;
     }
+
+    .task-description{
+        overflow: auto;
+    }
 }
 
 @media screen and (max-width: 777px) {
@@ -153,9 +157,13 @@
         width: auto;
     }
 
-        .upperHeaderRow{
-            margin: 8px 0px 8px 0px;
-        }
+    .upperHeaderRow{
+        margin: 8px 0px 8px 0px;
+    }
+
+    .d-flex-column{
+        margin: 0;
+    }
 }
 
 @media screen and (max-width: 450px) {
