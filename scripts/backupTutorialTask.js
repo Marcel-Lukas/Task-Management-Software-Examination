@@ -1,3 +1,24 @@
+/**
+ * An array of backup task objects used for restoring or initializing the tasks on the board.
+ * Each object represents a task with properties such as title, description, status, subtasks, and assigned contacts.
+ *
+ * @constant
+ * @type {Array<Object>}
+ * @property {number}         .id             - The unique identifier of the task.
+ * @property {string}         .title          - The title or name of the task.
+ * @property {string}         .description    - A brief explanation of what the task entails.
+ * @property {string}         .category       - The category under which this task falls (e.g., "Tutorial").
+ * @property {string}         .date           - The due date for the task (in YYYY-MM-DD format).
+ * @property {string}         .priority       - The task's priority level (e.g., "low", "medium", "urgent").
+ * @property {string}         .status         - The current status of the task (e.g., "todo", "inprogress", "awaitfeedback", "done").
+ * @property {Array<number>}  .assigned       - An array of contact IDs assigned to this task.
+ * @property {string|number}  .user           - A reference to the user (or user ID) primarily responsible for this task; can be empty if none is set.
+ * @property {Array<Object>}  .subtasks       - An array of subtask objects belonging to this task.
+ * @property {boolean}        .subtasks[].done         - Indicates whether the subtask is completed (`true`) or not (`false`).
+ * @property {number}         .subtasks[].subId        - A unique identifier for the subtask within the task.
+ * @property {string}         .subtasks[].subTaskName  - The name or description of the subtask.
+ */
+
 let backupTask = [
   {
     assigned: [1, 2, 3, 4, 5, 6, 7, 8, 9],
