@@ -1,14 +1,31 @@
 @media screen and (max-width: 1240px) {
 
     .content{
-        width: auto;
+        width: 90%;
+        height: 100vh;
         margin: 0px 8px 0px 8px;
+        padding: 112px 88px 0px 270px;
     }
 
     .arrow-back{
         top: 97px;
         left: calc(100% - 48px);
         position: fixed;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+
+    .content{
+        width: 100vh;
+    }
+}
+
+@media screen and (max-width: 777px) {
+
+    .content{
+        padding: 112px 88px 0px 8px;
+        width: auto;
     }
 }
 
