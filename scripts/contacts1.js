@@ -1,14 +1,28 @@
+/**
+ * Binds an event listener for DOMContentLoaded, then calls `renderContent` to initialize the page.
+ * @event document:DOMContentLoaded
+ */
 document.addEventListener("DOMContentLoaded", () => {
   renderContent();
 });
 
-
+/**
+ * Fetches and organizes user contacts into groups, then renders them on the page.
+ * @async
+ * @function renderContent
+ * @returns {Promise<void>}
+ */
 async function renderContent() {
   const groupedContacts = await groupContacts();
   renderContactsList(groupedContacts);
 }
 
-
+/**
+ * Retrieves and groups the active user's contacts by their first initial.
+ * @async
+ * @function groupContacts
+ * @returns {Promise<Object>} An object keyed by first letter, each containing an array of contact objects.
+ */
 async function groupContacts() {
   userContacts = await filterUserContacts();
   return userContacts.reduce((acc, contact, index) => {
@@ -23,7 +37,12 @@ async function groupContacts() {
   }, {});
 }
 
-
+/**
+ * Filters out only the active user's contacts from the global contacts database.
+ * @async
+ * @function filterUserContacts
+ * @returns {Promise<Array>} An array containing the active user's contact objects.
+ */
 async function filterUserContacts() {
   const activeUser = JSON.parse(localStorage.getItem("activeUser"));
   const data = await fetchData("contacts");
@@ -34,7 +53,13 @@ async function filterUserContacts() {
   return userContacts;
 }
 
-
+/**
+ * Renders the contacts in the DOM by creating initial letter boxes and contact entries.
+ * @async
+ * @function renderContactsList
+ * @param {Object} groupedContacts - An object grouping contacts by their initial.
+ * @returns {Promise<void>}
+ */
 async function renderContactsList(groupedContacts) {
   const contactList = document.getElementById("contact_list");
   contactList.innerHTML = "";
@@ -46,7 +71,13 @@ async function renderContactsList(groupedContacts) {
   });
 }
 
-
+/**
+ * Initializes an entry for the active user at the top of the contact list if available.
+ * @async
+ * @function initActiveUser
+ * @param {HTMLElement} contactList - The DOM element where contacts are rendered.
+ * @returns {Promise<void>}
+ */
 async function initActiveUser(contactList) {
   const activeUser = JSON.parse(localStorage.getItem("activeUser"));
   const user = await searchForUser(activeUser.id);
@@ -56,12 +87,23 @@ async function initActiveUser(contactList) {
   }
 }
 
-
+/**
+ * Sorts an array of initials alphabetically.
+ * @function sortInitials
+ * @param {string[]} initials - An array of single-letter strings.
+ * @returns {string[]} The sorted array of initials.
+ */
 function sortInitials(initials) {
   return initials.sort();
 }
 
-
+/**
+ * Renders each contact belonging to a particular initial group into the contact list.
+ * @function renderContactsByInitial
+ * @param {Array} contacts - An array of contact objects, each wrapped with its index and initials.
+ * @param {HTMLElement} contactList - The DOM element to which the contact HTML is appended.
+ * @returns {void}
+ */
 function renderContactsByInitial(contacts, contactList) {
   contacts.forEach(({ contact }) => {
     const contactHtml = generateContact(contact);
@@ -69,13 +111,24 @@ function renderContactsByInitial(contacts, contactList) {
   });
 }
 
-
+/**
+ * Renders a letter box for grouping contacts by their first initial.
+ * @function initLetterBox
+ * @param {string} initial - The letter corresponding to a group of contacts.
+ * @param {HTMLElement} contactList - The DOM element where the letter box is placed.
+ * @returns {void}
+ */
 function initLetterBox(initial, contactList) {
   const letterBoxHtml = generateLetterBox(initial);
   contactList.innerHTML += letterBoxHtml;
 }
 
-
+/**
+ * Adds a new contact to the active user, then refreshes the page content and clears the form.
+ * @async
+ * @function addContact
+ * @returns {Promise<void>}
+ */
 async function addContact() {
   const contactId = await postNewContact();
   addContactToUser(contactId, activeUser);
@@ -86,7 +139,15 @@ async function addContact() {
   renderContent();
 }
 
-
+/**
+ * Creates a contact object with relevant fields like name, email, phone, color, and initials.
+ * @function createContact
+ * @param {string} name - The contact's name.
+ * @param {string} email - The contact's email address.
+ * @param {string} phone - The contact's phone number.
+ * @param {number} contactId - A unique ID for the contact.
+ * @returns {Object} A contact object containing user details.
+ */
 function createContact(name, email, phone, contactId) {
   return {
     id: contactId,
@@ -98,7 +159,11 @@ function createContact(name, email, phone, contactId) {
   };
 }
 
-
+/**
+ * Generates a random color in hex format for contact icons.
+ * @function generateRandomColor
+ * @returns {string} A randomly generated hex color code (e.g., "#A3B9C6").
+ */
 function generateRandomColor() {
   const darkLetters = "0123456789ABC";
   let color = "#";
@@ -108,7 +173,13 @@ function generateRandomColor() {
   return color;
 }
 
-
+/**
+ * Retrieves a contact's data and displays it in the contact info box. If on mobile, shows a mobile-specific view.
+ * @async
+ * @function displayContactInfo
+ * @param {number} contactId - The unique identifier of the contact to display.
+ * @returns {Promise<void>}
+ */
 async function displayContactInfo(contactId) {
   const contact = await getContact(contactId);
   if (window.innerWidth <= 777) {
@@ -120,12 +191,18 @@ async function displayContactInfo(contactId) {
   contactInfoButtons.innerHTML = generateButtonsInContactInfo(contact);
   if (contact.id === 0) {
     document.getElementById("for_active_user").classList.add("letter-circel-user");
-    document.getElementById("user_delete_display_info").classList.add("d-none")
+    document.getElementById("user_delete_display_info").classList.add("d-none");
   }
   highlightContact(contact);
 }
 
-
+/**
+ * Obtains a contact object based on its ID. If the ID is 0, it is the active user, otherwise it's a normal contact.
+ * @async
+ * @function getContact
+ * @param {number} contactId - The unique identifier of the contact to fetch.
+ * @returns {Promise<Object>} The contact data object.
+ */
 async function getContact(contactId) {
   if (contactId === 0) {
     const activeUser = JSON.parse(localStorage.getItem("activeUser"));
@@ -137,7 +214,13 @@ async function getContact(contactId) {
   }
 }
 
-
+/**
+ * Visually highlights a contact in the contact list to indicate it is currently selected.
+ * @function highlightContact
+ * @param {Object} contact - The contact data object.
+ * @param {number} contact.id - The unique identifier of the contact.
+ * @returns {void}
+ */
 function highlightContact(contact) {
   const contacts = document.getElementsByClassName("contacts");
   for (let i = 0; i < contacts.length; i++) {
@@ -149,7 +232,13 @@ function highlightContact(contact) {
   document.getElementById(`contact${contact.id}`).style.color = "white";
 }
 
-
+/**
+ * Generates initials for a given name. For single names, returns the first character in uppercase.
+ * For multiple names, returns the first character of the first and last names in uppercase.
+ * @function getInitials
+ * @param {string} name - The full name of the user or contact.
+ * @returns {string} The generated initials (e.g., "JD").
+ */
 function getInitials(name) {
   const names = name.split(" ");
   if (names.length === 1) {
@@ -160,7 +249,13 @@ function getInitials(name) {
   return firstInitial + lastInitial;
 }
 
-
+/**
+ * Truncates the given text to a specified length, adding ellipsis if necessary.
+ * @function limitTextLength
+ * @param {string} text - The original text to potentially truncate.
+ * @param {number} [maxLength=25] - The maximum length before truncation.
+ * @returns {string} The truncated text or the original if it's below the max length.
+ */
 function limitTextLength(text, maxLength = 25) {
   if (text.length > maxLength) {
     return text.substring(0, maxLength) + "...";
@@ -168,15 +263,26 @@ function limitTextLength(text, maxLength = 25) {
   return text;
 }
 
-
+/**
+ * Returns a promise that resolves after a specified number of milliseconds.
+ * @function wait
+ * @param {number} ms - The number of milliseconds to wait.
+ * @returns {Promise<void>} A promise that resolves after `ms` milliseconds.
+ */
 function wait(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
+/* ======================= MOBILE ======================= */
 
-
-// Mobile
-
+/**
+ * Displays a contact's information in a mobile-specific view by adjusting the layout
+ * and adding buttons for editing or deleting.
+ * @async
+ * @function displayContactInfoMobile
+ * @param {number} contactId - The contact's unique identifier.
+ * @returns {Promise<void>}
+ */
 async function displayContactInfoMobile(contactId) {
   let infoDiv = document.getElementById("mobile_contact_info");
   infoDiv.classList.remove("d-none");
@@ -187,18 +293,23 @@ async function displayContactInfoMobile(contactId) {
   contactInfoDiv.innerHTML = generateContactInfo(contact);
   if (contact.id === 0) {
     document.getElementById("for_active_user").classList.add("letter-circel-user");
-    document.getElementById("user_delete_display_info").classList.add("d-none")
+    document.getElementById("user_delete_display_info").classList.add("d-none");
   }
   contactInfoButtons.innerHTML = generateButtonsInContactInfo(contact);
   mobileEditContact();
   const menu = document.getElementById("mobile_menu");
   menu.innerHTML = generateMobileMenu(contact);
   if (contact.id === 0) {
-    document.getElementById("user_delete_mobile").classList.add("d-none")
+    document.getElementById("user_delete_mobile").classList.add("d-none");
   }
 }
 
-
+/**
+ * Disables the edit/delete button block when in mobile mode,
+ * hiding it from the screen.
+ * @function mobileEditContact
+ * @returns {void}
+ */
 function mobileEditContact() {
   const contactMobileButton = document.querySelector(
     ".contact-box-edit-delete"
@@ -206,7 +317,11 @@ function mobileEditContact() {
   contactMobileButton.classList.add("d-none");
 }
 
-
+/**
+ * Closes the mobile contact info view, returning the layout to its default state.
+ * @function goBackMobile
+ * @returns {void}
+ */
 function goBackMobile() {
   document.getElementById("mobile_contact_info").classList.add("d-none");
   document.getElementById("mobile_contact_info").classList.remove("pos-abs");
@@ -214,7 +329,11 @@ function goBackMobile() {
   contactInfoDiv.innerHTML = "";
 }
 
-
+/**
+ * Opens the mobile menu and sets up a click listener to close it when clicking outside.
+ * @function openMobileMenu
+ * @returns {void}
+ */
 function openMobileMenu() {
   const menu = document.getElementById("mobile_menu");
   menu.classList.add("d-flex");
@@ -229,10 +348,14 @@ function openMobileMenu() {
   }, 0);
 }
 
+/* ======================= OPERATIONS ======================= */
 
-
-// Operations
-
+/**
+ * Creates a new contact on the server using form inputs for name, email, and phone.
+ * @async
+ * @function postNewContact
+ * @returns {Promise<number|undefined>} The newly created contact's ID, or undefined if missing name/email.
+ */
 async function postNewContact() {
   const name = getInputValue("name");
   const email = getInputValue("email");
@@ -244,7 +367,14 @@ async function postNewContact() {
   return contactId;
 }
 
-
+/**
+ * Adds a contact to the active user's contacts list in the backend if it's not already present.
+ * @async
+ * @function addContactToUser
+ * @param {number} contactId - The ID of the contact to add.
+ * @param {Object} activeUser - The active user's object containing at least an `id` and `contacts` array.
+ * @returns {Promise<void>}
+ */
 async function addContactToUser(contactId, activeUser) {
   const user = await searchForUser(activeUser.id);
   if (user && !user.contacts.includes(contactId)) {
@@ -253,125 +383,14 @@ async function addContactToUser(contactId, activeUser) {
   }
 }
 
-
+/**
+ * Adds a contact to the localStorage record of the active user without updating the backend.
+ * @function addContactToUserLocal
+ * @param {number} contactId - The ID of the contact to add.
+ * @returns {void}
+ */
 function addContactToUserLocal(contactId) {
   const activeUser = JSON.parse(localStorage.getItem("activeUser"));
   activeUser.contacts.push(contactId);
   localStorage.setItem("activeUser", JSON.stringify(activeUser));
-}
-
-
-async function deleteContact(contactId) {
-  await deleteContactInData(contactId);
-  openDialogSuccessfully('deleted');
-  await renderContent();
-  document.querySelector(".contacts-info-box").innerHTML = "";
-  if (window.innerWidth < 777) {
-    document.getElementById("mobile_menu").classList.remove("d-flex");
-    goBackMobile();
-  }
-}
-
-
-async function deleteContactInData(contactId) {
-  let users = await fetchData("users");
-  if (contactId >= 1 && contactId <= 10) {
-    await deleteContactOnlyforUser(contactId, users);
-  } else {
-    await deleteContactforAllUsers(contactId, users);
-  }
-  await deleteContactFromTasks(contactId);
-  deleteContactInLocalStorage(contactId);
-}
-
-
-async function deleteContactOnlyforUser(contactId, users) {
-  if (activeUser.id === 0) {
-    return;
-  }
-  users = users.map((user) => {
-    if (user.id === activeUser.id) {
-      return {
-        ...user,
-        contacts: user.contacts.filter((contact) => contact !== contactId),
-      };
-    }
-    return user;
-  });
-  await postData("users", users);
-}
-
-
-async function deleteContactFromTasks(contactId) {
-  const allTasks = await fetchData("tasks");
-  const updatedTasks = allTasks.map((task) => {
-    if (task.assigned && Array.isArray(task.assigned)) {
-      return {
-        ...task,
-        assigned: task.assigned.filter((id) => id !== contactId),
-      };
-    }
-    return task;
-  });
-  await postData("tasks", updatedTasks);
-}
-
-
-async function deleteContactforAllUsers(contactId, users) {
-  await deleteData("contacts", contactId);
-  if (activeUser.id === 0) {
-    return;
-  }
-  users = users.map((user) => ({
-    ...user,
-    contacts: user.contacts.filter((contact) => contact !== contactId),
-  }));
-  await postData("users", users);
-}
-
-
-function deleteContactInLocalStorage(contactId) {
-  let activeUser = JSON.parse(localStorage.getItem("activeUser"));
-  activeUser.contacts = activeUser.contacts.filter(
-    (contact) => contact !== contactId
-  );
-  localStorage.setItem("activeUser", JSON.stringify(activeUser));
-}
-
-
-async function searchForContact(contactId) {
-  const data = await fetchData("contacts");
-  const contacts = Object.values(data);
-  const contact = contacts.find((c) => c && c.id === contactId);
-  return contact;
-}
-
-
-async function searchForUser(contactId) {
-  const data = await fetchData("users");
-  const contacts = Object.values(data);
-  const contact = contacts.find((c) => c && c.id === contactId);
-  return contact;
-}
-
-
-function openDeleteDialog(contactId) {
-  toggleOverlay("contact_delete_overlay");
-  let yesButton = document.getElementById("delete_yes_btn");
-  yesButton.innerHTML = generateDeleteButton(contactId);
-}
-
-
-function toggleOverlay(section) {
-  let refOverlay = document.getElementById(section);
-  refOverlay.classList.toggle("d-none");
-  if (!refOverlay.classList.contains("d-none")) {
-    document.body.style.overflow = "hidden";
-    setTimeout(() => {
-      refOverlay.classList.add("active", "visible");
-    }, 50);
-  } else {
-    document.body.style.overflow = "auto";
-    refOverlay.classList.remove("active", "visible");
-  }
 }
