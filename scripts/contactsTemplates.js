@@ -1,3 +1,14 @@
+/**
+ * Generates an HTML snippet displaying the active user as a special contact entry,
+ * with a user icon in white, an indication of "YOU," and truncated name/email.
+ * @function generateActiveUserContact
+ * @param {Object} user - The data object for the active user.
+ * @param {number} user.id - A unique identifier for the user (forced to 0 for active user).
+ * @param {string} user.name - The full name of the active user.
+ * @param {string} user.email - The email address of the active user.
+ * @param {string} user.initials - The user's initials.
+ * @returns {string} An HTML string representing the active user in the contact list.
+ */
 function generateActiveUserContact(user){
   const limitNameLength = limitTextLength(user.name);
   const limitEmailLength = limitTextLength(user.email);
@@ -12,7 +23,18 @@ function generateActiveUserContact(user){
     `;
 }
 
-
+/**
+ * Generates an HTML snippet for displaying a regular contact in the contact list,
+ * including a color-coded icon, truncated name, and truncated email.
+ * @function generateContact
+ * @param {Object} contact - The data object for the contact.
+ * @param {number} contact.id - The unique identifier of the contact.
+ * @param {string} contact.name - The contact's full name.
+ * @param {string} contact.email - The contact's email address.
+ * @param {string} contact.color - The color associated with the contact.
+ * @param {string} contact.initials - The contact's initials.
+ * @returns {string} An HTML string representing a contact in the contact list.
+ */
 function generateContact(contact) {
   const limitNameLength = limitTextLength(contact.name);
   const limitEmailLength = limitTextLength(contact.email);
@@ -28,13 +50,31 @@ function generateContact(contact) {
     `;
 }
 
-
+/**
+ * Generates an HTML snippet for a letter box (alphabetic separator) in the contact list,
+ * used to group contacts by their first initial.
+ * @function generateLetterBox
+ * @param {string} initials - The single-letter string representing the grouped initial.
+ * @returns {string} An HTML string containing the letter box and a separator.
+ */
 function generateLetterBox(initials) {
   return `<div class="letter-box">${initials}</div>
               <div class="contact-seperator"></div>`;
 }
 
-
+/**
+ * Constructs an HTML snippet displaying detailed information about a contact,
+ * including name, email, phone, and edit/delete controls.
+ * @function generateContactInfo
+ * @param {Object} contact - The data object for the contact.
+ * @param {number} contact.id - The unique identifier of the contact.
+ * @param {string} contact.name - The contact's full name.
+ * @param {string} contact.email - The contact's email address.
+ * @param {string} contact.color - The color associated with the contact.
+ * @param {string} contact.initials - The contact's initials.
+ * @param {string} [contact.phone] - The contact's phone number, if available.
+ * @returns {string} An HTML snippet containing the contact's detailed info and action buttons.
+ */
 function generateContactInfo(contact) {
   const phone = contact.phone !== undefined ? contact.phone : "";
   return `
@@ -76,7 +116,15 @@ function generateContactInfo(contact) {
       `;
 }
 
-
+/**
+ * Generates an HTML snippet for a large letter circle (such as for editing a contact)
+ * displaying the contact's initials.
+ * @function generateBigLetterCircle
+ * @param {Object} contact - The contact data object.
+ * @param {string} contact.color - The background color for the circle.
+ * @param {string} contact.initials - The contact's initials.
+ * @returns {string} An HTML string for the large letter circle.
+ */
 function generateBigLetterCircle(contact) {
   return `
       <div id="for_active_use_dialog_circel" class="edit-big-letter-circle" style="background-color: ${contact.color}";>${contact.initials}
@@ -84,7 +132,14 @@ function generateBigLetterCircle(contact) {
       `;
 }
 
-
+/**
+ * Constructs an HTML snippet with buttons displayed in a contact's detailed view,
+ * allowing the user to delete or save changes to the contact.
+ * @function generateButtonsInContactInfo
+ * @param {Object} contact - The contact data object.
+ * @param {number} contact.id - The unique identifier of the contact.
+ * @returns {string} An HTML string containing two buttons: one for deletion and one for saving.
+ */
 function generateButtonsInContactInfo(contact) {
   return `
     <button onclick="openDeleteDialog(${contact.id})" id="user_display_info" class="button-delete">
@@ -101,21 +156,38 @@ function generateButtonsInContactInfo(contact) {
     `;
 }
 
-
+/**
+ * Generates the HTML snippet for a simple mobile menu, containing icons for editing
+ * and deleting a contact.
+ * @function generateMobileMenu
+ * @param {Object} contact - The contact data object.
+ * @param {number} contact.id - The unique identifier of the contact.
+ * @returns {string} An HTML string with two image buttons for mobile edit and delete actions.
+ */
 function generateMobileMenu(contact){
   return ` <img onclick="openDialogEdit(${contact.id})" class="mobile-edit-img" src="../assets/img/png/edit-default.png" alt="edit">
       <img onclick="openDeleteDialog(${contact.id})" id="user_delete_mobile" class="mobile-delete-img" src="../assets/img/png/delete-default.png" alt="delete"></img>`;
-  
 }
 
-
+/**
+ * Constructs a confirmation button for deleting a contact, toggling the overlay
+ * and closing any edit dialog upon click.
+ * @function generateDeleteButton
+ * @param {number} contactId - The unique identifier of the contact to delete.
+ * @returns {string} An HTML button labeled "YES" that triggers contact deletion.
+ */
 function generateDeleteButton(contactId) {
   return `<button class="clear-button"
            onclick="deleteContact(${contactId});toggleOverlay('contact_delete_overlay'); closeDialogEdit() ">YES
       </button>`;
 }
 
-
+/**
+ * Creates an HTML snippet indicating a successful creation, editing, or deletion of a contact.
+ * @function generateSuccesssfullyHtml
+ * @param {string} operation - A string describing the operation (e.g., "created," "edited," or "deleted").
+ * @returns {string} A success message formatted in HTML.
+ */
 function generateSuccesssfullyHtml(operation){
   return `<span>Contacts successfully ${operation}</span>`;
 }
