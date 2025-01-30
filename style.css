@@ -28,8 +28,8 @@ body {
   height: 100%;
   width: calc(100% - 232px);
   margin-left: 232px;
-  margin-top: 96px;
-  padding: 110px 96px 70px 96px;
+  margin-top: 64px;
+  padding: 36px 96px 70px 96px;
   display: flex;
   flex-direction: column;
 }

@@ -1,7 +1,7 @@
 @media screen and (max-width:1440px) {
     
     .content{
-        padding: 0px 0px 70px 0px;
+        padding: 64pxpx 0px 70px 8px;
     }
 }
 
@@ -73,10 +73,6 @@
 }
 
 @media screen and (max-width: 1024px) {
-
-    h1{
-        margin: 0px 0px 0px 114px;
-    }
 
     .pos-rel{
         width: 212px;
@@ -168,20 +164,24 @@
 
     h1{
         position: fixed;
-        margin: 88px 0px 0px 0px
+        margin: 88px 0px 0px 8px
     }
 
     .bottom-order{
-        margin: 16px 0px 0px 0px;
-        width: 448px;
-        height: 72px;
+        margin: 0px 0px 0px 0px;
+        width: 100%;
+        height: 48pxpx;
         z-index: 1;
         position: absolute;
-        justify-content: end;
+        justify-content: center;
     }
 
     .bottom-button-order{
-        margin: 0px 16px 0px 0px;
+    
+    }
+
+    .bottomButtonArea{
+
     }
 
     .add-task-form-left{
@@ -202,50 +202,53 @@
 @media screen and (max-width: 450px) {
 
     input{
-        width: 280px;
+        width: 248px;
     }
 
     textarea{
-        width: 280px;
+        width: 248px;
     }
 
     .assigned-container{
-        width: 280px;
+        width: 248px;
     }
 
     .pos-rel{
-        width: 280px;
+        width: 248px;
     }
 
     .prio-span{
-        font-size: 12px;
+        font-size: 22px;
     }
 
     .urgent-button{
-        width: 88px;
-        height: 36px;
+        width: 100px;
+        height: 62px;
     }
 
     .clicked-medium{
-        width: 88px;
-        height: 36px;
+        width: 100px;
+        height: 62px;
     }
 
     .low-button{
-        width: 88px;
-        height: 36px;
+        width: 100px;
+        height: 62px;
     }
 
     .add-task-form-left{
         width: 282px;
+        padding: 0px 0px 0px 16px;
     }
 
     .add-task-form-right{
         width: 282px;
+        padding: 0px 0px 0px 16px;
     }
 
     .bottom-order{
-        width: 280px;
+        width: -webkit-fill-available;
+        justify-content: center;
     }
 
     .create-task-button{
@@ -258,6 +261,7 @@
 
     .div-button-order{
         flex-direction: column;
+        padding: 0px 0px 0px 16px;
     }
 
     .order-content{
@@ -266,5 +270,10 @@
 
     .form-child-order{
         width: 200px;
+    }
+
+    .pos-abs{
+        right: 0;
+        left: 216px;
     }
 }
