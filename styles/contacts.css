@@ -23,10 +23,10 @@ h3 {
 }
 
 .contact-box {
-  padding: 32px 0px 0px 0px;
+  padding: 48px 0px 0px 0px;
   display: flex;
   width: clamp(333px, 27vw, 456px);
-  height: calc(100vh - 96px);
+  height: 100vh;
   background-color: white;
   box-shadow: 1px 0px 4px 0px #0000001a;
   flex-direction: column;
@@ -70,6 +70,7 @@ h3 {
   gap: 35px;
   align-items: center;
   border-radius: 10px;
+  overflow-x: clip;
 }
 
 .contacts:hover {
