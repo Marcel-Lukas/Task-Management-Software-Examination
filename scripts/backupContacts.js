@@ -1,3 +1,17 @@
+/**
+ * An array of backup contact objects used for restoring or initializing the contacts database.
+ * Each object represents a single contact with properties for name, email, phone, color, and initials.
+ * 
+ * @constant
+ * @type {Array<Object>}
+ * @property {number}    .id       - The unique identifier of the contact.
+ * @property {string}    .name     - The contact's full name.
+ * @property {string}    .email    - The contact's email address.
+ * @property {string}    .phone    - The contact's phone number.
+ * @property {string}    .color    - A hex color code representing the contact's display color.
+ * @property {string}    .initials - The contact's initials derived from the name.
+ */
+
 let backupContacts = [
   {
     color: "#01687E",
