@@ -8,6 +8,8 @@
 
 html {
   height: 100%;
+  font-family: "Inter", normal;
+  scroll-behavior: smooth;
 }
 
 .d-none {
