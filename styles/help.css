@@ -1,5 +1,8 @@
 body {
   margin: 0px;
+  font-size: 17px;
+  font-family: "Inter", normal;
+  scroll-behavior: smooth;
 }
 
 h1 {
