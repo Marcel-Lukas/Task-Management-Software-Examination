@@ -1,3 +1,110 @@
+/**
+ * Checks if the due date is valid and not in the past, applying visual alerts if invalid.
+ * @function requiredDate
+ * @returns {boolean} Returns `true` if the date is valid, otherwise `false`.
+ */
+function requiredDate() {
+  let date = document.getElementById("due_date");
+  let alertDate = document.getElementById("date_field_alert");
+  let today = new Date();
+  if (date.value.trim() == "" || new Date(date.value) < today) {
+    date.classList.add("alert-border");
+    alertDate.classList.remove("d-none");
+    return false;
+  } else {
+    date.classList.remove("alert-border");
+    alertDate.classList.add("d-none");
+    return true;
+  }
+}
+
+/**
+ * Checks if a task category has been selected; applies visual alerts if not.
+ * @function requiredCategory
+ * @returns {void}
+ */
+function requiredCategory() {
+  let categoryValue = document.getElementById("category");
+  let category = document.getElementById("category_contant");
+  let alertCategory = document.getElementById("category_field_alert");
+  if (categoryValue.innerText === "Select task category") {
+    category.classList.add("alert-border");
+    alertCategory.classList.remove("d-none");
+    category.classList.remove("category-container");
+  }
+}
+
+/**
+ * Resets all alert styles for required fields (title, date, category).
+ * @function resetrequiredFields
+ * @returns {void}
+ */
+function resetrequiredFields() {
+  resetrequiredTitle();
+  resetrequiredDate();
+  resetrequiredCategory();
+}
+
+/**
+ * Removes the alert styling from the title field.
+ * @function resetrequiredTitle
+ * @returns {void}
+ */
+function resetrequiredTitle() {
+  let title = document.getElementById("title_input");
+  let alertTitle = document.getElementById("title_field_alert");
+  title.classList.remove("alert-border");
+  alertTitle.classList.add("d-none");
+}
+
+/**
+ * Removes the alert styling from the date field.
+ * @function resetrequiredDate
+ * @returns {void}
+ */
+function resetrequiredDate() {
+  let date = document.getElementById("due_date");
+  let alertDate = document.getElementById("date_field_alert");
+  date.classList.remove("alert-border");
+  alertDate.classList.add("d-none");
+}
+
+/**
+ * Resets category selection styling if a valid category is set.
+ * @function resetrequiredCategory
+ * @returns {void}
+ */
+function resetrequiredCategory() {
+  let categoryValue = document.getElementById("category");
+  let category = document.getElementById("category_contant");
+  let alertCategory = document.getElementById("category_field_alert");
+  if ((categoryValue.innerText === "Technical Task" || "User Story")) {
+    category.classList.remove("alert-border");
+    alertCategory.classList.add("d-none");
+    category.classList.add("category-container");
+  }
+}
+
+/**
+ * Closes select dropdowns if the user clicks outside certain task elements.
+ * @function closeTaskIfOutside
+ * @param {Event} event - The DOM click event.
+ * @returns {void}
+ */
+function closeTaskIfOutside(event) {
+  if (event.target.id === 'add_task_board' || 'edit_task_board' || 'add_task_content') {
+    closeSelect();
+    closeSelectCategory();
+  }
+}
+
+
+/**
+ * Selects a priority level for a task and updates the UI to reflect the chosen priority.
+ * @function selectPrio
+ * @param {string} priority - The chosen priority (e.g., "low", "medium", "urgent").
+ * @returns {void}
+ */
 function selectPrio(priority) {
   let prios = ["low", "medium", "urgent"];
   prios.forEach((prio) => resetPrio(prio));
@@ -6,7 +113,12 @@ function selectPrio(priority) {
   handleSelectedPriority(selectedButton);
 }
 
-
+/**
+ * Resets the priority button styling to its default (non-clicked) state.
+ * @function resetPrio
+ * @param {string} prio - The priority level to reset (e.g., "low", "medium", "urgent").
+ * @returns {void}
+ */
 function resetPrio(prio) {
   let prioButton = document.getElementById(`${prio}_span`);
   let prioColoredRef = document.getElementById(`prio_${prio}_colored`);
@@ -17,7 +129,12 @@ function resetPrio(prio) {
   prioWhiteRef.classList.add("d-none");
 }
 
-
+/**
+ * Applies styling to indicate the newly selected priority and toggles relevant icons.
+ * @function setPrio
+ * @param {string} priority - The priority level to set (e.g., "low", "medium", "urgent").
+ * @returns {void}
+ */
 function setPrio(priority) {
   let prioButton = document.getElementById(`${priority}_span`);
   let prioColoredRef = document.getElementById(`prio_${priority}_colored`);
@@ -28,7 +145,11 @@ function setPrio(priority) {
   prioWhiteRef.classList.remove("d-none");
 }
 
-
+/**
+ * Opens the "Assigned" dropdown menu for selecting contacts.
+ * @function openSelect
+ * @returns {void}
+ */
 function openSelect() {
   if ((onclick = true)) {
     document.getElementById("assigned_inactiv").classList.add("d-none");
@@ -36,7 +157,11 @@ function openSelect() {
   }
 }
 
-
+/**
+ * Closes the "Assigned" dropdown menu.
+ * @function closeSelect
+ * @returns {void}
+ */
 function closeSelect() {
   if ((onclick = true)) {
     document.getElementById("assigned_activ").classList.add("d-none");
@@ -44,7 +169,11 @@ function closeSelect() {
   }
 }
 
-
+/**
+ * Opens the category selection dropdown and populates it with category options.
+ * @function openSelectCategory
+ * @returns {void}
+ */
 function openSelectCategory() {
   if ((onclick = true)) {
     document.getElementById("category_inactiv").classList.add("d-none");
@@ -53,7 +182,11 @@ function openSelectCategory() {
   }
 }
 
-
+/**
+ * Closes the category selection dropdown.
+ * @function closeSelectCategory
+ * @returns {void}
+ */
 function closeSelectCategory() {
   if ((onclick = true)) {
     document.getElementById("category_activ").classList.add("d-none");
@@ -61,7 +194,11 @@ function closeSelectCategory() {
   }
 }
 
-
+/**
+ * Opens the subtask input area to allow the user to add subtasks.
+ * @function openSubtasks
+ * @returns {void}
+ */
 function openSubtasks() {
   if ((onclick = true)) {
     document.getElementById("subtasks_inactiv_img").classList.add("d-none");
@@ -69,7 +206,11 @@ function openSubtasks() {
   }
 }
 
-
+/**
+ * Clears all input fields and resets certain global variables related to the task form.
+ * @function clearButton
+ * @returns {void}
+ */
 function clearButton() {
   document.getElementById("title_input").value = "";
   document.getElementById("description_textarea").value = "";
@@ -85,7 +226,11 @@ function clearButton() {
   document.getElementById("subtasks_list").innerHTML = "";
 }
 
-
+/**
+ * Manages the addition of a subtask, including toggling icons and clearing the input field.
+ * @function addSubtasksManage
+ * @returns {void}
+ */
 function addSubtasksManage() {
   toggleSubtaskIcons();
   let subtasksInput = document.getElementById("subtasks_input").value;
@@ -96,13 +241,22 @@ function addSubtasksManage() {
   }
 }
 
-
+/**
+ * Toggles subtask icons between active and inactive states.
+ * @function toggleSubtaskIcons
+ * @returns {void}
+ */
 function toggleSubtaskIcons() {
   document.getElementById("subtasks_inactiv_img").classList.remove("d-none");
   document.getElementById("subtasks_activ_img").classList.add("d-none");
 }
 
-
+/**
+ * Adds a new subtask to the global `subTasks` array and renders it in the subtask list.
+ * @function addSubtaskToList
+ * @param {string} subtasksInput - The text of the new subtask.
+ * @returns {void}
+ */
 function addSubtaskToList(subtasksInput) {
   subTasks.push(subtasksInput);
   let ids = subTasks.length;
@@ -112,7 +266,11 @@ function addSubtaskToList(subtasksInput) {
   );
 }
 
-
+/**
+ * Sets up an event listener for pressing Enter when adding subtasks. Toggles icons accordingly.
+ * @function enterValue
+ * @returns {void}
+ */
 function enterValue() {
   openSubtasks();
   let subtasksInput = document.getElementById("subtasks_input");
@@ -126,7 +284,12 @@ function enterValue() {
   });
 }
 
-
+/**
+ * Resets subtask icons to inactive if the user clicks outside the subtask area.
+ * @function changeSubtasksImages
+ * @param {Event} event - The DOM click event.
+ * @returns {void}
+ */
 function changeSubtasksImages(event) {
   if (
     event.target.id === "add_task_board" ||
@@ -138,19 +301,33 @@ function changeSubtasksImages(event) {
   }
 }
 
-
+/**
+ * Prevents further propagation of a click event, often used to stop unwanted side effects.
+ * @function changeSubtasksImgPrevention
+ * @param {Event} event - The DOM event to stop propagating.
+ * @returns {void}
+ */
 function changeSubtasksImgPrevention(event) {
   event.stopPropagation();
 }
 
-
+/**
+ * Cancels any subtask input operation, resets icons, and clears the input field.
+ * @function cancelSubtasks
+ * @returns {void}
+ */
 function cancelSubtasks() {
   document.getElementById("subtasks_inactiv_img").classList.remove("d-none");
   document.getElementById("subtasks_activ_img").classList.add("d-none");
   document.getElementById("subtasks_input").value = "";
 }
 
-
+/**
+ * Removes a subtask from the global `subTasks` array and the DOM.
+ * @function deleteSubtask
+ * @param {number} id - The index of the subtask to delete.
+ * @returns {void}
+ */
 function deleteSubtask(id) {
   document.getElementById(`listItem_${id}`).remove();
   document.getElementById(`listItem_input_${id}`).remove();
@@ -158,7 +335,12 @@ function deleteSubtask(id) {
   editSubTaskIndex = null;
 }
 
-
+/**
+ * Toggles between active and inactive UI states for a specific subtask (text or input field).
+ * @function toggleSubtasksImgs
+ * @param {number} id - The index of the subtask to toggle.
+ * @returns {void}
+ */
 function toggleSubtasksImgs(id) {
   document.getElementById(`list_imgs_activ_${id}`).classList.toggle("d-none");
   document.getElementById(`list_imgs_inactiv_${id}`).classList.toggle("d-none");
@@ -167,7 +349,11 @@ function toggleSubtasksImgs(id) {
   document.getElementById(`input_subtask_${id}`).classList.toggle("d-none");
 }
 
-
+/**
+ * Validates the required form inputs and either processes or rejects the form submission accordingly.
+ * @function enableButton
+ * @returns {void}
+ */
 function enableButton() {
   let input = getInputValues();
   let category = getCategoryValue();
@@ -178,7 +364,13 @@ function enableButton() {
   }
 }
 
-
+/**
+ * Retrieves trimmed input values from the form fields (title and date).
+ * @function getInputValues
+ * @returns {Object} An object containing the trimmed title and date.
+ * @property {string} input - The trimmed task title.
+ * @property {string} date - The trimmed task date.
+ */
 function getInputValues() {
   return {
     input: document.getElementById("title_input").value.trim(),
@@ -186,161 +378,12 @@ function getInputValues() {
   };
 }
 
-
+/**
+ * Retrieves the currently selected category text.
+ * @function getCategoryValue
+ * @returns {string} The selected category text.
+ */
 function getCategoryValue() {
   return document.getElementById("category").innerText;
 }
 
-
-function isFormComplete(input, category) {
-  let today = new Date();
-  today.setHours(0, 0, 0, 0);
-  let selectedDate = new Date(input.date);
-  selectedDate.setHours(0, 0, 0, 0);
-  return (
-    input.input !== "" &&
-    input.date !== "" &&
-    selectedDate >= today && 
-    (category === "Technical Task" || category === "User Story")
-  );
-}
-
-
-function processValidForm() {
-  resetrequiredFields();
-  createTask();
-}
-
-
-function processInvalidForm() {
-  requiredFields();
-}
-
-
-function setDate() {
-  let today = new Date();
-  let dd = String(today.getDate()).padStart(2, "0");
-  let mm = String(today.getMonth() + 1).padStart(2, "0"); 
-  let yyyy = today.getFullYear();
-  let formattedDate = `${yyyy}-${mm}-${dd}`;
-  let dueDateInput = document.getElementById("due_date");
-  dueDateInput.setAttribute("min", formattedDate); 
-  dueDateInput.value = ""; 
-}
-
-
-
-async function initTemplateAddTask(domLocation, clear) {
-  let response = await fetch("../assets/templates/taskTemplate.html");
-  let data = await response.text();
-  document.getElementById(domLocation).innerHTML = data;
-  clearTemplate(clear);
-  getContacts();
-  setDate();
-  if (clear) {
-      clearButton();
-      renderEditButtons();
-  }
-}
-
-
-function clearTemplate(clear) {
-  if (clear === true) {
-      document.getElementById('edit_task_template').innerHTML = "";
-  } else if (clear === false) {
-      document.getElementById('add_task_template').innerHTML = "";
-  }
-}
-
-function renderEditButtons(){
-  document.getElementById("content_order").classList.add("content-order");
-  document.getElementById("content_order").classList.remove("edit-content-order");
-  document.getElementById('bottom_button_order').classList.remove('edit-bottom-button-order');
-  document.getElementById('create_button_div').classList.remove('edit-ok-button');
-}
-
-
-async function createTask() {
-  let taskData = collectTaskFormData();
-  let taskId = await getNewId("tasks");
-
-  setTaskData(taskData, taskId);
-  await manageTaskCreationCompletion(taskId);
-}
-
-
-function setTaskData(taskData, taskId) {
-  putTasksContent(
-    taskData.title,
-    taskData.description,
-    taskData.dueDate,
-    taskId,
-    taskData.assignedTo,
-    taskData.categorySeleced
-  );
-  putTaskToUser(taskId);
-}
-
-
-async function putTaskToUser(taskId) {
-  if (!activeUser.tasks.includes(taskId)) {
-    activeUser.tasks.push(taskId);
-    localStorage.setItem("activeUser", JSON.stringify(activeUser));
-    try {
-      await updateUserTaskInDatabase(activeUser.id, taskId);
-    } catch (error) {
-      console.error("Fehler beim Hinzufügen des Tasks:", error);
-      activeUser.tasks.pop();
-      localStorage.setItem("activeUser", JSON.stringify(activeUser));
-    }
-  }
-}
-
-
-async function updateUserTaskInDatabase(userId, taskId) {
-  if (userId != 0) {
-    let path = `users/${userId - 1}/tasks/${activeUser.tasks.length - 1}`;
-    return postData(path, taskId);
-  }
-}
-
-
-function putTasksContent(title, description, dueDate, taskId, assignedTo, categorySeleced) {
-  postData(`tasks/${taskId - 1}/`, {
-    title: title,
-    description: description,
-    date: dueDate,
-    priority: selectedPrio,
-    category: categorySeleced,
-    id: taskId,
-    subtasks: collectSubtasks(),
-    assigned: assignedTo,
-    status: taskStatus,
-    user: Number(userId[0]),
-  });
-}
-
-
-async function getContacts() {
-  document.getElementById("contact_contant").innerHTML = "";
-  let contacts = await fetchData("contacts");
-  let userContacts = activeUser.contacts;
-  let contactsToRender = contacts.filter((contact) =>
-    userContacts.includes(contact.id)
-  );
-  window.allContacts = contactsToRender;
-  showContacts(contactsToRender);
-}
-
-
-async function updateSelectedContactsDisplay() {
-  let newContacts = await fetchData("contacts");
-  let selectedList = document.getElementById("selected_contacts");
-  selectedList.innerHTML = "";
-  let userContacts = activeUser.contacts;
-  let contactsToRender = newContacts.filter((contact) =>
-    userContacts.includes(contact.id)
-  );
-  window.allContacts = contactsToRender;
-  displaySelectedContacts(contactsToRender, selectedList);
-}
