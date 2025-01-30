@@ -1,3 +1,14 @@
+/**
+ * Validates user inputs including email, name, password, and password confirmation.
+ * @async
+ * @function validateInputs
+ * @param {string} email - The user's email address to validate.
+ * @param {string} name - The user's name to validate.
+ * @param {string} password - The user's desired password.
+ * @param {string} cPassword - The user's password confirmation.
+ * @returns {Promise<boolean>} Returns `true` if all validations pass.
+ * @throws {Error} Throws an error if any validation fails.
+ */
 async function validateInputs(email, name, password, cPassword) {
   let noticeField = document.getElementById("signup_notice_field");
   let isEmailValid = await validateMail(email, noticeField);
@@ -15,6 +26,14 @@ async function validateInputs(email, name, password, cPassword) {
 }
 
 
+/**
+ * Validates the format and registration status of the provided email.
+ * @async
+ * @function validateMail
+ * @param {string} email - The email address to validate.
+ * @param {HTMLElement} noticeField - The DOM element for displaying validation messages.
+ * @returns {Promise<boolean>} Returns `true` if the email is valid and not registered, otherwise `false`.
+ */
 async function validateMail(email, noticeField) {
   let emailField = document.getElementById("signup_email");
 
@@ -30,6 +49,15 @@ async function validateMail(email, noticeField) {
 }
 
 
+/**
+ * Checks if the provided email is already registered.
+ * @async
+ * @function checkMailExists
+ * @param {string} email - The email address to check.
+ * @param {HTMLElement} noticeField - The DOM element for displaying validation messages.
+ * @param {HTMLElement} emailField - The DOM element representing the email input.
+ * @returns {Promise<boolean>} Returns `true` if the email is not registered, otherwise `false`.
+ */
 async function checkMailExists(email, noticeField, emailField) {
   try {
     let emailExists = await isMailRegistered(email);
@@ -46,6 +74,13 @@ async function checkMailExists(email, noticeField, emailField) {
 }
 
 
+/**
+ * Determines if the given email is present in the user database.
+ * @async
+ * @function isMailRegistered
+ * @param {string} email - The email address to check.
+ * @returns {Promise<boolean>} Returns `true` if the email exists in the database, otherwise `false`.
+ */
 async function isMailRegistered(email) {
   let users = await fetchData("users");
   if (!users) {
@@ -57,6 +92,14 @@ async function isMailRegistered(email) {
 }
 
 
+/**
+ * Checks if the given email matches a valid email format.
+ * @function checkEmailFormat
+ * @param {string} email - The email address to check.
+ * @param {HTMLElement} noticeField - The DOM element for displaying validation messages.
+ * @param {HTMLElement} emailField - The DOM element representing the email input.
+ * @returns {boolean} Returns `true` if the email format is valid, otherwise `false`.
+ */
 function checkEmailFormat(email, noticeField, emailField) {
   let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(email)) {
@@ -69,6 +112,13 @@ function checkEmailFormat(email, noticeField, emailField) {
 }
 
 
+/**
+ * Validates the given user name by checking if it's not empty and contains valid characters.
+ * @function validateName
+ * @param {string} name - The user's name to validate.
+ * @param {HTMLElement} noticeField - The DOM element for displaying validation messages.
+ * @returns {boolean} Returns `true` if the name is valid, otherwise `false`.
+ */
 function validateName(name, noticeField) {
   let isValidName = true;
   let nameField = document.getElementById("signup_name");
@@ -84,6 +134,14 @@ function validateName(name, noticeField) {
 }
 
 
+/**
+ * Checks if the provided name is not empty (at least 3 letters).
+ * @function checkNameNotEmpty
+ * @param {string} name - The name to check.
+ * @param {HTMLElement} noticeField - The DOM element for displaying validation messages.
+ * @param {HTMLElement} nameField - The DOM element representing the name input.
+ * @returns {boolean} Returns `true` if the name is non-empty, otherwise `false`.
+ */
 function checkNameNotEmpty(name, noticeField, nameField) {
   if (name.trim().length < 3) {
     nameField.classList.add("border-alert");
@@ -94,6 +152,14 @@ function checkNameNotEmpty(name, noticeField, nameField) {
 }
 
 
+/**
+ * Checks if the provided name contains only letters and spaces.
+ * @function checkNameCharacters
+ * @param {string} name - The name to check.
+ * @param {HTMLElement} noticeField - The DOM element for displaying validation messages.
+ * @param {HTMLElement} nameField - The DOM element representing the name input.
+ * @returns {boolean} Returns `true` if the name contains only valid characters, otherwise `false`.
+ */
 function checkNameCharacters(name, noticeField, nameField) {
   let nameRegex = /^[A-Za-zÄäÖöÜüß\s]+$/;
 
@@ -106,6 +172,14 @@ function checkNameCharacters(name, noticeField, nameField) {
 }
 
 
+/**
+ * Validates the given password by checking its complexity and confirmation match.
+ * @function validatePassword
+ * @param {string} password - The user's password.
+ * @param {string} cPassword - The user's confirmed password.
+ * @param {HTMLElement} noticeField - The DOM element for displaying validation messages.
+ * @returns {boolean} Returns `true` if the password passes all checks, otherwise `false`.
+ */
 function validatePassword(password, cPassword, noticeField) {
   let isValidPassword = true;
   let passwordField = document.getElementById("signup_password");
@@ -123,6 +197,14 @@ function validatePassword(password, cPassword, noticeField) {
 }
 
 
+/**
+ * Checks if the provided password meets complexity requirements.
+ * @function checkPasswordComplexity
+ * @param {string} password - The password to check.
+ * @param {HTMLElement} noticeField - The DOM element for displaying validation messages.
+ * @param {HTMLElement} passwordField - The DOM element representing the password input.
+ * @returns {boolean} Returns `true` if the password meets complexity requirements, otherwise `false`.
+ */
 function checkPasswordComplexity(password, noticeField, passwordField) {
   let complexityRegex =
     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>/?]).{8,}$/;
@@ -136,6 +218,16 @@ function checkPasswordComplexity(password, noticeField, passwordField) {
 }
 
 
+/**
+ * Checks if the provided password and confirmation match.
+ * @function checkPasswordMatch
+ * @param {string} password - The password to compare.
+ * @param {string} cPassword - The password confirmation to compare.
+ * @param {HTMLElement} noticeField - The DOM element for displaying validation messages.
+ * @param {HTMLElement} passwordField - The DOM element representing the password input.
+ * @param {HTMLElement} cPasswordField - The DOM element representing the confirmation password input.
+ * @returns {boolean} Returns `true` if both passwords match, otherwise `false`.
+ */
 function checkPasswordMatch(password, cPassword, noticeField, passwordField, cPasswordField) {
   if (password !== cPassword) {
     passwordField.classList.add("border-alert");
@@ -147,6 +239,12 @@ function checkPasswordMatch(password, cPassword, noticeField, passwordField, cPa
 }
 
 
+/**
+ * Checks if the legal notice is accepted by the user.
+ * @function checkLegalAcceptance
+ * @param {HTMLElement} noticeField - The DOM element for displaying validation messages.
+ * @returns {boolean} Returns `true` if the legal notice is accepted, otherwise `false`.
+ */
 function checkLegalAcceptance(noticeField) {
   let acceptedLegal = isLegalAccepted();
   if (!acceptedLegal) {
@@ -159,6 +257,11 @@ function checkLegalAcceptance(noticeField) {
 }
 
 
+/**
+ * Determines if the legal notice checkbox is in a checked state.
+ * @function isLegalAccepted
+ * @returns {boolean} Returns `true` if the legal notice is accepted, otherwise `false`.
+ */
 function isLegalAccepted() {
   let checkButton = document.getElementById("signup_check_off");
   let isChecked = checkButton.src.includes("true");
@@ -166,6 +269,12 @@ function isLegalAccepted() {
 }
 
 
+/**
+ * Returns the initials from a given user name.
+ * @function getUserInitials
+ * @param {string} name - The full name from which to extract initials.
+ * @returns {string} The user's initials in uppercase.
+ */
 function getUserInitials(name) {
   let words = name.trim().split(/\s+/);
 
