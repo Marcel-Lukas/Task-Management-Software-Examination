@@ -55,9 +55,9 @@ function signupConfirmPassword() {
 
 
 async function resetDatabase() {
-  for (let index = 0; index < dbBackupTask.length; index++) {
-      await postData(`tasks/${index}/`, dbBackupTask[index]);
-      await postData(`contacts/${index}/`, dbBackupContacts[index]);
+  for (let index = 0; index < backupTask.length; index++) {
+      await postData(`tasks/${index}/`, backupTask[index]);
+      await postData(`contacts/${index}/`, backupContacts[index]);
   }  
 }
 
