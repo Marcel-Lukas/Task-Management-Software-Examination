@@ -50,6 +50,27 @@
     .task-card-area{
         width: 148px;
     }
+
+    /* Für die Zeit nach der Abgabe, um eine bessere Möglichkeit zu schaffen, die Tasks in der mobilen Ansicht auf dem Board zu verschieben.
+    .task-card-area {
+    background-color: #29ABE2;
+    width: 252px;
+    margin: 8px;
+    box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.2);
+    }
+
+    .task-arrow {
+      display: flex;
+      filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(90deg) brightness(100%) contrast(100%);
+    }
+
+    .task-arrow-top {
+      border-top: 1px solid rgb(41, 171, 226);
+    }
+
+    .task-arrow-bottom {
+      border-bottom: 1px solid rgb(41, 171, 226);
+    } */
     
     .inputBoard{
         padding: 0px 8px 0px 8px;
