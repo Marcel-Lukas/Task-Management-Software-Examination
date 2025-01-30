@@ -1,7 +1,7 @@
 @media screen and (max-width:1440px) {
     
     .content{
-        padding: 8px 96px 70px 24px;
+        padding: 8px 0px 70px 24px;
     }
 }
 
@@ -114,7 +114,7 @@
     .clicked-medium{
         width: 64px;
         flex-direction: column-reverse;
-        padding: 12px 0px 24px 0px;
+        padding: 0px 0px 0px 0px;
         gap: 0;
     }
 
@@ -132,7 +132,7 @@
         display: grid;
         justify-content: center;
         flex-direction: column;
-        margin: 56px 0px 0px 0px;
+        margin: 156px 0px 0px 0px;
         max-height: 472px;
         overflow-y: scroll;
         width: auto;
@@ -168,7 +168,7 @@
 
     h1{
         position: fixed;
-        margin: 0px 0px 0px 0px
+        margin: 88px 0px 0px 0px
     }
 
     .bottom-order{
