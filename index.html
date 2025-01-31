@@ -55,8 +55,7 @@
         <button 
           class="font-s-16"
           onclick="toggleAdmissionWindow(), resetSignupFormInputs(), resetSignupAlert(), removeNoticeButtonBg()"
-          aria-label="Sign up button"
-        >
+          aria-label="Sign up button">
           Sign up
         </button>
       </div>
@@ -183,16 +182,19 @@
       class="access-window window-signup d-flex-column-center d-none"
       aria-label="Sign up form"
     >
-      <img 
-        class="litte-button wh-32 d-flex-center arrow"
-        onclick="toggleAdmissionWindow(), resetLoginAlert(), resetLoginFormInputs(), checkRememberMe()"
-        src="./assets/img/png/arrow-left-line.png" 
-        alt="Back arrow"
-        aria-label="Back to login"
-      />
-      <div class="access-headline d-flex-column-center">
-        <h1 id="signup-headline">Sign up</h1>
-        <div class="blue-line"></div>
+
+      <div class="signUpHeader">
+        <img 
+          class="litte-button wh-32 d-flex-center arrow"
+          onclick="toggleAdmissionWindow(), resetLoginAlert(), resetLoginFormInputs(), checkRememberMe()"
+          src="./assets/img/png/arrow-left-line.png" 
+          alt="Back arrow"
+          aria-label="Back to login"
+        />
+        <div class="access-headline d-flex-column-center">
+          <h1 id="signup-headline">Sign up</h1>
+          <div class="blue-line"></div>
+        </div>
       </div>
 
       <div class="content-area w-100 d-flex-column-center">

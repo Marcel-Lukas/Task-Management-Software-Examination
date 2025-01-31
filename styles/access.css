@@ -7,6 +7,10 @@ body {
   align-items: center;
 }
 
+h1{
+  margin: 0;
+}
+
 .headerRow{
   width: 100%;
   height: 25%;
@@ -93,14 +97,16 @@ body {
   width: 598px;
 }
 
-.arrow{
-    position: absolute;
-    top: 64px;
-    left: 48px;
+.signUpHeader{
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  width: 100%;
 }
 
 .access-headline{
   gap: 16px;
+  margin: 0px 0px 0px 36px;
 }
 
 .blue-line {
