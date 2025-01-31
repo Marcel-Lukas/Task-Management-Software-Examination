@@ -50,16 +50,15 @@
     display: none;
   }
 
-  
   .seperator-blue{
     display: none;
-}
+  }
   
   .seperator-horizontal{
     visibility: visible;
     width: 100px;
     border: 1.5px solid #29abe2;
-}
+  }
 
   .content{
     padding: 80px 0px 0px 8px;
@@ -125,6 +124,7 @@
   }
 
   h1 {
+    margin: 0;
     font-size: clamp(47px, 7vw, 61px);
   }
 

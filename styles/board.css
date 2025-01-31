@@ -1,6 +1,6 @@
+
 .board {
   padding: 80px 44px 20px 44px;
-  gap: 55px;
 }
 
 .board-menue {
@@ -77,7 +77,7 @@
 }
 
 .kanban-tasks {
-  height: calc(100vh - 380px);
+  height: calc(100vh - 300px);
   padding-right: 2px;
   border: 1px solid transparent;
   border-radius: 10px;

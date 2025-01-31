@@ -10,6 +10,9 @@
     .add_task_content{
         margin-left: 232px;;
     }
+    .add-task-form-left{
+        width: 288px;
+    }
 
     .pos-rel{
         width: 280px;
@@ -84,16 +87,13 @@
 
     .bottom-order{
         width: 502px;
+        margin: 0;
     }
     
     .content-order{
         margin: 0px 0px 0px 8px;
         width: 556px;
         bottom: 0px;
-    }
-
-    .bottom-order{
-        margin: 0px 0px 0px 24px;
     }
 
     .dividing-bar{
@@ -168,7 +168,7 @@
     }
 
     .bottom-order{
-        margin: 0px 0px 0px 0px;
+        margin: 8px 0px 0px 0px;
         width: 100%;
         height: 48pxpx;
         z-index: 1;

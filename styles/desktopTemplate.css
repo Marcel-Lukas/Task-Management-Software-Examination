@@ -6,7 +6,7 @@ header {
   display: flex;
   width: calc(100% - 232px);
   height: 96px;
-  padding: 20px 40px 20px 116px;
+  padding: 20px 40px 20px 40px;
   gap: 0px;
   justify-content: space-between;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
@@ -216,10 +216,6 @@ aside {
 
 a:hover {
   font-weight: 400;
-}
-
-.logo-mobile {
-  display: none;
 }
 
 .d-flex{
