@@ -1,5 +1,9 @@
 @media screen and (max-width:1240px) {
 
+    h1{
+        margin: 0;
+    }
+
     .text-box{
         flex-direction: row;
         align-items: unset;
@@ -37,6 +41,10 @@
 
 @media screen and (max-width: 1040px) {
 
+    .contacts-info{
+        padding: clamp(8px, 1vw, 48px);
+    }
+
     .big-letter-circle{
         width: clamp(58px, 8vw, 120px);
         height: clamp(50px, 8vw, 120px);
@@ -52,6 +60,15 @@
 }
 
 @media screen and (max-width:555px) {
+
+    .contacts-info-name{
+        width: 70%;
+    }
+
+    .big-letter-circle{
+        width: 48px;
+        height: 48px;
+    }
 
     .contactInfo{
         display: none;
