@@ -43,284 +43,288 @@
     />
   </div>
 
-  <!-- Switch between login/sign-up -->
-  <div 
-    id="change_access" 
-    class="change-access d-flex-spbe-center" 
-    aria-label="Toggle between login and sign-up"
-  >
-    <div class="font-c-black">Not a Join user?</div>
-    <button 
-      class="font-s-16"
-      onclick="toggleAdmissionWindow(), resetSignupFormInputs(), resetSignupAlert(), removeNoticeButtonBg()"
-      aria-label="Sign up button"
-    >
-      Sign up
-    </button>
-  </div>
-
-  <!-- Privacy Policy, Legal Notice -->
-  <div class="legal d-flex-spbe-center" aria-label="Legal links">
-    <a 
-      onclick="openLegal('./html/privacyPolicy.html')" 
-      aria-label="Privacy Policy link"
-    >
-      Privacy Policy
-    </a>
-    <a 
-      onclick="openLegal('./html/legalNotice.html')" 
-      aria-label="Legal notice link"
-    >
-      Legal notice
-    </a>
-  </div>
-
-  <!-- Login-Formular -->
-  <form 
-    id="Login"
-    onsubmit="loginUser(); return false"
-    class="access-window window-login d-flex-column-center container"
-    aria-label="Login form"
-  >
-    <div class="access-headline d-flex-column-center">
-      <h1 id="login-headline">Log in</h1>
-      <div class="blue-line"></div>
-    </div>
-
-    <div class="content-area w-100 d-flex-column-center">
-      <div class="input-space-login w-100 d-flex-column-center">
-        <div class="w-100 d-flex-column pos-rel">
-          <input
-            id="login_email"
-            name="username"        
-            type="email"
-            placeholder="Email"
-            autocomplete="username"
-            required
-            aria-label="Email address"
-          />
-          <img 
-            class="pos-abs top12-right21 cursor-p" 
-            src="./assets/img/png/mail.png" 
-            alt="Mail icon" 
-          />
-        </div>
-
-        <div class="w-100 d-flex-column gap-8 pos-rel">
-          <input 
-            id="login_password" 
-            type="password" 
-            placeholder="Password" 
-            ondragover="false"
-            autocomplete="current-password" 
-            required
-            aria-label="Password"
-          />
-          <img 
-            id="login_lock_icon" 
-            class="pos-abs top12-right21 cursor-p" 
-            src="./assets/img/png/lock.png"
-            alt="Lock icon" 
-            aria-label="Toggle password visibility icon"
-          />
-          <img 
-            id="login_toggle_password" 
-            class="pos-abs top12-right21 d-none cursor-p"
-            src="./assets/img/png/visibility_off.png" 
-            alt="Toggle password visibility"
-            aria-label="Toggle password visibility icon"
-          />
-          <div 
-            id="login_notice_field" 
-            class="font-s-12 font-c-255-129-144"
-          >
-          </div>
-        </div>
-      </div>
-
-      <div class="remember w-100 gap-8">
-        <img 
-          onclick="toggleCheckBtnAdmission('login_check_off', 'button')" 
-          id="login_check_off" 
-          class="litte-button"
-          src="./assets/img/png/check-button-false.png" 
-          alt="Check button for remember me"
-          aria-label="Remember me check button"
-        />
-        Remember me
-      </div>
-    </div>
-
-    <div class="login-buttons">
-      <div class="access-button">
+  <!-- Contains all useable elements -->
+  <div class="content">
+    <!-- Switch between login/sign-up -->
+     <div class="headerRow">
+      <div 
+        id="change_access" 
+        class="change-access d-flex-spbe-center" 
+        aria-label="Toggle between login and sign-up">
+        <div class="font-c-black">Not a Join user?</div>
         <button 
-          type="submit"
-          aria-label="Log in button"
+          class="font-s-16"
+          onclick="toggleAdmissionWindow(), resetSignupFormInputs(), resetSignupAlert(), removeNoticeButtonBg()"
+          aria-label="Sign up button"
         >
-          Log in
+          Sign up
         </button>
       </div>
-      <div class="access-button">
-        <button 
-          type="button" 
-          onclick="loginGuest()" 
-          class="clear-button guest-button"
-          aria-label="Guest log in button"
-        >
-          Guest Log in
-        </button>
+     </div>
+
+    <!-- Privacy Policy, Legal Notice -->
+    <div class="legal d-flex-spbe-center" aria-label="Legal links">
+      <a 
+        onclick="openLegal('./html/privacyPolicy.html')" 
+        aria-label="Privacy Policy link"
+      >
+        Privacy Policy
+      </a>
+      <a 
+        onclick="openLegal('./html/legalNotice.html')" 
+        aria-label="Legal notice link"
+      >
+        Legal notice
+      </a>
+    </div>
+  
+    <!-- Login-Formular -->
+    <form 
+      id="Login"
+      onsubmit="loginUser(); return false"
+      class="access-window window-login d-flex-column-center container"
+      aria-label="Login form"
+    >
+      <div class="access-headline d-flex-column-center">
+        <h1 id="login-headline">Log in</h1>
+        <div class="blue-line"></div>
       </div>
-    </div>
-  </form>
 
-  <!-- Sign-up-Formular -->
-  <form 
-    onsubmit="signUp(); return false" 
-    id="Signup" 
-    class="access-window window-signup d-flex-column-center d-none"
-    aria-label="Sign up form"
-  >
-    <img 
-      class="litte-button wh-32 d-flex-center arrow"
-      onclick="toggleAdmissionWindow(), resetLoginAlert(), resetLoginFormInputs(), checkRememberMe()"
-      src="./assets/img/png/arrow-left-line.png" 
-      alt="Back arrow"
-      aria-label="Back to login"
-    />
-    <div class="access-headline d-flex-column-center">
-      <h1 id="signup-headline">Sign up</h1>
-      <div class="blue-line"></div>
-    </div>
+      <div class="content-area w-100 d-flex-column-center">
+        <div class="input-space-login w-100 d-flex-column-center">
+          <div class="w-100 d-flex-column pos-rel">
+            <input
+              id="login_email"
+              name="username"        
+              type="email"
+              placeholder="Email"
+              autocomplete="username"
+              required
+              aria-label="Email address"
+            />
+            <img 
+              class="pos-abs top12-right21 cursor-p" 
+              src="./assets/img/png/mail.png" 
+              alt="Mail icon" 
+            />
+          </div>
 
-    <div class="content-area w-100 d-flex-column-center">
-      <div class="input-space-signup w-100 d-flex-column-center">
-        <div class="w-100 d-flex-column pos-rel">
-          <input 
-            id="signup_email" 
-            type="email" 
-            placeholder="Email" 
-            autocomplete="username" 
-            required
-            aria-label="Sign up email address"
-          />
-          <img 
-            class="pos-abs top12-right21 cursor-p" 
-            src="./assets/img/png/mail.png" 
-            alt="Mail icon"
-          />
-        </div>
-
-        <div class="w-100 d-flex-column pos-rel">
-          <input 
-            id="signup_name" 
-            type="text" 
-            placeholder="Name" 
-            autocomplete="name" 
-            required
-            aria-label="Full name"
-          />
-          <img 
-            class="pos-abs top12-right21 cursor-p personIcon" 
-            src="./assets/img/png/person.png" 
-            alt="Person icon"
-          />
-        </div>
-
-        <div class="w-100 d-flex-column gap-8 pos-rel">
-          <input 
-            id="signup_password" 
-            type="password" 
-            placeholder="Password" 
-            autocomplete="new-password" 
-            required
-            aria-label="Create password"
-          />
-          <img 
-            id="signup_lock_icon" 
-            class="pos-abs top12-right21 cursor-p" 
-            src="./assets/img/png/lock.png"
-            alt="Lock icon"
-            aria-label="Toggle password visibility icon"
-          />
-          <img 
-            id="signup_toggle_password" 
-            class="pos-abs top12-right21 d-none cursor-p"
-            src="./assets/img/png/visibility_off.png" 
-            alt="Toggle password visibility"
-            aria-label="Toggle password visibility icon"
-          />
-        </div>
-
-        <div class="w-100 d-flex-column gap-8 pos-rel">
-          <input 
-            id="signup_c_password" 
-            type="password" 
-            placeholder="Confirm Password" 
-            autocomplete="new-password"
-            required
-            aria-label="Confirm password"
-          />
-          <img 
-            id="signup_c_lock_icon" 
-            class="pos-abs top12-right21 cursor-p" 
-            src="./assets/img/png/lock.png"
-            alt="Lock icon"
-            aria-label="Toggle confirm password visibility icon"
-          />
-          <img 
-            id="signup_c_toggle_password" 
-            class="pos-abs top12-right21 d-none cursor-p"
-            src="./assets/img/png/visibility_off.png" 
-            alt="Toggle password visibility"
-            aria-label="Toggle confirm password visibility icon"
-          />
-          <div 
-            id="signup_notice_field" 
-            class="font-s-12 font-c-255-129-144 d-flex-column gap-8"
-          >
+          <div class="w-100 d-flex-column gap-8 pos-rel">
+            <input 
+              id="login_password" 
+              type="password" 
+              placeholder="Password" 
+              ondragover="false"
+              autocomplete="current-password" 
+              required
+              aria-label="Password"
+            />
+            <img 
+              id="login_lock_icon" 
+              class="pos-abs top12-right21 cursor-p" 
+              src="./assets/img/png/lock.png"
+              alt="Lock icon" 
+              aria-label="Toggle password visibility icon"
+            />
+            <img 
+              id="login_toggle_password" 
+              class="pos-abs top12-right21 d-none cursor-p"
+              src="./assets/img/png/visibility_off.png" 
+              alt="Toggle password visibility"
+              aria-label="Toggle password visibility icon"
+            />
+            <div 
+              id="login_notice_field" 
+              class="font-s-12 font-c-255-129-144"
+            >
+            </div>
           </div>
         </div>
+
+        <div class="remember w-100 gap-8">
+          <img 
+            onclick="toggleCheckBtnAdmission('login_check_off', 'button')" 
+            id="login_check_off" 
+            class="litte-button"
+            src="./assets/img/png/check-button-false.png" 
+            alt="Check button for remember me"
+            aria-label="Remember me check button"
+          />
+          Remember me
+        </div>
       </div>
 
-      <div class="d-flex-center gap-4">
-        <img 
-          onclick="toggleCheckBtnAdmission(`signup_check_off`, 'button'), removeNoticeButtonBg()"
-          id="signup_check_off" 
-          class="litte-button" 
-          src="./assets/img/png/check-button-false.png"
-          alt="Check button for terms acceptance"
-          aria-label="Accept legal notice check button"
-        />
-        <div class="font-c-168-168-168">I accept the</div>
-        <a 
-          class="link-privacy-policy" 
-          onclick="openLegal('./html/legalNotice.html')"
-          aria-label="Legal notice link"
-        >
-          Legal notice
-        </a>
+      <div class="login-buttons">
+        <div class="access-button">
+          <button 
+            type="submit"
+            aria-label="Log in button"
+          >
+            Log in
+          </button>
+        </div>
+        <div class="access-button">
+          <button 
+            type="button" 
+            onclick="loginGuest()" 
+            class="clear-button guest-button"
+            aria-label="Guest log in button"
+          >
+            Guest Log in
+          </button>
+        </div>
       </div>
-    </div>
-
-    <button 
-      class="signup-btn" 
-      type="submit"
-      aria-label="Sign up button"
+    </form>
+  
+    <!-- Sign-up-Formular -->
+    <form 
+      onsubmit="signUp(); return false" 
+      id="Signup" 
+      class="access-window window-signup d-flex-column-center d-none"
+      aria-label="Sign up form"
     >
-      Sign up
-    </button>
-  </form>
+      <img 
+        class="litte-button wh-32 d-flex-center arrow"
+        onclick="toggleAdmissionWindow(), resetLoginAlert(), resetLoginFormInputs(), checkRememberMe()"
+        src="./assets/img/png/arrow-left-line.png" 
+        alt="Back arrow"
+        aria-label="Back to login"
+      />
+      <div class="access-headline d-flex-column-center">
+        <h1 id="signup-headline">Sign up</h1>
+        <div class="blue-line"></div>
+      </div>
 
-  <!-- Overlay for successful registration -->
-  <div 
-    id="successfully_signed_up" 
-    class="overlay d-flex-center d-none"
-    aria-label="Sign up success message"
-  >
+      <div class="content-area w-100 d-flex-column-center">
+        <div class="input-space-signup w-100 d-flex-column-center">
+          <div class="w-100 d-flex-column pos-rel">
+            <input 
+              id="signup_email" 
+              type="email" 
+              placeholder="Email" 
+              autocomplete="username" 
+              required
+              aria-label="Sign up email address"
+            />
+            <img 
+              class="pos-abs top12-right21 cursor-p" 
+              src="./assets/img/png/mail.png" 
+              alt="Mail icon"
+            />
+          </div>
+
+          <div class="w-100 d-flex-column pos-rel">
+            <input 
+              id="signup_name" 
+              type="text" 
+              placeholder="Name" 
+              autocomplete="name" 
+              required
+              aria-label="Full name"
+            />
+            <img 
+              class="pos-abs top12-right21 cursor-p personIcon" 
+              src="./assets/img/png/person.png" 
+              alt="Person icon"
+            />
+          </div>
+
+          <div class="w-100 d-flex-column gap-8 pos-rel">
+            <input 
+              id="signup_password" 
+              type="password" 
+              placeholder="Password" 
+              autocomplete="new-password" 
+              required
+              aria-label="Create password"
+            />
+            <img 
+              id="signup_lock_icon" 
+              class="pos-abs top12-right21 cursor-p" 
+              src="./assets/img/png/lock.png"
+              alt="Lock icon"
+              aria-label="Toggle password visibility icon"
+            />
+            <img 
+              id="signup_toggle_password" 
+              class="pos-abs top12-right21 d-none cursor-p"
+              src="./assets/img/png/visibility_off.png" 
+              alt="Toggle password visibility"
+              aria-label="Toggle password visibility icon"
+            />
+          </div>
+
+          <div class="w-100 d-flex-column gap-8 pos-rel">
+            <input 
+              id="signup_c_password" 
+              type="password" 
+              placeholder="Confirm Password" 
+              autocomplete="new-password"
+              required
+              aria-label="Confirm password"
+            />
+            <img 
+              id="signup_c_lock_icon" 
+              class="pos-abs top12-right21 cursor-p" 
+              src="./assets/img/png/lock.png"
+              alt="Lock icon"
+              aria-label="Toggle confirm password visibility icon"
+            />
+            <img 
+              id="signup_c_toggle_password" 
+              class="pos-abs top12-right21 d-none cursor-p"
+              src="./assets/img/png/visibility_off.png" 
+              alt="Toggle password visibility"
+              aria-label="Toggle confirm password visibility icon"
+            />
+            <div 
+              id="signup_notice_field" 
+              class="font-s-12 font-c-255-129-144 d-flex-column gap-8"
+            >
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex-center gap-4">
+          <img 
+            onclick="toggleCheckBtnAdmission(`signup_check_off`, 'button'), removeNoticeButtonBg()"
+            id="signup_check_off" 
+            class="litte-button" 
+            src="./assets/img/png/check-button-false.png"
+            alt="Check button for terms acceptance"
+            aria-label="Accept legal notice check button"
+          />
+          <div class="font-c-168-168-168">I accept the</div>
+          <a 
+            class="link-privacy-policy" 
+            onclick="openLegal('./html/legalNotice.html')"
+            aria-label="Legal notice link"
+          >
+            Legal notice
+          </a>
+        </div>
+      </div>
+
+      <button 
+        class="signup-btn" 
+        type="submit"
+        aria-label="Sign up button"
+      >
+        Sign up
+      </button>
+    </form>
+
+    <!-- Overlay for successful registration -->
     <div 
-      class="signup-message d-flex-center font-s-20 font-c-white"
+      id="successfully_signed_up" 
+      class="overlay d-flex-center d-none"
+      aria-label="Sign up success message"
     >
-      You Signed Up successfully
+      <div 
+        class="signup-message d-flex-center font-s-20 font-c-white"
+      >
+        You Signed Up successfully
+      </div>
     </div>
   </div>
 </body>

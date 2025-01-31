@@ -22,6 +22,7 @@ body {
   color: rgb(42, 54, 71);
   visibility: hidden;
   position: fixed;
+  max-width: 1920px;
 }
 
 .content {
