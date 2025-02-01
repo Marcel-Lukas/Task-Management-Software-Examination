@@ -1,8 +1,3 @@
-@media screen and (min-width: 1441px) {
-  .content {
-   
-  }
-}
 
 @media screen and (max-width: 1440px) {
   .content {
@@ -85,7 +80,7 @@
   }
 
   span{
-    font-size: 14px;
+    font-size: 20px;
   }
 
   aside{
