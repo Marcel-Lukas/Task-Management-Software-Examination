@@ -299,16 +299,17 @@ function clearEditForm() {
  */
 function validateInput(input, regex, errorMsg, errorId, maxLength) {
   const valid = maxLength
-    ? input.value.match(regex) && input.value.length <= maxLength
-    : input.value.match(regex);
+    ? regex.test(input.value) && input.value.length <= maxLength
+    : regex.test(input.value);
   if (!valid) {
     setError(input, errorMsg, errorId);
-    input.value = "";
+    // input.value = ""; // Habe diese Zeile entfernen, damit die Eingabe bestehen bleibt wie Herr Heller gesagt hat.
   } else {
     clearError(input, errorId);
   }
   return valid;
 }
+
 
 /**
  * Updates the close/cross icon image based on the current window width,
