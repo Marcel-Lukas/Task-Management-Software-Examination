@@ -267,21 +267,35 @@ function addSubtaskToList(subtasksInput) {
 }
 
 /**
- * Sets up an event listener for pressing Enter when adding subtasks. Toggles icons accordingly.
+ * Executes actions related to subtasks by opening the subtasks interface,
+ * managing additional subtasks setup, and toggling the visibility of subtasks images.
+ *
+ * This function calls external functions `openSubtasks()` and `addSubtasksManage()`,
+ * then hides the element with the ID "subtasks_inactiv_img" and shows the element with the ID "subtasks_activ_img".
+ *
+ * @function handleSubtasks
+ */
+function handleSubtasks() {
+  openSubtasks();
+  addSubtasksManage();
+  document.getElementById("subtasks_inactiv_img").classList.add("d-none");
+  document.getElementById("subtasks_activ_img").classList.remove("d-none");
+}
+
+/**
+ * Initializes event listeners for the subtasks input field and inactive subtasks image.
+ *
+ * This function sets up a keydown listener on the element with the ID "subtasks_input" that listens
+ * for the Enter key. When the Enter key is pressed, it prevents the default behavior and triggers the subtasks handling.
+ * Additionally, it sets up a click listener on the element with the ID "subtasks_inactiv_img" to trigger the same actions.
+ *
  * @function enterValue
- * @returns {void}
  */
 function enterValue() {
-  openSubtasks();
-  let subtasksInput = document.getElementById("subtasks_input");
-  subtasksInput.addEventListener("keydown", function (event) {
-    if (event.key === "Enter") {
-      event.preventDefault();
-      addSubtasksManage();
-      document.getElementById("subtasks_inactiv_img").classList.add("d-none");
-      document.getElementById("subtasks_activ_img").classList.remove("d-none");
-    }
-  });
+  document.getElementById("subtasks_input")
+    .addEventListener("keydown", e => e.key === "Enter" && (e.preventDefault(), handleSubtasks()));
+  document.getElementById("subtasks_inactiv_img")
+    .addEventListener("click", handleSubtasks);
 }
 
 /**
