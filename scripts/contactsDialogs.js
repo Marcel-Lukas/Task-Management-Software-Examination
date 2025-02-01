@@ -28,20 +28,20 @@ async function validateForm() {
       id: "name",
       regex: /^[A-Za-zÄäÖöÜüß]+(\s+[A-Za-zÄäÖöÜüß]+){1,}$/,
       alert: "field_alert_name",
-      message: "(min. two words, max. 23 chars)",
+      message: "⚠ Please enter at least two words and keep it under 23 characters.",
       maxLength: 23,
     },
     {
       id: "email",
       regex: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
       alert: "field_alert_email",
-      message: "Invalid email (test@test.de)",
+      message: "⚠ Please enter a valid email address.",
     },
     {
       id: "phone",
-      regex: /^(?:\+?\d{1,3})?[-. ]?(\(?\d{1,4}?\)?[-. ]?)?\d{1,4}[-. ]?\d{1,4}[-. ]?\d{1,9}$/,
+      regex: /^\+?\d{1,3}?[-.\s]?\(?\d{2,4}\)?[-.\s]?\d{3,4}[-.\s]?\d{3,4}$/,
       alert: "field_alert_phone",
-      message: "(min 8 numbers, max. 15 numbers)",
+      message: "⚠ Please enter a phone number with 8 to 15 digits.",
       maxLength: 15,
     }
   ];
@@ -64,15 +64,22 @@ async function validateEditForm(contactId) {
       id: "inputEditName",
       regex: /^[A-Za-zÄäÖöÜüß]+(\s+[A-Za-zÄäÖöÜüß]+){1,}$/,
       alert: "edit_field_alert_name",
-      message: "(min. two words, max. 23 chars)",
+      message: "⚠ Please enter at least two words and keep it under 23 characters.",
       maxLength: 23,
     },
     {
       id: "inputEditEmail",
       regex: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
       alert: "edit_field_alert_email",
-      message: "Invalid email (test@test.de)",
+      message: "⚠ Please enter a valid email address.",
     },
+    {
+      id: "inputEditPhone",
+      regex: /^\+?\d{1,3}?[-.\s]?\(?\d{2,4}\)?[-.\s]?\d{3,4}[-.\s]?\d{3,4}$/,
+      alert: "edit_field_alert_phone",
+      message: "⚠ Please enter a phone number with 8 to 15 digits.",
+      maxLength: 15,
+    }
   ];
   const valid = validateFields(fields);
   if (valid) {
