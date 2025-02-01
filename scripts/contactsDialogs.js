@@ -37,6 +37,13 @@ async function validateForm() {
       alert: "field_alert_email",
       message: "Invalid email (test@test.de)",
     },
+    {
+      id: "phone",
+      regex: /^(?:\+?\d{1,3})?[-. ]?(\(?\d{1,4}?\)?[-. ]?)?\d{1,4}[-. ]?\d{1,4}[-. ]?\d{1,9}$/,
+      alert: "field_alert_phone",
+      message: "(min 8 numbers, max. 15 numbers)",
+      maxLength: 15,
+    }
   ];
   const valid = validateFields(fields);
   if (valid) {
