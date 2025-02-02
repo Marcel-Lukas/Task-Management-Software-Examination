@@ -1,287 +1,114 @@
-@media screen and (max-width:1440px) {
-    
-    .content{
-        padding: 64pxpx 0px 70px 8px;
-    }
+@media screen and (max-width: 1440px) {
+  .content {
+    padding-inline: 96px;
+  }
+}
+@media screen and (max-width: 1280px) {
+  .content-order {
+    display: flex;
+    margin-top: 25px;
+    overflow-y: auto;
+    max-height: calc(100vh - 285px);
+  }
 }
 
-@media screen and (max-width:1240px) {
-
-    .content{
-        padding: 16px 30px 70px !important;
-    }
-
-    .add_task_content{
-        margin-left: 232px;;
-    }
-    .add-task-form-left{
-        width: 288px;
-    }
-
-    .pos-rel{
-        width: 280px;
-    }
-
-    .urgent-button{
-        width: 96px;
-    }
-
-    .clicked-medium{
-        width: 96px;
-    }
-
-    .low-button{
-        width: 96px;
-    }
-
-    .prio-span{
-        font-size: 16px;
-    }
-
-    img{
-        width: 12pxS;
-    }
-
-    .subtasks-container{
-        width: 212px;
-    }
-
-    .assigned-container{
-        width: 212px;
-    }
-
-    input{
-        padding-right: 0;
-        width: 212px;
-        font-size: 16px;
-    }
-
-    .div-input{
-        font-size: 16px;
-    }
-
-    textarea{
-        width: 212px;
-        font-size: 16px;
-    }
-
-    .content-order{
-        width: 720px;
-    }
-
-    .bottom-order{
-        width: 720px;
-    }
-
-    .div-button-order{
-        width: 110%;
-    }
-
-}
-
-@media screen and (max-width: 1024px) {
-
-    .pos-rel{
-        width: 212px;
-    }
-
-    .add_task_content{
-        margin-left: 232px;;
-    }
-
-    .bottom-order{
-        width: 502px;
-        margin: 0;
-    }
-    
-    .content-order{
-        margin: 0px 0px 0px 8px;
-        width: 556px;
-        bottom: 0px;
-    }
-
-    .dividing-bar{
-        margin: 0px 24px;
-    }
-
-    .urgent-button{
-        width: 64px;
-        flex-direction: column-reverse;
-        padding: 12px 0px 24px 0px;
-        gap: 0;
-    }
-
-    .clicked-medium{
-        width: 64px;
-        flex-direction: column-reverse;
-        padding: 0px 0px 0px 0px;
-        gap: 0;
-    }
-
-    .low-button{
-        width: 64px;
-        flex-direction: column-reverse;
-        padding: 12px 0px 24px 0px;
-        gap: 0;
-    }
+@media screen and (max-width: 1152px) {
+  .content {
+    padding: 16px;
+  }
 }
 
 @media screen and (max-width: 777px) {
-
-    .content{
-        align-items: normal;
-    }
-    
-    .content-order{
-        display: grid;
-        justify-content: center;
-        flex-direction: column;
-        margin: 88px 0px 0px 0px;
-        max-height: 472px;
-        overflow-y: scroll;
-        width: auto;
-    }
-
-    .add-task-form-left{
-        width: 364px;
-    }
-
-    .add-task-form-right{
-        width: 364px;
-    }
-
-    .dividing-bar{
-        display: none;
-    }
-
-    input{
-        width: 396px;
-    }
-
-    textarea{
-        width: 396px;
-    }
-
-    .assigned-container{
-        width: 396px;
-    }
-
-    .pos-rel{
-        width: 396px;
-    }
-
-    h1{
-        position: fixed;
-        margin: 12px 0px 0px 8px;
-    }
-
-    .bottom-order{
-        margin: 8px 0px 0px 0px;
-        width: 100%;
-        height: 48pxpx;
-        z-index: 1;
-        position: relative;
-        justify-content: center;
-    }
-    .add-task-form-left{
-        width: 400px;
-    }
-
-    .create-task-button{
-        width: 183px;
-        height: 56px;
-    }
-
-    .clear-button{
-        width: 110px;
-        height: 56px;
-    }
+  .add-task-h1 {
+    font-size: 40px;
+    position: absolute;
+    top: 80px;
+    padding-left: 16px;
+  }
+  .content {
+    width: 100%;
+    margin-top: 10px;
+    margin-left: 0;
+  }
+  .bottom-order {
+    width: 100%;
+    position: absolute;
+    bottom: -6px;
+    left: 0px;
+    background-color: rgba(255, 255, 255, 0);
+    padding: 8px 16px;
+  }
+  .content-order {
+    display: flex;
+    flex-direction: column;
+    margin-top: 70px;
+    overflow-y: auto;
+    height: calc(100vh - 300px);
+    position: relative;
+    top: 54px;
+  }
+  .dividing-bar {
+    display: none;
+  }
+  .add-task-form-left {
+    padding: 0px 16px;
+    width: auto;
+  }
+  .add-task-form-right {
+    padding: 0px 16px;
+    width: auto;
+  }
+  .div-button-order {
+    justify-content: space-between;
+  }
+  label {
+    font-size: clamp(16px, 4vw, 20px);
+  }
+  input {
+    font-size: clamp(16px, 4vw, 20px);
+  }
+  textarea {
+    font-size: clamp(16px, 4vw, 20px);
+  }
+  .div-input {
+    font-size: clamp(16px, 4vw, 20px);
+  }
+  .prio-span {
+    font-size: clamp(16px, 4vw, 20px);
+  }
+  button {
+    font-size: clamp(16px, 4vw, 20px);
+  }
+  .alert-field {
+    font-size: clamp(12px, 4vw, 16px);
+  }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 516px) {
+  .clear-button {
+    display: none;
+  }
+  .div-button-order {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
 
-    .content-order{
-        margin: 88px 0px 0px 0px;
-        max-height: 396px;
-    }
+@media screen and (max-width: 500px) {
+  ::-webkit-calendar-picker-indicator {
+    height: 20px;
+    width: 20px;
+  }
+}
 
-    h1{
-        margin: 12px 0px 0px 8px;
-    }
+@media screen and (max-height: 960px) {
+  .content {
+    padding-block: 16px;
+  }
+}
 
-    input{
-        width: 248px;
-    }
-
-    textarea{
-        width: 248px;
-    }
-
-    .assigned-container{
-        width: 248px;
-    }
-
-    .pos-rel{
-        width: 248px;
-    }
-
-    .prio-span{
-        font-size: 22px;
-    }
-
-    .urgent-button{
-        width: 100px;
-        height: 62px;
-    }
-
-    .clicked-medium{
-        width: 100px;
-        height: 62px;
-    }
-
-    .low-button{
-        width: 100px;
-        height: 62px;
-    }
-
-    .add-task-form-left{
-        width: 272px;
-        padding: 0px 0px 0px 8px;
-    }
-
-    .add-task-form-right{
-        width: 272px;
-        padding: 0px 0px 0px 8px;
-    }
-
-    .bottom-order{
-        width: -webkit-fill-available;
-        justify-content: center;
-    }
-
-    .create-task-button{
-        width: 136px;
-    }
-
-    .subtasks-container{
-        width: 115px;
-    }
-
-    .div-button-order{
-        flex-direction: column;
-        padding: 0px 0px 0px 16px;
-    }
-
-    .order-content{
-        width: 353px;
-    }
-
-    .form-child-order{
-        width: 200px;
-    }
-
-    .pos-abs{
-        right: 0;
-        left: 216px;
-    }
+@media screen and (max-height: 860px) {
+  .add-task-h1 {
+    font-size: 40px;
+  }
 }
