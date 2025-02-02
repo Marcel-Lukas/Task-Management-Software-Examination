@@ -26,7 +26,7 @@ h3 {
   padding: 48px 0px 0px 0px;
   display: flex;
   width: clamp(333px, 27vw, 456px);
-  height: 100vh;
+  height: 95vh;
   background-color: white;
   box-shadow: 1px 0px 4px 0px #0000001a;
   flex-direction: column;
@@ -66,7 +66,7 @@ h3 {
   display: flex;
   font-size: 20px;
   width: clamp(280px, 23vw, 352px);
-  padding: 15px 24px 15px 24px;
+  padding: 0px 8px 15px 8px;
   gap: 35px;
   align-items: center;
   border-radius: 10px;
@@ -312,6 +312,7 @@ input[type="number"]::-webkit-inner-spin-button {
   width: 100%;
   overflow: scroll;
   margin-top: 9px;
+  margin-bottom: 12px;
   flex-direction: column;
   align-items: center;
 }

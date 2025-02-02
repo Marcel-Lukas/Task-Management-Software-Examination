@@ -1,5 +1,9 @@
 @media screen and (max-width:1240px) {
 
+    .content {
+        padding: 0px 0px 70px !important;
+    }
+
     h1{
         margin: 0;
     }
@@ -53,6 +57,14 @@
 
 @media screen and (max-width: 777px) {
 
+    .content{
+        align-items: normal !important;
+    }
+
+    #contact_list{
+        margin-bottom: 100px;
+    }
+
     .arrow-back{
         width: 48px;
         height: 48px;
@@ -98,6 +110,6 @@
     }
 
     #contact_list{
-        height: 65%;
+        height: auto;
     }
 }
