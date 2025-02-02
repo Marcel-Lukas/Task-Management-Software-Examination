@@ -123,12 +123,16 @@
 }
 
 @media screen and (max-width: 777px) {
+
+    .content{
+        align-items: normal;
+    }
     
     .content-order{
         display: grid;
         justify-content: center;
         flex-direction: column;
-        margin: 156px 0px 0px 0px;
+        margin: 88px 0px 0px 0px;
         max-height: 472px;
         overflow-y: scroll;
         width: auto;
@@ -164,7 +168,7 @@
 
     h1{
         position: fixed;
-        margin: 88px 0px 0px 8px
+        margin: 12px 0px 0px 8px;
     }
 
     .bottom-order{
@@ -176,7 +180,7 @@
         justify-content: center;
     }
     .add-task-form-left{
-        width: inherit;
+        width: 400px;
     }
 
     .create-task-button{

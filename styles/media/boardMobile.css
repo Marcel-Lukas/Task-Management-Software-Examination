@@ -185,6 +185,7 @@
 
     .task-card-area{
         align-items: baseline;
+        width: 244px;
     }
 
     .headerBox{
@@ -192,7 +193,7 @@
     }
 
     .kanban-board{
-        width: auto;
+        width: -webkit-fill-available;
     }
 
     .upperHeaderRow{
@@ -201,6 +202,10 @@
 
     .d-flex-column{
         margin: 0;
+    }
+
+    .single-task{
+        width: 500px;
     }
 }
 

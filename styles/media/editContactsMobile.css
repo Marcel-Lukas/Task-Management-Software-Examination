@@ -69,4 +69,8 @@
         width: 288px;
         background-position: 246px 17px;
     }
+
+    .button-delete-save{
+        padding: 16px 0px 0px 0px;
+    }
 }
