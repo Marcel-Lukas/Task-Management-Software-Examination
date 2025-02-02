@@ -94,6 +94,10 @@
     .summary-link{
         border-radius: 10px;
     }
+
+    .greeting-mobile{
+        bottom: -16px;
+    }
 }
 
 @media screen and (max-width:450px) {
