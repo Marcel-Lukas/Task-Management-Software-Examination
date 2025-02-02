@@ -5,9 +5,7 @@
 }
 
 @media screen and (max-width: 1240px) {
-    .content {
-        margin: 36px 0px 0px 270px;
-    }
+
 
     .greeting{
         display: none;
@@ -34,7 +32,7 @@
     }
 
     .summary{
-        padding: 110px 0px 70px 0px;
+        padding: 0px 0px 70px 12px;
     }
 
     .priority-block{
