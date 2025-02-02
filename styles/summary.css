@@ -282,4 +282,5 @@ span {
   align-items: center;
   flex-direction: column;
   font-size: clamp(24px, 5vw, 36px);
+  border: none !important;
 }
