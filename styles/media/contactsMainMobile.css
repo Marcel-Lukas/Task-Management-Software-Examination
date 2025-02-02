@@ -1,115 +1,240 @@
-@media screen and (max-width:1240px) {
+@media screen and (max-width: 1240px) {
+  .content {
+    padding: 0px;
+  }
 
-    .content {
-        padding: 0px 0px 70px !important;
-    }
+  .text-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-    h1{
-        margin: 0;
-    }
+  .text-seperator {
+    order: 1;
+    width: 90px;
+    height: 3px;
+  }
 
-    .text-box{
-        flex-direction: row;
-        align-items: unset;
-        padding-left: clamp(15px, 2vw, 55px);
-        justify-content: space-between;
-    }
+  .contacts {
+    width: clamp(283px, 23vw, 352px);
+  }
 
-    .innerTextBox{
-        flex-direction: column;
-        align-items: normal;
-    }
+  .contact-seperator {
+    width: 242px;
+    margin: 8px 0px 8px 12px;
+  }
 
-    .text-seperator{
-        display: none;
-    }
-
-    .seperator-horizontal{
-        visibility: visible;
-        width: 100px;
-        border: 1.5px solid #29abe2;
-    }
-
-    .contact-box{
-        width: clamp(305px, 27vw, 456px);
-    }
-
-    .contact-email{
-        font-size: 14px;
-    }
-
-    .contacts-info{
-        padding-left: clamp(15px, 2vw, 55px);
-    }
+  .contact-info {
+    font-size: clamp(12px, 5vw, 20px);
+  }
 }
 
-@media screen and (max-width: 1040px) {
+@media screen and (max-width: 1024px) {
+  #dialog_contacts {
+    display: flex;
+    width: clamp(290px, 88vw, 396px);
+    height: clamp(584px, 67vh, 760px);
+    flex-direction: column;
+  }
 
-    .contacts-info{
-        padding: clamp(8px, 1vw, 48px);
-    }
+  #dialog_edit {
+    display: flex;
+    width: clamp(290px, 88vw, 396px);
+    height: clamp(584px, 67vh, 760px);
+    flex-direction: column;
+  }
 
-    .big-letter-circle{
-        width: clamp(58px, 8vw, 120px);
-        height: clamp(50px, 8vw, 120px);
-    }
+  .dialog-left {
+    width: clamp(290px, 88vw, 396px);
+    height: 352px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 0px;
+    padding: 66px 24px 66px 24px;
+  }
+
+  .logo-dialog {
+    display: none;
+  }
+
+  .dialog-text {
+    font-size: 20px;
+  }
+
+  .dialog-right {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .unknown-user {
+    margin-top: -60px;
+    margin-left: 0px;
+  }
+
+  .edit-big-letter-circle {
+    margin-top: -60px;
+    margin-left: 0px;
+    border: 3px solid white;
+  }
+
+  .input-fields-contacts {
+    margin-top: 23px;
+    width: 364px;
+    gap: 15px;
+  }
+
+  .dialog-content-right {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+
+  .input-name {
+    width: clamp(240px, 76vw, 364px);
+    height: 41px;
+    background-position: 330px 12px;
+  }
+
+  .input-email {
+    width: clamp(240px, 76vw, 364px);
+    height: 41px;
+    background-position: 330px 12px;
+  }
+
+  .input-phone {
+    width: clamp(240px, 76vw, 364px);
+    height: 41px;
+    background-position: 330px 12px;
+  }
+
+  .button-cancel {
+    display: none;
+  }
+
+  .button-contacts {
+    padding-top: 32px;
+    padding-bottom: 30px;
+    justify-content: center;
+  }
+  .close-cross {
+    top: 24px;
+    right: 16px;
+  }
+  .close-cross:hover {
+    background-color: rgb(41, 171, 227);
+  }
+
+  .close-cross:active {
+    background-color: rgb(41, 171, 227);
+  }
+
+  .button-delete-save {
+    width: unset;
+    height: 51px;
+    padding-top: 32px;
+    padding-bottom: 81px;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .button-delete {
+    width: 82px;
+    padding: 18px 10px;
+  }
 }
 
 @media screen and (max-width: 777px) {
+  .content {
+    height: calc(100% - 160px);
+    width: 100%; /*muss weil keine sidebar mehr da ist links  */
+    margin: 80px 0px 192px;
+    padding: 0px 16px 0px;
+  }
 
-    .content{
-        align-items: normal !important;
-    }
+  h1 {
+    font-size: clamp(47px, 7vw, 61px);
+  }
 
-    #contact_list{
-        margin-bottom: 100px;
-    }
+  h3 {
+    font-size: clamp(24px, 5vw, 47px);
+  }
 
-    .arrow-back{
-        width: 48px;
-        height: 48px;
-    }
-}
+  .add-contact {
+    display: none;
+  }
 
-@media screen and (max-width:555px) {
+  #contact_info {
+    display: none;
+  }
 
-    .contacts-info-name{
-        width: 70%;
-    }
+  .letter-box {
+    width: clamp(300px, 77vw, 352px);
+  }
 
-    .big-letter-circle{
-        width: 48px;
-        height: 48px;
-    }
+  .big-letter-circle {
+    font-size: clamp(24px, 6vw, 47px);
+    width: clamp(70px, 23vw, 120px);
+    height: clamp(70px, 19vw, 120px);
+    border: 3px solid white;
+  }
 
-    .contactInfo{
-        display: none;
-    }
+  .contacts {
+    width: clamp(300px, 77vw, 352px);
+  }
 
-    .contact-box{
-        width: 100%;
-    }
+  .contact-box {
+    width: 100%;
+    height: calc(100vh - 160px);
+    padding: 0px 0px;
+    align-items: flex-start;
+  }
 
-    .letter-box{
-        width: 55%;
-    }
-}
+  .contact-seperator {
+    margin-left: clamp(0px, 77vw, 12px);
+    width: clamp(270px, 83vw, 95%);
+  }
 
-@media screen and (max-width: 450px) {
+  .mobile-add-contact {
+    display: flex;
+  }
 
-    .contacts{
-        gap: 8px;
-    }
+  .contact-box-name {
+    justify-content: center;
+  }
 
-    .contact-seperator{
-        width: clamp(224px, 23vw, 352px);
-    }
+  .arrow-back {
+    position: absolute;
+    right: 21px;
+  }
 
-    .contact-email{
-        font-size: 12px;
-    }
+  .arrow-back:hover {
+    cursor: pointer;
+  }
 
-    #contact_list{
-        height: auto;
-    }
+  .field-alert {
+    width: clamp(240px, 76vw, 364px);
+  }
+
+  .contacts-info-name {
+    height: unset;
+    width: clamp(300px, 57vw, 700px);
+  }
+
+  .contacts-information {
+    height: unset;
+  }
+
+  .contacts-info {
+    animation: slideInFromRight 0s ease-in;
+  }
+
+  #succesfully_created {
+    top: unset;
+    left: 50%;
+    bottom: -15%;
+    transition: bottom 0.4s ease-out;
+    transform: translate(-50%, -50%);
+  }
+
+  #succesfully_created.dialog-open {
+    left: 50%;
+    bottom: 20%;
+  }
 }
