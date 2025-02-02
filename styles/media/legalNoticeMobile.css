@@ -1,8 +1,8 @@
 @media screen and (max-width: 1240px) {
 
     .content{
-        width: 90vh;
-        margin: 64px 8px 0px 248px;
+        width: 70vh;
+        margin: 64px 8px 0px 236px;
     }
 
     .arrow-back{
@@ -16,6 +16,7 @@
 
     .content{
         padding: 0px 260px 0px 0px;
+        margin: 100px 8px 0px 236px;
     }
 }
 

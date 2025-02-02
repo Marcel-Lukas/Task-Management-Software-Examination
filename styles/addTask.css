@@ -5,6 +5,7 @@ body {
 .content-order {
   display: flex;
   margin-top: 48px;
+  width: auto;
 }
 
 .add-task-form-left {
