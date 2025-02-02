@@ -96,4 +96,8 @@
     .contact-email{
         font-size: 12px;
     }
+
+    #contact_list{
+        height: 65%;
+    }
 }

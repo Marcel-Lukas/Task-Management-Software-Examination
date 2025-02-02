@@ -7,6 +7,10 @@
 
 @media screen and (max-width:1240px) {
 
+    .content{
+        padding: 16px 30px 70px !important;
+    }
+
     .add_task_content{
         margin-left: 232px;;
     }
@@ -49,16 +53,16 @@
     input{
         padding-right: 0;
         width: 212px;
-        font-size: 12px;
+        font-size: 16px;
     }
 
     .div-input{
-        font-size: 12px;
+        font-size: 16px;
     }
 
     textarea{
         width: 212px;
-        font-size: 12px;
+        font-size: 16px;
     }
 
     .content-order{

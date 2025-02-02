@@ -16,6 +16,10 @@
 
 @media screen and (max-width: 1240px) {
 
+    .content{
+        padding: 16px 30px 70px !important;
+    }
+
     .headerBox{
         width: 720px;
     }
@@ -152,8 +156,9 @@
     }
 
     .task-card-area{
-        width: 2348px;
+        width: auto;
         height: 240px;
+        align-items: baseline;
     }
 
     .task-card{

@@ -109,6 +109,7 @@
   .box-icons{
     flex-direction: column;
     width: 24px;
+    white-space: nowrap;
   }
 
   .h1-box{
