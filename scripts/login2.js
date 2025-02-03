@@ -157,7 +157,6 @@ function manageLoginError() {
   noticeField.innerHTML += `<div>Check your email and password. Please try again.</div>`;
   document.getElementById("login_email").classList.add("border-alert");
   document.getElementById("login_password").classList.add("border-alert");
-  console.error(errorMessage);
 }
 
 /**
