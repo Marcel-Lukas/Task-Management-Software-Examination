@@ -53,7 +53,7 @@ function generateTasksOnBoard(id, title, shortDescription, category, categoryCol
  * @returns {string} An HTML string stating that there are no tasks to do.
  */
 function generateNoTaskField() {
-  return `<div class="task-none d-flex-center">No tasks To do</div>`;
+  return `<div class="task-none d-flex-center"></div>`;
 }
 
 /**
