@@ -181,7 +181,7 @@
 
   .big-letter-circle {
     font-size: clamp(24px, 6vw, 47px);
-    width: clamp(70px, 23vw, 120px);
+    width: clamp(70px, 21vw, 120px);
     height: clamp(70px, 19vw, 120px);
     border: 3px solid white;
   }
