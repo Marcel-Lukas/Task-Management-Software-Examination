@@ -438,3 +438,8 @@
     height: 100vh;
     align-items: center;
 }
+
+.assignedTo{
+  overflow-y: scroll;
+  min-height: 188px;
+}

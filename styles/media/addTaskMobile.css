@@ -259,7 +259,7 @@
   }
 
   .inputSubTask{
-    width: 234px;
+    width: 247px;
   }
 
   textarea{
@@ -267,7 +267,7 @@
   }
 
   .subtasks-container{
-    width: 236px;
+    width: 248px;
   }
 
   .assigned-container{
@@ -278,12 +278,12 @@
     width: 248px;
   }
 
-  .div-button-order{
-    align-items: center;
+  .pos-rel{
+    width: 248px;
   }
 
-  .pos-rel{
-    width: 236px;
+  .div-button-order{
+    align-items: center;
   }
 }
 

@@ -180,10 +180,10 @@ function generateSingleTasks(singleTask, categoryColor) {
               <img class="single-task-prio" src="../assets/img/png/prio-${singleTask.priority}-text.png" alt="" />
             </div>
 
-            <div class="w-100 d-flex-column gap-8">
+            <div class="w-100 d-flex-column gap-8 assignedTo">
               Assigned To:
 
-              <div id="single_assignee" class="single-task-lines d-flex-column gap-4 font-c-black">
+              <div id="single_assignee" class="single-task-lines d-flex-column gap-4 font-c-black assigneRegister">
 
                 <div class="single-task-assignee">
                   <span
