@@ -188,6 +188,36 @@
 
 @media screen and (max-width: 777px) {
 
+    .single-edit-task{
+        padding: 8px 8px 8px 8px;
+        height: 100vh;
+        margin: 0px 8px 0px 8px;
+        align-items: center;
+    }
+
+    .edit-content-order{
+        margin-top: 64px;
+        width: 500px;
+    }
+
+    .bottom-edit-order{
+        justify-content: end;
+        padding: 0px 12px 0px 12px;
+        margin: 88px 0px 0px 0px;
+    }
+
+    .add-task-form-left{
+        margin: 0px 8px 0px 8px;
+    }
+
+    .closw-DD-TAKS-BUTTON{
+        height: 25;
+    }
+
+    .h1-box{
+        display: none;
+    }
+
     .task-card-area{
         align-items: baseline;
         width: 244px;
@@ -202,7 +232,7 @@
     }
 
     .upperHeaderRow{
-        margin: 8px 0px 8px 0px;
+        margin: 80px 0px 8px 0px;
     }
 
     .d-flex-column{
@@ -211,6 +241,28 @@
 
     .single-task{
         width: 500px;
+    }
+}
+
+@media screen and (max-width:540px) {
+
+    .edit-content-order{
+        width: auto;
+    }
+
+    .add-task-form-left{
+        width: auto;
+    }
+
+    .add-task-form-right{
+        width: auto;
+    }
+}
+
+@media screen and (max-width:485px) {
+
+    .div-button-order{
+        flex-direction: column;
     }
 }
 
