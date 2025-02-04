@@ -240,12 +240,10 @@
 
 @media screen and (max-width: 516px) {
 
-  .clear-button {
-    display: none;
-  }
   .div-button-order {
     align-items: flex-start;
     flex-direction: column;
+    align-items: center;
   }
 }
 
@@ -257,23 +255,27 @@
   }
 
   input{
-    width: auto;
+    width: 248px;
+  }
+
+  .inputSubTask{
+    width: 234px;
   }
 
   textarea{
-    width: auto;
+    width: 248px;
   }
 
   .subtasks-container{
-    width: auto;
+    width: 236px;
   }
 
   .assigned-container{
-    width: auto;
+    width: 248px;
   }
 
   .category-container{
-    width: auto;
+    width: 248px;
   }
 
   .div-button-order{
@@ -282,6 +284,13 @@
 
   .pos-rel{
     width: 236px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+
+  button{
+    padding: 0;
   }
 }
 

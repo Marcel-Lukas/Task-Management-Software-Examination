@@ -432,3 +432,8 @@
   background-color: unset !important;
   color: rgb(204, 204, 204) !important ;
 }
+
+
+.edit-task-board-click{
+    height: 100vh;
+}

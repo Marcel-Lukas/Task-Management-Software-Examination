@@ -200,6 +200,10 @@
         width: 500px;
     }
 
+    .edit-task-board-click{
+        height: 100vh;
+    }
+
     .bottom-edit-order{
         justify-content: end;
         padding: 0px 12px 0px 12px;
