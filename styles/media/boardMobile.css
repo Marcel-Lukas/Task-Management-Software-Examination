@@ -207,8 +207,8 @@
 
     .single-edit-task{
         padding: 8px 8px 8px 8px;
-        height: 100vh;
-        margin: 0px 8px 0px 8px;
+        height: 90vh;
+        margin: 24px 8px 0px 8px;
         align-items: center;
     }
 
@@ -220,7 +220,7 @@
     .bottom-edit-order{
         justify-content: end;
         padding: 0px 12px 0px 12px;
-        margin: 88px 0px 0px 0px;
+        margin: 24px 0px 0px 0px;
     }
 
     .add-task-form-left{
