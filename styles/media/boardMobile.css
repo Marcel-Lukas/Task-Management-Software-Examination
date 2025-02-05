@@ -184,9 +184,20 @@
     .task-description{
         overflow: auto;
     }
+
+    .add-task-board{
+        max-height: calc(100vh - 90px);
+    }
 }
 
 @media screen and (max-width: 777px) {
+
+    .content-order{
+        flex-direction: column;
+        align-items: center;
+        height: 800px;
+        margin: 0;
+    }
 
     .single-edit-task{
         padding: 8px 8px 8px 8px;
@@ -246,7 +257,20 @@
 
     .assigneRegister{
         max-height: 288PX;
-      }
+    }
+
+    .bottom-order{
+        justify-content: center;
+    }
+      
+}
+
+@media screen and (max-width: 650px) {
+
+    .content-order{
+        margin-top: 0px;
+        overflow-y: scroll;
+    }
 }
 
 @media screen and (max-width:540px) {
@@ -269,6 +293,12 @@
     .div-button-order{
         flex-direction: column;
     }
+
+    .bottom-button-order{
+        gap: 4px;
+        flex-wrap: nowrap;
+        margin: 24px 0px 0px 0px;
+    }
 }
 
 @media screen and (max-width: 450px) {
@@ -285,3 +315,19 @@
         width: auto;
     }
 }
+
+@media screen and (max-height: 1030px) {
+
+    .add-task-board{
+        overflow: auto; 
+        scrollbar-width: none; 
+        -ms-overflow-style: none; 
+    }
+
+    .boardtaskScrollArea{
+        overflow: auto; 
+        scrollbar-width: none; 
+        -ms-overflow-style: none;
+    }
+    
+} 
