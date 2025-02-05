@@ -44,6 +44,7 @@
 
     .kanban-tasks{
         align-items: center;
+        height: auto;
     }
 
     .d-felx-column{
@@ -55,16 +56,18 @@
         width: 760px;
     }
 
-    .task-card-area{
-        width: 148px;
-    }
-
-    /* Für die Zeit nach der Abgabe, um eine bessere Möglichkeit zu schaffen, die Tasks in der mobilen Ansicht auf dem Board zu verschieben.
     .task-card-area {
     background-color: #29ABE2;
-    width: 252px;
+    width: 148px;
     margin: 8px;
     box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.2);
+    }
+
+    [id^="arrow_area_bottom_"] {
+      background-color: #29ABE2;
+      width: 86%;
+      align-self: center;
+      border-radius: 0 0 24px 24px;
     }
 
     .task-arrow {
@@ -78,7 +81,7 @@
 
     .task-arrow-bottom {
       border-bottom: 1px solid rgb(41, 171, 226);
-    } */
+    } 
     
     .inputBoard{
         padding: 0px 8px 0px 8px;
@@ -148,6 +151,8 @@
     .kanban-tasks{
         align-items: normal;
         flex-direction: row;
+        padding-bottom: 54px;
+        margin: 0;
     }
 
     .d-flex-column{
@@ -166,6 +171,7 @@
         max-height: 244px;
         width: 244px;
         padding: 8px 12px 8px 12px;
+        margin-bottom: 0;
     }
 
     h1 {

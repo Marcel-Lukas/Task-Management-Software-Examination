@@ -85,6 +85,10 @@
   overflow-y: scroll;
 }
 
+.kanban-tasks::-webkit-scrollbar {
+  display: none;
+}
+
 .kanban-tasks-highlight {
   background-color: rgb(230, 230, 230);
   border: 1px solid rgba(42, 54, 71, 0.3);
