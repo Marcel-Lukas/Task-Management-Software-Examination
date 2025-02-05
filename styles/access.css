@@ -1,3 +1,9 @@
+html {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 body {
   visibility: visible;
   width: 100%;
@@ -184,6 +190,7 @@ body {
 .d-none {
   display: none;
 }
+
 
 @media (max-width: 777px) {
   .img-logo {

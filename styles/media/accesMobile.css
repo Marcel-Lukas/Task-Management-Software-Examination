@@ -1,3 +1,14 @@
+@media (min-width: 2280px) {
+  .logo-small {
+    left: calc((100vw - 1140px) / 2);
+  }
+
+  .change-access {
+    position: absolute;
+    left: 1222px;
+  }
+}
+
 @media (min-width: 1441px) {
   .logo-small {
     left: calc((100vw - 1286px) / 2);
