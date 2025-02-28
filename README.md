@@ -1,0 +1,1 @@
+<p><strong>The “Join” project was part of the further training at the Developer Academy in Munich. The aim was to further develop JavaScript skills while mastering the challenge of working in a small team with Git and GitHub. “Join” is intended to be an alternative solution to Slack and Trello.</strong></p>
