@@ -1,6 +1,6 @@
 {
-  "name": "MyWebSite",
-  "short_name": "MySite",
+  "name": "Kanban Project Management Tool",
+  "short_name": "Kanban Tool",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",

@@ -190,7 +190,7 @@ aside {
 }
 
 .credit a {
-  font-size: clamp(12px, 1.5vw, 16px);
+  font-size: 16px;
 }
 
 .link-sidebar.disabled {

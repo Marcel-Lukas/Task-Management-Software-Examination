@@ -83,9 +83,9 @@
     width: clamp(243px, 64vw, 350px);
     height: clamp(40px, 5vw, 48px);
     font-size: clamp(16px, 3vw, 20px);
-    top: auto;
+    top: unset;
     bottom: 64px;
-    right: auto;
+    right: calc(100vw / 4);
   }
 
   .change-access button{
@@ -163,6 +163,20 @@
   }
 }
 
+
+@media (max-width: 660px) {
+    .change-access {
+        right: calc(100vw / 5);
+    }
+}
+
+@media (max-width: 560px) {
+    .change-access {
+        right: calc(100vw / 6);
+    }
+}
+
+
 @media (max-width: 428px) {
   h1 {
     font-size: clamp(32px, 11vw, 47px);
@@ -171,4 +185,31 @@
   .blue-line {
     width: clamp(110px, 35vw, 150px);
   }
+}
+
+@media (max-width: 360px) {
+    .change-access {
+        right: calc(100vw / 8);
+    }
+}
+
+@media (max-width: 320px) and (max-height: 610px) {
+    .change-access {
+        padding-left: 132px;
+        height: 36px;
+        font-size: 16px;
+        top: 6px;
+        right: 0;
+        .font-c-black {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 320px) and (max-height: 570px) {
+    .signUpHeader {
+        .litte-button {
+            top: 60px;
+        }
+    }
 }

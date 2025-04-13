@@ -2,7 +2,7 @@ body {
   background-color: #f5f6f7;
 }
 
-.content{
+.content {
   margin-top: clamp(18px, 9vh, 96px);
 }
 

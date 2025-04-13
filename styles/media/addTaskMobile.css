@@ -107,7 +107,7 @@
   }
 }
 
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 935px) {
 
   .div-button-order{
     flex-direction: row;
@@ -120,6 +120,11 @@
 
   .bottom-order{
     width: 520px;
+    align-items: center;
+    .bottom-button-order {
+        margin-top: -10px;
+        z-index: 3333;
+    }
   }
 
   .add-task-form-left{
@@ -172,6 +177,9 @@
     bottom: -6px;
     left: 0px;
     padding: 8px 16px;
+    .bottom-button-order {
+        margin-top: 0px;
+    }
   }
   .content-order {
     display: flex;

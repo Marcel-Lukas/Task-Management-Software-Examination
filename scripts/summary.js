@@ -205,9 +205,9 @@ function deadlineDate(tasks) {
 /**
  * Navigates the user to the board page.
  *
- * @function navigateToBoard
+ * @function navigatonToBoard
  */
-function navigateToBoard() {
+function navigatonToBoard() {
   window.location.href = "../html/board.html";
 }
 

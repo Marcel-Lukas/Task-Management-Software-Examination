@@ -1,16 +1,12 @@
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 1360px) {
 
     .headerBox{
         width: 964px;
     }
 
     .task-card-area{
-        width: 188px;
-    }
-
-    .kanban-header{
-        font-size: 16px;
-        justify-content: space-around;
+        width: 222px;
+        height: auto;
     }
 }
 
@@ -21,7 +17,18 @@
     }
 
     .headerBox{
-        width: 720px;
+        width: 860px;
+    }
+
+    .btn-add-task {
+        margin-left: 20px;
+    }
+
+    .task-card-area {
+        background-color: #29ABE2;
+        width: 200px;
+        margin: 8px;
+        box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.2);
     }
 
     .board{
@@ -56,13 +63,6 @@
         width: 760px;
     }
 
-    .task-card-area {
-    background-color: #29ABE2;
-    width: 148px;
-    margin: 8px;
-    box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.2);
-    }
-
     [id^="arrow_area_bottom_"] {
       background-color: #29ABE2;
       width: 86%;
@@ -92,7 +92,7 @@
     }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1160px) {
 
     .content{
         margin: 80px 0px 0px 232px ;
@@ -268,17 +268,15 @@
     .bottom-order{
         justify-content: center;
     }
+
+    .kanban-header{
+        margin-top: 16px;
+    }
       
 }
 
-@media screen and (max-width: 777px) {
-  .kanban-header{
-    margin-top: 16px;
-  }
-}
 
 @media screen and (max-width: 650px) {
-
     .content-order{
         margin-top: 0px;
         overflow-y: scroll;
@@ -325,6 +323,10 @@
 
     .board-menue{
         width: auto;
+    }
+
+    .btn-add-task-mobile {
+        margin-left: 20px;
     }
 }
 
